@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>consulta_cliente</class>
+ <widget class="QWidget" name="consulta_cliente">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>829</width>
+    <height>292</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>9</number>
+   </property>
+   <property name="topMargin">
+    <number>9</number>
+   </property>
+   <property name="rightMargin">
+    <number>9</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="central_frame">
+     <property name="styleSheet">
+      <string notr="true">QWidget#central_frame{border: 1px solid rgb(249,66,58);}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="background_frame">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(151, 153, 155);
+
+</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="contenido_frame">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(179, 179, 179)</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QFrame" name="botones_frame">
+            <property name="geometry">
+             <rect>
+              <x>710</x>
+              <y>10</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QToolButton" name="minimizar">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>0</y>
+               <width>21</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border-style: solid;
+border-with 0px;</string>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../iconos/icons/minimize-window.png</normaloff>../iconos/icons/minimize-window.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="maximizar">
+             <property name="geometry">
+              <rect>
+               <x>50</x>
+               <y>0</y>
+               <width>25</width>
+               <height>19</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border-style: solid;
+border-with 0px;</string>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../iconos/icons/close-window.png</normaloff>../iconos/icons/close-window.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QFrame" name="tabla_frame">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>50</y>
+              <width>781</width>
+              <height>211</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="titulo_cliente">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>10</y>
+               <width>121</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Nombre del cliente:</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="ingre_nombre">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>10</y>
+               <width>201</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:white
+</string>
+             </property>
+            </widget>
+            <widget class="QTableWidget" name="tabla_clientes">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>40</y>
+               <width>731</width>
+               <height>161</height>
+              </rect>
+             </property>
+             <property name="rowCount">
+              <number>4</number>
+             </property>
+             <attribute name="horizontalHeaderVisible">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderHighlightSections">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderVisible">
+              <bool>false</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row/>
+             <row/>
+            </widget>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

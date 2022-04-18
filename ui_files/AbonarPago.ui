@@ -1,0 +1,1629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DetailWindow</class>
+ <widget class="QWidget" name="DetailWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1395</width>
+    <height>685</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#DetailWindow{border-radius: 5px}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="central_widget_frame">
+     <property name="styleSheet">
+      <string notr="true">Qwidget#centra_widget_frama{border-radius: 5px}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="shadow_layout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="background_frame">
+        <property name="styleSheet">
+         <string notr="true">QWidget#background_frame{background-color: rgb(245, 240, 225);}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="top_bar_frame">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #1e3d59;
+border-radius: 5px</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="title_label">
+              <property name="minimumSize">
+               <size>
+                <width>1100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: white;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="buttons_holder_frame">
+              <property name="minimumSize">
+               <size>
+                <width>180</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>113</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QToolButton" name="minimize_button">
+               <property name="geometry">
+                <rect>
+                 <x>90</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../iconos/icons/maximize-window.png</normaloff>../iconos/icons/maximize-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="restore_button">
+               <property name="geometry">
+                <rect>
+                 <x>120</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../iconos/icons/restore-window.png</normaloff>../iconos/icons/restore-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="maximize_button">
+               <property name="geometry">
+                <rect>
+                 <x>120</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../iconos/icons/minimize-window.png</normaloff>../iconos/icons/minimize-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="close_button">
+               <property name="geometry">
+                <rect>
+                 <x>150</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../iconos/icons/close-window.png</normaloff>../iconos/icons/close-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="content_frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QFrame" name="barra_principal_frame">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QWidget#barra_principal_frame{background-color: rgb(48, 127, 226);
+border-radius: 5px}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QPushButton" name="Empresa">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Empresa</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/house.png</normaloff>../assets/Iconos/house.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Clientes">
+               <property name="geometry">
+                <rect>
+                 <x>150</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Clientes</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/60eb68bb3242ef4ac327a3fe28d25719.png</normaloff>../assets/Iconos/60eb68bb3242ef4ac327a3fe28d25719.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Prestamos">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Prestamos</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/prestamos.png</normaloff>../assets/Iconos/prestamos.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>35</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Ahorros">
+               <property name="geometry">
+                <rect>
+                 <x>430</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Ahorros</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/497f1ee33d47f13536a037095be32bde-icono-de-circulo-de-banco-de-cerdo.png</normaloff>../assets/Iconos/497f1ee33d47f13536a037095be32bde-icono-de-circulo-de-banco-de-cerdo.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Consultas">
+               <property name="geometry">
+                <rect>
+                 <x>570</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Consultas</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/consultas.png</normaloff>../assets/Iconos/consultas.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Ayuda">
+               <property name="geometry">
+                <rect>
+                 <x>1140</x>
+                 <y>10</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Ayuda</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/ayuda.png</normaloff>../assets/Iconos/ayuda.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Salir">
+               <property name="geometry">
+                <rect>
+                 <x>1240</x>
+                 <y>10</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Salir</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/exit.png</normaloff>../assets/Iconos/exit.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Notificaciones">
+               <property name="geometry">
+                <rect>
+                 <x>1000</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Notificaciones</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/Imagen2.png</normaloff>../assets/Iconos/Imagen2.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="PolizaS">
+               <property name="geometry">
+                <rect>
+                 <x>712</x>
+                 <y>10</y>
+                 <width>151</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Polizas</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/polizas.png</normaloff>../assets/Iconos/polizas.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="ChequeS">
+               <property name="geometry">
+                <rect>
+                 <x>860</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Cheques</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/cheques.png</normaloff>../assets/Iconos/cheques.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="contenido">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="label_18">
+               <property name="geometry">
+                <rect>
+                 <x>1000</x>
+                 <y>10</y>
+                 <width>251</width>
+                 <height>51</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QFrame" name="frame">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1431</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_17">
+                <property name="geometry">
+                 <rect>
+                  <x>340</x>
+                  <y>10</y>
+                  <width>750</width>
+                  <height>61</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>750</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>1600</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Abonar pago&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_10">
+                <property name="geometry">
+                 <rect>
+                  <x>1200</x>
+                  <y>10</y>
+                  <width>80</width>
+                  <height>80</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>80</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../imagenes/res.qrc">:/imagen/logobueno_preview_rev_1.png</pixmap>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Catalogo">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Catálogo de cuentas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Respaldo">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Respaldar empresa</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Mi_Empresa">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Mi empresa</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="abonar_ahorro">
+                <property name="geometry">
+                 <rect>
+                  <x>430</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Abonar ahorro</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="PLD">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>PLD</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Ahorro">
+                <property name="geometry">
+                 <rect>
+                  <x>430</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nuevo ahorro</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="abonar">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Abonar pago</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Reportes">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Emitir reporte</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Polizas">
+                <property name="geometry">
+                 <rect>
+                  <x>710</x>
+                  <y>0</y>
+                  <width>151</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nueva poliza</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Historial">
+                <property name="geometry">
+                 <rect>
+                  <x>150</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Historial del cliente</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Estado">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Estado de cuentas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="cancelar">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Cancelar pago</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Cliente">
+                <property name="geometry">
+                 <rect>
+                  <x>150</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Agregar nuevo cliente</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Retirar">
+                <property name="geometry">
+                 <rect>
+                  <x>430</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Retirar ahorro</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Cheques">
+                <property name="geometry">
+                 <rect>
+                  <x>860</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Cheques</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Consulta_cheque">
+                <property name="geometry">
+                 <rect>
+                  <x>860</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Consultar cheques</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Listado">
+                <property name="geometry">
+                 <rect>
+                  <x>710</x>
+                  <y>30</y>
+                  <width>151</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Listado de polizas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="prestamo">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nuevo prestamo</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="Desarrollo">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>100</y>
+                 <width>1431</width>
+                 <height>491</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QLabel" name="label_44">
+                <property name="geometry">
+                 <rect>
+                  <x>580</x>
+                  <y>120</y>
+                  <width>471</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(151, 153, 155);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Realizar pago&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_47">
+                <property name="geometry">
+                 <rect>
+                  <x>580</x>
+                  <y>190</y>
+                  <width>171</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fecha registro de pago:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_50">
+                <property name="geometry">
+                 <rect>
+                  <x>580</x>
+                  <y>240</y>
+                  <width>161</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fecha siguiente pago:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_45">
+                <property name="geometry">
+                 <rect>
+                  <x>580</x>
+                  <y>160</y>
+                  <width>151</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fecha limite de pago:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="advertencia">
+                <property name="geometry">
+                 <rect>
+                  <x>580</x>
+                  <y>230</y>
+                  <width>471</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(249, 66, 58);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="boton_pagar">
+                <property name="geometry">
+                 <rect>
+                  <x>780</x>
+                  <y>300</y>
+                  <width>81</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string>Pagar</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="cuenta">
+                <property name="geometry">
+                 <rect>
+                  <x>360</x>
+                  <y>70</y>
+                  <width>81</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha">
+                <property name="geometry">
+                 <rect>
+                  <x>700</x>
+                  <y>410</y>
+                  <width>131</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_42">
+                <property name="geometry">
+                 <rect>
+                  <x>270</x>
+                  <y>280</y>
+                  <width>101</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Total a pagar:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_limite">
+                <property name="geometry">
+                 <rect>
+                  <x>730</x>
+                  <y>160</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="total_pago">
+                <property name="geometry">
+                 <rect>
+                  <x>370</x>
+                  <y>280</y>
+                  <width>101</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 1px solid #97999B;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="nombre">
+                <property name="geometry">
+                 <rect>
+                  <x>590</x>
+                  <y>70</y>
+                  <width>281</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_36">
+                <property name="geometry">
+                 <rect>
+                  <x>270</x>
+                  <y>160</y>
+                  <width>41</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Pago:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_registro">
+                <property name="geometry">
+                 <rect>
+                  <x>760</x>
+                  <y>190</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="pago">
+                <property name="geometry">
+                 <rect>
+                  <x>320</x>
+                  <y>160</y>
+                  <width>101</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 1px solid #97999B;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_29">
+                <property name="geometry">
+                 <rect>
+                  <x>270</x>
+                  <y>70</y>
+                  <width>81</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Cuenta No°&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="interes">
+                <property name="geometry">
+                 <rect>
+                  <x>330</x>
+                  <y>200</y>
+                  <width>101</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 1px solid #97999B;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_31">
+                <property name="geometry">
+                 <rect>
+                  <x>560</x>
+                  <y>70</y>
+                  <width>21</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;C.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="amortizacin">
+                <property name="geometry">
+                 <rect>
+                  <x>410</x>
+                  <y>240</y>
+                  <width>101</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 1px solid #97999B;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_38">
+                <property name="geometry">
+                 <rect>
+                  <x>270</x>
+                  <y>200</y>
+                  <width>51</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Interes:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_sig">
+                <property name="geometry">
+                 <rect>
+                  <x>550</x>
+                  <y>410</y>
+                  <width>131</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_40">
+                <property name="geometry">
+                 <rect>
+                  <x>270</x>
+                  <y>240</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Interes moratorio:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_34">
+                <property name="geometry">
+                 <rect>
+                  <x>265</x>
+                  <y>110</y>
+                  <width>105</width>
+                  <height>44</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(151, 153, 155);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Prestamo de:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="prestamo_2">
+                <property name="geometry">
+                 <rect>
+                  <x>370</x>
+                  <y>110</y>
+                  <width>104</width>
+                  <height>44</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(151, 153, 155);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_sig_2">
+                <property name="geometry">
+                 <rect>
+                  <x>750</x>
+                  <y>240</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="realizo_pago">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>380</y>
+                  <width>551</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="pagar_ahorro">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>300</y>
+                  <width>171</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string>Pagar con cuenta ahorro</string>
+                </property>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../imagenes/res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

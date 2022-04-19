@@ -15,6 +15,8 @@ class Error(QWidget, Ui_consulta_cliente):
         self.setWindowFlag(Qt.Window)
         self.config_table() #medidas de la tabla
         self.set_table_data()
+        self.ingre_nombre.returnPressed.connect(self.search)  #returnPressed= al dar enter hace la accion
+        self.ingre_nombre.textChanged.connect(self.restore_table_data)
 
         
     """*********************  DISEÑAR LA TABLA   ***************************"""  
@@ -61,6 +63,18 @@ class Error(QWidget, Ui_consulta_cliente):
         
         delete_button.clicked.connect(self.delete_recipe)
         return buttons_frame
+    """*********************  BUSQUEDA DE PAGO PRESTAMO   ***************************"""
+    #Metodo de buscar
+    def search(self):
+        param = self.ingre_nombre.text()
+        if param != "":
+            data = recipes.select_cancelacion(param)
+            self.populate_table(data)
+    #METODO DE REGRESAR TODOS LOS PARAMETROS DESPUES DE BUSCAR
+    def restore_table_data(self):
+        param = self.ingre_nombre.text()
+        if param == "":
+            self.set_table_data()
     """*********************  OBTIENE EL ID DEL PAGO PRESTAMO   ***************************"""             
     def get_recipe_id_from_table(self, table, button):
         row_index = table.indexAt(button.parent().pos()).row()
@@ -109,7 +123,7 @@ class Error(QWidget, Ui_consulta_cliente):
                 capital=Decimal(ahorro[0])
                 importe=Decimal(ahorro[2])
                 id_ahorro=int(ahorro[1])
-                puntos=punctuacion-1
+                puntos=punctuacion
                 cap=capital+renta
                 correo2=correo
                 importe2=importe
@@ -126,7 +140,7 @@ class Error(QWidget, Ui_consulta_cliente):
                 if recipes.editar_puntos_clientes(id_cliente, bu):
                  print("Editada la puntuacion")
             elif bandera==0 and moratorio>0:
-                puntos=punctuacion+1
+                puntos=punctuacion
                 correo2=correo
                 bu=(puntos, correo2)
                 if recipes.editar_puntos_clientes(id_cliente, bu):

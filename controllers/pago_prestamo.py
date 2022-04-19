@@ -109,7 +109,7 @@ class Pagos(QWidget, Ui_Nuevoprestamo):
         dia_delta=datetime.timedelta(days=30)
         fecha_siguiente=fecha_limite+dia_delta
         if fecha>fecha_limite:     ###################################
-            puntos=punt-1
+            puntos=punt
             intervalo=fecha-fecha_limite
             dias=intervalo.days
             tasa_moratorio=Decimal(0.06)
@@ -162,9 +162,9 @@ class Pagos(QWidget, Ui_Nuevoprestamo):
         fecha_limite=datetime.datetime.strptime(data[6],'%Y-%m-%d %H:%M:%S.%f') #fecha limite
         amor_acum=Decimal(data[10])
         iva=data[9]#IVA dividido
-        ahorro=recipes.capital_ahorro(self.Id_cliente)
+        ahorro=recipes.llamar_capital(self.Id_cliente)
         cap=Decimal(ahorro[0])
-        impo=Decimal(ahorro[1])
+        impo=Decimal(ahorro[2])
         puntitos=recipes.clientes_puntos(self.Id_cliente)
         nombre=puntitos[1]
         punt=puntitos[0]
@@ -177,7 +177,7 @@ class Pagos(QWidget, Ui_Nuevoprestamo):
         dia_delta=datetime.timedelta(days=30)
         fecha_siguiente=fecha_limite+dia_delta
         if fecha>fecha_limite:
-            puntos=punt-1
+            puntos=punt
             intervalo=fecha-fecha_limite
             dias=intervalo.days
             tasa_moratorio=Decimal(0.06)
@@ -186,7 +186,7 @@ class Pagos(QWidget, Ui_Nuevoprestamo):
             moratorio_dia=x
             aumento=dias*moratorio_dia
             #amortizacion=aumento
-            total=amortizacion+renta #total a pagar
+            total=aumento+renta #total a pagar
             restar=cap-total    #resta al capital
             pago_con_capital=(restar,impo)
             g=1
@@ -201,8 +201,8 @@ class Pagos(QWidget, Ui_Nuevoprestamo):
             if recipes.clientes_puntos_mas(self.Id_cliente,datas):
                 print("puntos eliminados")
         else:
-            puntos=punt+1
-            restar=cap-renta
+            total=aumento+renta #total a pagar
+            restar=cap-total    #resta al capital
             pago_con_capital=(restar,impo)
             if recipes.pagar_con_ahorro(self.Id_cliente, pago_con_capital):
                 print("Pago hecho con ahorro")
@@ -244,3 +244,4 @@ class Pagos(QWidget, Ui_Nuevoprestamo):
         self.realizo_pago.clear() 
         self.fecha_sig.clear()
         self.fecha.clear()   
+        self.fecha_sig_2.clear()

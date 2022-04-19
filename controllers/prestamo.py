@@ -6,10 +6,12 @@ from PySide6.QtWidgets import QWidget
 from views.general_custom_ui import GeneralCustomUi
 from views.botonesMenu import Menu_Botones
 from views.Ui_NuevoPrestamo import Ui_Nuevoprestamo
+from controllers.prestamo_registrado import mensaje
 from PySide6.QtCore import Qt
 from decimal import Decimal
 from database import recipes
 import datetime
+from datetime import date
 from fpdf import FPDF
 
 class Prestamos(QWidget, Ui_Nuevoprestamo):
@@ -30,7 +32,7 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
     def llamar_nombre(self): 
         data=recipes.select_cliente(self.Id_cliente)
         Id_cl=data[0]
-        nombre=data[1]
+        nombre=str(data[1])
         punctuation=data[2]
         if punctuation <18:
             self.cantidad_prestamo.setText("  El cliente "+nombre+ " tiene acceso a un prestamo máximo de 25000 con un plazo máximo de 18 meses para pagar")
@@ -41,10 +43,11 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
         self.nom_cliente.setText(nombre)
 
 #********************** INSERTAR DATOS PARA EL PRESTAMO **********************#
-    def insertar_prestamos(self):
+    def insertar_prestamos(self,):
         data=recipes.select_cliente(self.Id_cliente)
         Id_cl=data[0]
         punctuation=data[2]
+        nombre=data[1]
         prestamo=Decimal(self.Cantidad.text())
         cantidad_prestamo=prestamo  #total prestamo
         frecuencia=Decimal(self.Frecuencia.text()) #si es mensual, trimestral, semestral
@@ -84,13 +87,19 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
         elif periodo>36 and cantidad_prestamo<=300000:
             self.Plazo_max.setText("El usuario excede el plazo máximo para pagar")
         else:
-            data=(Id_cl,cantidad_prestamo,frecuencia,tiempo,periodo,Iva,Iva_div,saldo_insolito,renta,interes,
-              amortizacion,amortizacion_acum,fecha_inicio,fecha_siguiente,nombre_codeudor,Garantia) 
+            b=date.today()
+            ejemp=str(nombre)
+            m=ejemp+"_"+str(b)
+            l="imagenes\{m}"+".pdf"
+            link=f"prestamos\{m}"+".pdf"
+            dato=(Id_cl,cantidad_prestamo,frecuencia,tiempo,periodo,Iva,Iva_div,saldo_insolito,renta,interes,
+              amortizacion,amortizacion_acum,fecha_inicio,fecha_siguiente,nombre_codeudor,Garantia,link) 
         
-            if recipes.insert_Prestamos(data):
+            if recipes.insert_Prestamos(dato):
                 print("Recipe Added")
                 self.limpirar_parametros()
-       
+            self.Open_emergente()
+        return Id_cl
 #********************** LIMPIAR LA INTERFAZ **********************    
     def limpirar_parametros(self):
         self.nom_cliente.clear()
@@ -105,13 +114,7 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
         self.cantidad_prestamo.clear()
         self.Plazo_max.clear()
     
-#********************** CREAR MATRIZ **********************
-         
-    """***********************  CREAR INFORME   **************************"""
-    def crear_pdf(self):
-        pdf=FPDF(orientation='P',unit='mm',format='A4')
-        pdf.add_page()
-        pdf.set_font('Arial', '', 18)
-        pdf.text(x=60, y=50, txt='HOLA MUNDO')
-        nombre=self.Id_cliente
-        pdf.output(f'prestamos/Prestamo.pdf')
+    """ABRIR VENTANA EMERGENTE"""
+    def Open_emergente(self):
+        self.window=mensaje(self)
+        self.window.show()

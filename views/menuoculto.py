@@ -47,7 +47,7 @@ class Menu():
         self.ocultar_botones_consulta()
         self.ui.prestamo.clicked.connect(self.ui.visibles_opciones_prestamo)
         self.ui.consultas.clicked.connect(self.ui.vicible_opciones_consulta)
-        
+    
     #objeto de la ventana de agregar, category_data fue creada arriba
     """ def fill_category_cb(self):
         self.ui.category_combo_box.addItems(category_data)"""

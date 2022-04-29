@@ -15,6 +15,7 @@ class GeneralCustomUi():
     def __init__(self, ui):
         self.ui=ui #contiene el objeto de las ventanas
         self.remove_defult_title_bar()
+        self.miximize_window()
         self.ui.top_bar_frame.mouseMoveEvent = self.move_window #top_bar_frame= la barra principal azul
         self.set_window_shadow()
         self.set_title_bar_buttons_actions() #boton de maximizar y minimizar
@@ -46,7 +47,7 @@ class GeneralCustomUi():
         shadow.setColor("#000000")
         self.ui.background_frame.setGraphicsEffect(shadow)
         
-    #Programar botones de la barra azul
+ #Programar botones de la barra azul
         #maximizar ventana
     def miximize_window(self):
         self.ui.showMaximized()
@@ -68,3 +69,6 @@ class GeneralCustomUi():
     #objeto de la ventana de agregar, category_data fue creada arriba
     """ def fill_category_cb(self):
         self.ui.category_combo_box.addItems(category_data)"""
+        
+    
+    

@@ -10,6 +10,7 @@ class buscar(QWidget, Ui_consulta_cliente):
         super().__init__(parent)
         self.setupUi(self) #1
         self.contenido_frame.mouseMoveEvent = self.move_window
+        self.remove_defult_title_bar()
         self.setWindowFlag(Qt.Window)
         self.set_title_bar_buttons_actions()
         self.config_table() #medidas de la tabla
@@ -87,7 +88,9 @@ class buscar(QWidget, Ui_consulta_cliente):
             error.show()
         else: 
             window=Prestamos(self,Id_cliente)
+            self.close()
             window.show()
+            #self.hide()
             
         #self.close()   
     """*************************  MOVIMIENTO Y ACCION DE LOS BOTONES  *****************************"""   
@@ -108,3 +111,7 @@ class buscar(QWidget, Ui_consulta_cliente):
             #event.globalPos = posicion actaul del mouse cuando presione boton izquierdo
             self.move(self.pos() + event.globalPos()- self.drag_pos)
             self.drag_pos=event.globalPos()
+    def remove_defult_title_bar(self):   #hacer el fondo transparente
+        self.setAttribute(Qt.WA_TranslucentBackground, True)
+        #Quitar la barra de titulo
+        self.setWindowFlag(Qt.FramelessWindowHint)

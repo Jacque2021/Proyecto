@@ -12,13 +12,15 @@ class Error(QWidget, Ui_consulta_cliente):
     def __init__(self, parent=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.setupUi(self) #1
+        self.contenido_frame.mouseMoveEvent = self.move_window
+        self.remove_defult_title_bar()
         self.setWindowFlag(Qt.Window)
+        self.set_title_bar_buttons_actions()
         self.config_table() #medidas de la tabla
         self.set_table_data()
         self.ingre_nombre.returnPressed.connect(self.search)  #returnPressed= al dar enter hace la accion
         self.ingre_nombre.textChanged.connect(self.restore_table_data)
-
-        
+             
     """*********************  DISEÑAR LA TABLA   ***************************"""  
     def populate_table(self, data): #crea tabla
         self.tabla_clientes.setRowCount(len(data)) #cantidad de filas que va tener
@@ -93,7 +95,7 @@ class Error(QWidget, Ui_consulta_cliente):
             interes=Decimal(pago[2])
             amortizacion=Decimal(pago[3])
             aumuluado=Decimal(pago[4])
-            fecha=datetime.datetime.strptime(pago[5],'%Y-%m-%d %H:%M:%S.%f')
+            fecha=pago[5]
             moratorio=Decimal(pago[7])
             bandera=int(pago[6]) #para saber si pago en efectivo o con ahorro 
             datos=recipes.llamar_datos_prestamo_cliente(id_prestamo)
@@ -123,7 +125,7 @@ class Error(QWidget, Ui_consulta_cliente):
                 capital=Decimal(ahorro[0])
                 importe=Decimal(ahorro[2])
                 id_ahorro=int(ahorro[1])
-                puntos=punctuacion
+                puntos=punctuacion-1
                 cap=capital+renta
                 correo2=correo
                 importe2=importe
@@ -152,7 +154,7 @@ class Error(QWidget, Ui_consulta_cliente):
             amortizacion2=amortizacion
             acum=aumuluado-amortizacion
             fecha_lim=fecha
-            nuevo=(saldo_insolito, interes2,amortizacion2,acum,str(fecha_lim))
+            nuevo=(saldo_insolito, interes2,amortizacion2,acum,fecha_lim)
             if recipes.editar_prestamo(id_prestamo, nuevo):
                  print("editado el prestamo")
             if recipes.borra_pago(recipe_id):
@@ -163,4 +165,25 @@ class Error(QWidget, Ui_consulta_cliente):
     def Open_emergente(self):
         self.window=mensaje(self)
         self.window.show()
+    """*************************  MOVIMIENTO Y ACCION DE LOS BOTONES  *****************************"""   
+    def set_title_bar_buttons_actions(self):
+        self.maximizar.clicked.connect(self.hide)
+        self.minimizar.clicked.connect(self.showMinimized)
     
+    def mousePressEvent(self, event): #ubicación mouse
+        self.mouse_press_event2(event)
+        
+    def mouse_press_event2(self, event):
+        self.drag_pos=event.globalPos()
+        
+    def move_window(self, event):
+        #cuando el boton se mueva dentro de la barra azul pero ejecutando el boton izquierdo, ejecuta lo que este en el lefstame
+        if event.buttons()== Qt.LeftButton: #LeftButton=boton izquierdo
+            #obtener posicion actual de la ventana
+            #event.globalPos = posicion actaul del mouse cuando presione boton izquierdo
+            self.move(self.pos() + event.globalPos()- self.drag_pos)
+            self.drag_pos=event.globalPos()
+    def remove_defult_title_bar(self):   #hacer el fondo transparente
+        self.setAttribute(Qt.WA_TranslucentBackground, True)
+        #Quitar la barra de titulo
+        self.setWindowFlag(Qt.FramelessWindowHint)

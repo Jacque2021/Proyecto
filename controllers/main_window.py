@@ -4,6 +4,7 @@ from views.general_custom_ui import GeneralCustomUi
 from views.Ui_InicioSesion import InicioSesion
 from controllers.menu import Menu
 from controllers.error import Error
+from database import recipes
 class MainWindowsForm(QWidget,InicioSesion):
     def __init__(self):
         super().__init__()
@@ -13,8 +14,7 @@ class MainWindowsForm(QWidget,InicioSesion):
         self.contrasena.returnPressed.connect(self.logeo) #manda llamar la función "logeo" al momento de dar enter al cuadro de contrasena
         
     def mousePressEvent(self, event): #ubicación mouse
-        self.ui.mouse_press_event(event)
-      
+        self.ui.mouse_press_event(event)  
     def logeo(self): #función de inicio de sesión
         usuario=self.usuario.text() #almacena el texto que fue ingresado en front-end, recuadro usuario
         contrasena=self.contrasena.text() #almacena el texto que fue ingresado en front-end, recuadro contrasena
@@ -23,6 +23,7 @@ class MainWindowsForm(QWidget,InicioSesion):
             self.texto_error.setText("                 Ingrese todos los datos") #Mensaje al no ingresar un dato
         elif usuario=="Admin" and contrasena=="123": #validación de usuario y contraseña
             self.open_menu()    #si los datos son correctos, abre la ventana de menu
+            self.hide()   #OCULTA MENU
         else:                   #si los datos son incorrectos, abre la venta Error
             self.error()
             self.texto_error.setText("")
@@ -33,4 +34,3 @@ class MainWindowsForm(QWidget,InicioSesion):
     def error(self):
         window=Error(self) #abrir interfaz de error
         window.show()
-        

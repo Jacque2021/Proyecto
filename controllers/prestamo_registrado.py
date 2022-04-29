@@ -6,7 +6,6 @@ from datetime import datetime
 from datetime import date, timedelta
 import datetime
 from decimal import Decimal
-import math
 import webbrowser as wb
 from fpdf import FPDF
 from database import recipes
@@ -52,37 +51,13 @@ class mensaje(QWidget, Ui_Form):
         shadow.setColor("#000000")
         self.frame.setGraphicsEffect(shadow)
 ################################################################
-    def header(self):
-        fesha=date.today()
-        cancelar='imagenes/cancelar.png'
-        empresa=recipes.empresa()
-        nombre=str(empresa[0])
-        direccion=str(empresa[1])
-        #logo
-        self.image(cancelar, x=10,y=10,w=30,h=30)
-        #Arial bold 15
-        self.set_font('Arial', '',18)
-        #Titulo
-        self.cell(w=0,h=10,txt=nombre,border=0,ln=1,align='R',fill=0)
-        self.set_font('Arial', '',8)
-        self.cell(w=0,h=5,txt=direccion,border=0,ln=1,align='R',fill=0)
-        self.cell(w=0,h=5,txt=' '+"",border=0,ln=1,align='R',fill=0)
-        #line breack
-        self.ln(5)
-        #pie de pagina
-    def footer(self):
-        self.set_y(-20)#posicion 1.5cm de boton
-        self.set_font('Arial','I',12)
-        #numero de pagina
-        self.cell(w=0,h=10,txt='Pagina'+str(self.page_no())+'/{nb}',border=0, ln=1,align='C',fill=0)
-################################################################
     def crear_pdf(self):
         prestamo=recipes.ultimo_prestamo()
         id_cliente=int(prestamo[0])
         cantidad_prestamo=Decimal(prestamo[1])
         cantidad_prestamo2=round(cantidad_prestamo, 2)
         frecuencia=Decimal(prestamo[2])
-        tiempo=Decimal(prestamo[3])
+        tiempo=str(prestamo[3])
         periodo=Decimal(prestamo[4])
         periodo2=round(periodo, 0)
         Iva=Decimal(prestamo[5])
@@ -240,7 +215,7 @@ class mensaje(QWidget, Ui_Form):
         pdf.set_draw_color(r=0,g=0 , b=0)#color del borde
         pdf.set_text_color(r=0,g=0,b=0)
         pdf.cell(w=45,h=4, txt="Monto del préstamo",border=1,align='C', fill=1)
-        pdf.cell(w=30,h=4, txt="Tasa de interes",border=1,align='C', fill=1)
+        pdf.cell(w=30,h=4, txt="Tasa de interés",border=1,align='C', fill=1)
         pdf.cell(w=30,h=4, txt="Periodos",border=1,align='C', fill=1)
         pdf.cell(w=45,h=4, txt="Pago por periodo",border=1,align='C', fill=1)
         pdf.cell(w=40,h=4, txt="Interés moratorio",border=1,align='C', fill=1,ln=1)

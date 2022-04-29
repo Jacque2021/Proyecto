@@ -2,7 +2,6 @@ from string import punctuation
 from PySide6.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView
 from PySide6.QtCore import Qt
 from views.Ui_consulta_cliente import Ui_consulta_cliente
-from controllers.prestamo import Prestamos
 from controllers.pago_prestamo import Pagos
 from database import recipes
 class buscueda_prestamo(QWidget, Ui_consulta_cliente):
@@ -10,6 +9,7 @@ class buscueda_prestamo(QWidget, Ui_consulta_cliente):
         super().__init__(parent)
         self.setupUi(self) #1
         self.contenido_frame.mouseMoveEvent = self.move_window
+        self.remove_defult_title_bar()
         self.setWindowFlag(Qt.Window)
         self.set_title_bar_buttons_actions()
         self.config_table() #medidas de la tabla
@@ -82,7 +82,8 @@ class buscueda_prestamo(QWidget, Ui_consulta_cliente):
         numero=int(self.tabla_clientes.selectedIndexes()[0].data())
         Id_cliente=numero
         window=Pagos(self,Id_cliente)
-        window.show()  
+        self.close()
+        window.show() 
     """*************************  MOVIMIENTO Y ACCION DE LOS BOTONES  *****************************"""   
     def set_title_bar_buttons_actions(self):
         self.maximizar.clicked.connect(self.close)
@@ -101,3 +102,7 @@ class buscueda_prestamo(QWidget, Ui_consulta_cliente):
             #event.globalPos = posicion actaul del mouse cuando presione boton izquierdo
             self.move(self.pos() + event.globalPos()- self.drag_pos)
             self.drag_pos=event.globalPos()
+    def remove_defult_title_bar(self):   #hacer el fondo transparente
+        self.setAttribute(Qt.WA_TranslucentBackground, True)
+        #Quitar la barra de titulo
+        self.setWindowFlag(Qt.FramelessWindowHint)

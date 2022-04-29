@@ -18,12 +18,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QPushButton,
     QSizePolicy, QVBoxLayout, QWidget)
 
-from imagenes import res_rc
-class Ui_mensaje(object):
+class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(235, 170)
+        Form.resize(223, 169)
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -43,19 +42,15 @@ class Ui_mensaje(object):
 "background-color: rgb(48, 127, 226);")
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
-        self.label = QLabel(self.frame)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(10, 50, 91, 81))
-        self.label.setStyleSheet(u"image: url(:/imagen/cancelar.png);")
         self.label_2 = QLabel(self.frame)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(100, 50, 111, 41))
+        self.label_2.setGeometry(QRect(0, 40, 231, 41))
         self.label_3 = QLabel(self.frame)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(100, 70, 111, 41))
+        self.label_3.setGeometry(QRect(10, 60, 211, 41))
         self.Ok = QPushButton(self.frame)
         self.Ok.setObjectName(u"Ok")
-        self.Ok.setGeometry(QRect(130, 110, 41, 24))
+        self.Ok.setGeometry(QRect(90, 110, 41, 24))
         font = QFont()
         font.setPointSize(12)
         self.Ok.setFont(font)
@@ -71,7 +66,6 @@ class Ui_mensaje(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.label.setText("")
         self.label_2.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Pago cancelado</span></p></body></html>", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">exitosamente</span></p></body></html>", None))
         self.Ok.setText(QCoreApplication.translate("Form", u"Ok", None))

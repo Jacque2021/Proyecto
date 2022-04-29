@@ -1,9 +1,9 @@
 from PySide6.QtWidgets import QWidget
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QGraphicsDropShadowEffect
-from views.Ui_cancelado_exitoso import Ui_mensaje
+from views.Ui_cancelado_exitoso import Ui_Form
 
-class mensaje(QWidget, Ui_mensaje):
+class mensaje(QWidget, Ui_Form):
     def __init__(self, parent=None,Id_cliente=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.Id_cliente=Id_cliente

@@ -64,7 +64,7 @@ class Ui_consulta_cliente(object):
         self.minimizar.setStyleSheet(u"border-style: solid;\n"
 "border-with 0px;")
         icon = QIcon()
-        icon.addFile(u"../iconos/icons/minimize-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"./iconos/icons/minimize-window.png", QSize(), QIcon.Normal, QIcon.Off)
         self.minimizar.setIcon(icon)
         self.minimizar.setIconSize(QSize(25, 25))
         self.maximizar = QToolButton(self.botones_frame)
@@ -73,7 +73,7 @@ class Ui_consulta_cliente(object):
         self.maximizar.setStyleSheet(u"border-style: solid;\n"
 "border-with 0px;")
         icon1 = QIcon()
-        icon1.addFile(u"../iconos/icons/close-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"./iconos/icons/close-window.png", QSize(), QIcon.Normal, QIcon.Off)
         self.maximizar.setIcon(icon1)
         self.maximizar.setIconSize(QSize(25, 25))
         self.tabla_frame = QFrame(self.contenido_frame)

@@ -1,5 +1,10 @@
-from asyncio.windows_events import NULL
-from cgitb import text
+from PySide6.QtWidgets import (QWidget, QApplication, QDialog, QPushButton, QTableWidget,
+                             QTableWidgetItem, QAbstractItemView, QHeaderView, QMenu,QMenuBar,
+                            QMessageBox)
+from PySide6.QtGui import QAction, QActionGroup
+from PySide6.QtCore import Qt
+#from asyncio.windows_events import NULL
+#from cgitb import text
 import math
 from string import punctuation
 from PySide6.QtWidgets import QWidget
@@ -7,24 +12,26 @@ from views.general_custom_ui import GeneralCustomUi
 from views.botonesMenu import Menu_Botones
 from views.Ui_NuevoPrestamo import Ui_Nuevoprestamo
 from controllers.prestamo_registrado import mensaje
-from PySide6.QtCore import Qt
 from decimal import Decimal
 from database import recipes
+from controllers.cancelacion import Error
 import datetime
 from datetime import date
-from fpdf import FPDF
+#from fpdf import FPDF
 
 class Prestamos(QWidget, Ui_Nuevoprestamo):
     def __init__(self, parent=None,Id_cliente=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.Id_cliente=Id_cliente
         self.setupUi(self) #1
-        self.ui=GeneralCustomUi(self)
         self.bm=Menu_Botones(self)
-        self.llamar_nombre()
+        self.ui=GeneralCustomUi(self)
         self.setWindowFlag(Qt.Window)
+        self.llamar_nombre()
         self.Guardar.clicked.connect(self.insertar_prestamos)
         self.Borrar.clicked.connect(self.limpirar_parametros)
+        self.minimenu()
+        self.cc()
         
     def mousePressEvent(self, event): #ubicación mouse
         self.ui.mouse_press_event(event)
@@ -52,8 +59,9 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
         cantidad_prestamo=prestamo  #total prestamo
         frecuencia=Decimal(self.Frecuencia.text()) #si es mensual, trimestral, semestral
         a=Decimal(frecuencia)
-        tiempo=Decimal(self.Tiempo.text()) #tiempo en años
-        periodo=a*tiempo  #periodo=frecuencia*tiempo    condicion
+        tiempo="Mensual"
+        #tiempo=Decimal(self.Tiempo.text()) #tiempo en años
+        periodo=a #periodo=frecuencia*tiempo    condicion
         x=Decimal(self.Interes.text())
         Iva=x/100   #sacar porcentaje de tasa anual
         Iva_div=Iva/frecuencia  #porcentaje mensual
@@ -66,11 +74,10 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
         amortizacion=renta-interes
         amortizacion_acum=0
         saldo_insolito=prestamo
-        fecha_inicio=datetime.datetime.now()
-        fecha=datetime.datetime.now()
+        fecha_inicio=datetime.date.today()
+        fecha=datetime.date.today()
         dia_delta=datetime.timedelta(days=30)
         fecha_siguiente=fecha+dia_delta
-        un_mes=fecha_siguiente.strftime('%Y-%m-%d %H:%M:%S')
         nombre_codeudor=self.Codeudor.text()
         Garantia=self.Garantia.text()
         #condiciones para el prestamo
@@ -98,6 +105,7 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
             if recipes.insert_Prestamos(dato):
                 print("Recipe Added")
                 self.limpirar_parametros()
+                self.Guardar.setVisible(False)
             self.Open_emergente()
         return Id_cl
 #********************** LIMPIAR LA INTERFAZ **********************    
@@ -118,3 +126,71 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
     def Open_emergente(self):
         self.window=mensaje(self)
         self.window.show()
+        
+    def Open_pagosPrestamos(self):
+        #self.window=buscueda_prestamo(self)
+        Prestamos.close(self)
+        self.window.show()
+    def Open_cancelacion(self):
+        self.window=Error(self)
+        self.window.show()
+ ###################################################################  
+    def minimenu(self):
+        self.Prestamos.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.Prestamos.customContextMenuRequested.connect(self.on_context_menu)
+        np = QActionGroup(self)
+        np.setExclusive(True)
+        ######################3
+        ap = QActionGroup(self)
+        ap.setExclusive(True)
+        ########################3
+        cancela = QActionGroup(self)
+        cancela.setExclusive(True)
+        # create context menu
+        self.popMenu = QMenu(self)
+        self.popMenu.addAction(QAction('Nuevo prestamo', np))
+        self.popMenu.addSeparator()
+        self.popMenu.addAction(QAction('Abonar pago', ap))
+        self.popMenu.addSeparator()
+        self.popMenu.addAction(QAction('Cancelar pago', cancela))
+        
+        np.triggered.connect(self.open_busqueda)
+        ap.triggered.connect(self.Open_pagosPrestamos)
+        cancela.triggered.connect(self.Open_cancelacion)
+    def on_context_menu(self, point):
+        # show context menu
+        self.popMenu.exec_(self.Prestamos.mapToGlobal(point))
+    """  Menu  """
+    def Open_pagosPrestamos(self):
+        from controllers.busqueda_pago import buscueda_prestamo
+        self.window=buscueda_prestamo(self)
+        self.hide()
+        self.window.show()
+    def Open_cancelacion(self):
+        from controllers.cancelacion import Error
+        self.window=Error(self)
+        self.hide()
+        self.window.show()
+    def open_busqueda(self):
+        from controllers.busqueda import buscar
+        self.window=buscar(self)
+        self.hide()
+        self.window.show()
+    def ayuda(self):
+        from controllers.ayuda import Documento
+        self.window=Documento(self)
+        self.hide()
+        self.window.show()
+    def Notificacio(self):
+        from controllers.notificaciones import Notificacion
+        self.window=Notificacion(self)
+        self.hide()
+        self.window.show()
+    def cc(self):
+        self.cancelar.clicked.connect(self.Open_cancelacion)
+        #self.prestamo.triggered.connect(self.Open_cancelacion)###
+        self.abonar.clicked.connect(self.Open_pagosPrestamos)
+        self.prestamo.clicked.connect(self.open_busqueda)
+        self.Ayuda.clicked.connect(self.ayuda)
+        self.Notificaciones.clicked.connect(self.Notificacio)
+        self.Salir.clicked.connect(self.close)

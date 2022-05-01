@@ -11,6 +11,53 @@ category_data=(
     "Bebidas"
 )
 
+opciones=(
+    "Contables",
+    "Fiscales"
+)
+
+codigos=(
+    "CA=100, Activo",
+    "CA=100.01, Activo a corto plazo",
+    "Nivel=1, CA=101, Caja",
+    "Nivel=2, CA=101.01, Caja y efectivo",
+    "Nivel=1, CA=102, Bancos",
+    "Nivel=2, CA=102.01, Bancos nacionales",
+    "Nivel=2, CA=102.02, Bancos extranjeros",
+    "Nivel=1, CA=102, Iversiones",
+    "Nivel=2, CA=102, Inversiones temporales",
+    "Nivel=2, CA=102, Inversiones en fideicomisos",
+    "Nivel=2, CA=102, Otras inversiones",
+    "Nivel=1, CA=105, Clientes",
+    "Nivel=2, CA=105.01, Clientes nacionales",
+    "Nivel=2, CA=105.02, Clientes extranjeros",
+    "Nivel=2, CA=105.03, Clientes nacionales parte relacionada",
+    "Nivel=2, CA=105.04, Clientes extranjeros parte relacionada",
+    "Nivel=1, CA=107, Deudores diversos",
+    "Nivel=2, CA=107.01, Funcionarios y empleados",
+    "Nivel=2, CA=107.02, Socios y accionistas",
+    "Nivel=2, CA=107.03, Partes relacionadas nacionales",
+    "Nivel=2, CA=107.04, Partes relacionadas extranjeros",
+    "Nivel=2, CA=107.05, Otros deudores diversos",
+    "Nivel=2, CA=216.06, Impuestos retenidos de ISR por intereses",
+    "Nivel=2, CA=216.07, Impuestos retenidos de ISR por pagos al extranjero",
+    "Nivel=2, CA=216.08, Impuestos retenidos de ISR por venta de acciones",
+    "Nivel=2, CA=216.09, Impuestos retenidos de ISR por venta de partes sociales",
+    "Nivel=2, CA=216.10, Impuestos retenidos de IVA",
+    "Nivel=2, CA=251.01, Socios, accionistas o representante legal",
+    "Nivel=2, CA=251.02, Acreedores diversos a largo plazo nacional",
+    "Nivel=2, CA=251.03, Acreedores diversos a largo plazo extranjero",
+    "Nivel=2, CA=251.04, Acreedores diversos a largo plazo nacional parte relacionada",
+    "Nivel=2, CA=251.05, Acreedores diversos a largo plazo extranjero parte relacionada",
+    "Nivel=2, CA=251.06, Otros acreedores diversos a largo plazo",
+    "Nivel=1, CA=403, Otros ingresos",
+    "Nivel=1, CA=606, Facilidades administrativas fiscales",
+    "Nivel=2, CA=611.01, Impuesto Sobre la renta",
+    "Nivel=2, CA=611.02, Impuesto Sobre la renta por remanente distribuible",
+    "CA=800, Cuentas en orden",
+)
+
+
 class GeneralCustomUi():
     def __init__(self, ui):
         self.ui=ui #contiene el objeto de las ventanas
@@ -70,5 +117,10 @@ class GeneralCustomUi():
     """ def fill_category_cb(self):
         self.ui.category_combo_box.addItems(category_data)"""
         
+    def fiscal_contable(self):
+        self.ui.elegir_c_f.addItems(opciones)
+
+    def opciones_c(self):
+        self.ui.codigo_SAT.addItems(codigos)
     
     

@@ -808,3 +808,335 @@ def retirar_ahorro(data):
     finally:
         cur.close()
         conn.close()
+
+#METODO PARA LLENAR TABLA DE EMPRESA
+def buscar_empresa():
+    conn=create_conection()
+    sql="""SELECT RFC, nombre_empresa FROM mi_empresa"""
+    try:
+        cur=conn.cursor()
+        cur.execute(sql)
+        recipes=cur.fetchall()  #devuelva datos seleccionados
+        #conn.commit()    se utiliza cuando se haga cambios en la BD
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_all function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+    
+#METODO PARA LLENAR TABLA DE CLIENTES 2
+def buscar2c():
+    conn=create_conection()
+    sql="""SELECT Id_cliente, nombre, apellidos, telefono, 
+     telefono_add, direccion, correo, fecha_nacimiento, puntuacion, municipio 
+     FROM clientes
+     """
+    try:
+        cur=conn.cursor()
+        cur.execute(sql)
+        recipes=cur.fetchall()  #devuelva datos seleccionados
+        #conn.commit()    se utiliza cuando se haga cambios en la BD
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_all function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+#METODO DE BUSQUEDA DE EMPRESA
+def buscar_e(param):
+    conn = create_conection()
+    param = f"%{param}%"  #cualquier parametro que pongamos puede estar al comienzo o final
+    sql = """SELECT RFC,nombre_empresa FROM mi_empresa
+            WHERE RFC LIKE %s OR nombre_empresa LIKE %s 
+            """
+           
+    try:
+        cur = conn.cursor()
+        cur.execute(sql, (param, param))
+        recipes = cur.fetchall()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+#METODO DE BUSQUEDA DE CLIENTES 2
+def buscarc(param):
+    conn = create_conection()
+    param = f"%{param}%"  #cualquier parametro que pongamos puede estar al comienzo o final
+    sql = """SELECT Id_cliente, nombre, apellidos, telefono, telefono_add, direccion, correo, fecha_nacimiento, 
+         puntuacion, municipio FROM clientes WHERE Id_cliente LIKE %s OR nombre LIKE %s 
+            """
+           
+    try:
+        cur = conn.cursor()
+        cur.execute(sql, (param, param))
+        recipes = cur.fetchall()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+#********************************************ALMACENA RFC DE LA EMPRESA PARA SU BUSQUEDA**********#
+def select_empresa(RFC_e):
+    conn = create_conection()
+    sql = f"""SELECT RFC, nombre_empresa FROM mi_empresa
+            WHERE RFC= %s
+            """
+    try:
+        cur = conn.cursor()
+        cur.execute(sql,(RFC_e,))
+        recipes = cur.fetchone()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+"""****INSERTAR DATOS A LA TABLA DE CLIENTES***"""
+def insertar_clientes(data):
+    conn = create_conection()
+    sql = """INSERT INTO clientes(Id_cliente, nombre, apellidos, telefono, 
+     telefono_add, direccion, correo, fecha_nacimiento, puntuacion, municipio)
+     VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            """
+            #VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+    try:
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        conn.commit()
+        return True
+    except connector.Error as err:
+        print(f"Error at insert_recuoe function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+"""****INSERTAR DATOS A LA TABLA DE CATALOGO DE CUENTAS***"""
+def insertar_catalogo_cuentas(data):
+    conn = create_conection()
+    sql = """INSERT INTO catalogo_cuentas(cuenta, RFC_e, nombre_b, registro, elegircf, codigo_SAT, 
+     rubro, digito_fiscal_1, digito_fiscal_2) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            """
+    try:
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        conn.commit()
+        return True
+    except connector.Error as err:
+        print(f"Error at insert_recuoe function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+"""****CONSULTAS PARA EL HISTORIAL DEL CLIENTE***"""
+def busqueda_id(Id_cliente):
+    conn = create_conection()
+    sql = """SELECT clientes.Id_cliente,clientes.nombre,clientes.apellidos,
+            nuevo_ahorro.fecha_apertura, nuevo_ahorro.fecha_vencimiento, abonar_ahorro.monto, 
+            nuevo_ahorro.importe, prestamos.cantidad_prestamo,
+            nuevo_ahorro.capital_actualizado 
+            FROM clientes 
+            INNER JOIN abonar_ahorro ON clientes.Id_cliente=abonar_ahorro.Id_cliente 
+            INNER JOIN prestamos ON prestamos.Id_cliente=clientes.Id_cliente INNER JOIN nuevo_ahorro ON
+            nuevo_ahorro.nombre=clientes.nombre
+            WHERE clientes.Id_cliente LIKE %s
+            """ 
+    try:
+        cur = conn.cursor()
+        cur.execute(sql,(Id_cliente,))
+        recipes = cur.fetchall()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+def busqueda_nombre(nombre):
+    conn = create_conection()
+    sql = """SELECT clientes.Id_cliente,clientes.nombre,clientes.apellidos,
+            nuevo_ahorro.fecha_apertura, nuevo_ahorro.fecha_vencimiento, abonar_ahorro.monto, 
+            nuevo_ahorro.importe, prestamos.cantidad_prestamo,
+            nuevo_ahorro.capital_actualizado 
+            FROM clientes 
+            INNER JOIN abonar_ahorro ON clientes.Id_cliente=abonar_ahorro.Id_cliente 
+            INNER JOIN prestamos ON prestamos.Id_cliente=clientes.Id_cliente INNER JOIN nuevo_ahorro ON
+            nuevo_ahorro.nombre=clientes.nombre
+            WHERE clientes.nombre LIKE %s
+            """ 
+    try:
+        cur = conn.cursor()
+        cur.execute(sql,(nombre,))
+        recipes = cur.fetchall()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+
+def busqueda_apellidos(apellidos):
+    conn = create_conection()
+    sql = """SELECT clientes.Id_cliente,clientes.nombre,clientes.apellidos,
+            nuevo_ahorro.fecha_apertura, nuevo_ahorro.fecha_vencimiento, abonar_ahorro.monto, 
+            nuevo_ahorro.importe, prestamos.cantidad_prestamo,
+            nuevo_ahorro.capital_actualizado 
+            FROM clientes 
+            INNER JOIN abonar_ahorro ON clientes.Id_cliente=abonar_ahorro.Id_cliente 
+            INNER JOIN prestamos ON prestamos.Id_cliente=clientes.Id_cliente INNER JOIN nuevo_ahorro ON
+            nuevo_ahorro.nombre=clientes.nombre
+            WHERE clientes.apellidos LIKE %s
+            """          
+            #
+    try:
+        cur = conn.cursor()
+        cur.execute(sql,(apellidos,))
+        recipes = cur.fetchall()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+#"""ACTUALIZAR Y ELIMINAR DATOS DEL CLIENTE"""#
+def actualizar_cliente(_id, data):
+    conn=create_conection()
+    #nombre= %s
+    sql=f"""UPDATE clientes SET
+                            nombre= %s, 
+                            apellidos= %s,
+                            telefono= %s,
+                            telefono_add= %s,
+                            direccion= %s,
+                            correo= %s,
+                            fecha_nacimiento= %s,
+                            puntuacion= %s,
+                            municipio= %s
+                        WHERE Id_cliente={_id}"""
+    try:
+        cur=conn.cursor()
+        cur.execute(sql, data)
+        #recipes=cur.fetchall()  #devuelva datos seleccionados
+        conn.commit()   # se utiliza cuando se haga cambios en la BD
+        return True
+    except connector.Error as err:
+        print(f"Error at update function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+def eli_cliente(_id):
+    conn = create_conection()
+    sql = f""" DELETE FROM clientes
+            WHERE Id_cliente = {_id}      
+            """
+    try:
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        return True
+    except connector.Error as err:
+        print(f"Error at delete recipe function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()    
+
+#********************************************ALMACENA ID DEL CLIENTE PARA SU BUSQUEDA**********#
+def select_cliente3(Id_cliente):
+    conn = create_conection()
+    sql = f"""SELECT Id_cliente, nombre, apellidos, telefono, 
+        telefono_add, direccion, correo, fecha_nacimiento, puntuacion, municipio FROM clientes
+        WHERE Id_cliente= %s
+        """
+    try:
+        cur = conn.cursor()
+        cur.execute(sql,(Id_cliente,))
+        recipes = cur.fetchone()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+
+#********************************************ALMACENA NOMBRE PARA SU BUSQUEDA**********#
+def select_cliente4(nombre):
+    conn = create_conection()
+    sql = f"""SELECT nombre FROM clientes
+        WHERE nombre= %s
+        """
+    try:
+        cur = conn.cursor()
+        cur.execute(sql,(nombre,))
+        recipes = cur.fetchone()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+#********************************************BUSQUEDA DE LISTADO DE POLIZAS**********#
+def busqueda_rfc(numero):
+    conn = create_conection()
+    sql = """SELECT nueva_poliza.numero, nueva_poliza.fecha, nueva_poliza.concepto, movimientos_poliza.cargo, movimientos_poliza.abono
+            FROM nueva_poliza
+            INNER JOIN movimientos_poliza ON nueva_poliza.cuenta=movimientos_poliza.cuenta
+            WHERE nueva_poliza.numero LIKE %s
+            """ 
+    try:
+        cur = conn.cursor()
+        cur.execute(sql,(numero,))
+        recipes = cur.fetchall()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+        
+#********************************************BUSQUEDA DE DIARIOS Y POLIZAS**********#
+def filtro_numero(numero_1, numero_2):
+    conn=create_conection()
+    sql="""SELECT nueva_poliza.fecha, movimientos_poliza.referencia, nueva_poliza.tipo, movimientos_poliza.cuenta,
+            nueva_poliza.numero, movimientos_poliza.cuenta, nueva_poliza.concepto, movimientos_poliza.cargo,
+            movimientos_poliza.abono
+            FROM movimientos_poliza
+            INNER JOIN nueva_poliza ON movimientos_poliza.cuenta=nueva_poliza.cuenta
+            WHERE nueva_poliza.numero BETWEEN %s AND %s 
+            """
+    try:
+        cur = conn.cursor()
+        cur.execute(sql, (numero_1, numero_2))
+        recipes = cur.fetchall()
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_by_param function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()

@@ -25,6 +25,7 @@ class buscar_retirar_ahorro(QWidget, consulta_re_ahorro):
         self.ingre_nombre.returnPressed.connect(self.search)  #returnPressed= al dar enter hace la accion
         self.ingre_nombre.textChanged.connect(self.restore_table_data)
         self.tabla_cheques.cellDoubleClicked.connect(self.funcional_dobleclicked)
+        self.tabla_cheques.setEditTriggers(QAbstractItemView.NoEditTriggers)#deshabilita la edicion jacque
     
     """*********************  DISEÑAR LA TABLA CONSULTA CLIENTES DE RETIRO  ***************************"""  
     def populate_table(self, data): #crea tabla

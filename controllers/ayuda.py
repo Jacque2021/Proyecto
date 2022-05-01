@@ -13,7 +13,7 @@ class Documento(QWidget, Ayuda):
         self.setupUi(self) #1
         self.setWindowFlag(Qt.Window)
         self.ui=GeneralCustomUi(self)
-        self.bm=Menu_Botones(self)
+        #self.bm=Menu_Botones(self)
         self.imagen()
         self.cc()
         #self.bm.cc()

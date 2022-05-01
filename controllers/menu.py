@@ -17,6 +17,10 @@ from controllers.notificaciones import Notificacion
 from controllers.ayuda import Documento
 from controllers.mi_empresa import MiEmpresaForm
 from controllers.respaldar_empresa import RespaldarEmpresaForm
+from controllers.agregar_cliente import AgregarClienteForm
+from controllers.historial_cliente import HistorialClienteForm
+from controllers.listado_polizas import ListadoPolizasForm
+from controllers.busqueda_e import buscar_empresa
 from controllers.cheques import ChequesForm
 from database import recipes
 import os
@@ -47,6 +51,10 @@ class Menu(QWidget, Ui_MenuPrincipal):
         self.Ayuda.clicked.connect(self.ayuda)
         self.Notificaciones.clicked.connect(self.Notificacio)
         self.Salir.clicked.connect(self.close)
+        self.Cliente.clicked.connect(self.Open_agregar_cliente)
+        self.Listado.clicked.connect(self.Open_listado_polizas)
+        self.Historial.clicked.connect(self.Open_historial_cliente)
+        self.Catalogo.clicked.connect(self.open_catalogo)
     def Open_pagosPrestamos(self):
         window=buscueda_prestamo(self)
         window.show()
@@ -84,8 +92,20 @@ class Menu(QWidget, Ui_MenuPrincipal):
     def open_retiro_ahorro(self):
         self.window=buscar_retirar_ahorro(self)
         self.window.show()
-    """***AQUI ESTUVO ??***"""  
-        
+    """***AQUI ESTUVO PABLO***"""
+    def Open_historial_cliente(self):
+        self.window=HistorialClienteForm(self)
+        self.window.show()
+    def Open_listado_polizas(self):
+        self.window=ListadoPolizasForm(self)
+        self.window.show()
+    def Open_agregar_cliente(self):
+        self.window=AgregarClienteForm(self)
+        self.window.show()
+    def open_catalogo(self):
+        self.window=buscar_empresa(self)
+        self.window.show()
+    """***AQUI ESTUVO ??***"""
         
     """*************************  SUB MENU 2 ****************************"""
     ###################################################################  

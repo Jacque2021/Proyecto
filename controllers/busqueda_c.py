@@ -1,14 +1,15 @@
 from PySide6.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView
 from PySide6.QtCore import Qt
 from controllers.cheques import ChequesForm
-from controllers.consulta_cheques import Consulta_chequesForm
-from views.consulta_cliente import consulta_cliente
+#from controllers.consulta_cheques import Consulta_chequesForm
+#from views.consulta_cliente import consulta_cliente
+from views.Ui_consulta_cliente import Ui_consulta_cliente
 from views.cheques import Cheques
 #from views.consulta_cheques import ConsultaCheques
-from views.general_custom_ui import GeneralCustomUi
+#from views.general_custom_ui import GeneralCustomUi
 from database import recipes
 
-class buscarc(QWidget, consulta_cliente):
+class buscarc(QWidget, Ui_consulta_cliente):
     def __init__(self, parent=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.parent=parent
@@ -46,6 +47,7 @@ class buscarc(QWidget, consulta_cliente):
         self.tabla_clientes.verticalHeader().setDefaultSectionSize(30) #tamaño de las filas 
         #self.tabla_clientes.setColumnHidden(0, True)#selecciona una celda, lo pone en color azul
         self.tabla_clientes.setSelectionBehavior(QAbstractItemView.SelectRows)#selecciona la selda completa
+        self.tabla_clientes.setEditTriggers(QAbstractItemView.NoEditTriggers)#deshabilita la edicion jacque
         
         """self.tabla_clientes.setCellWidget(
                 index_row, 4, self.build_action_buttons()

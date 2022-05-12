@@ -4,18 +4,21 @@ from views.botonesMenu import Menu_Botones
 from views.empresaRespaldada import respaldo
 from controllers.respaldoRealizado import RespaldoRealizado
 from views.repaldar_empresa import RespaldarEmpresa
+from views.Ui_resp import resp
+from PySide6.QtCore import Qt
 from controllers.error_prestamo import Error_p
 from datetime import date, time
 import datetime, time
 from database import recipes
 
 
-class RespaldarEmpresaForm(QWidget, RespaldarEmpresa):
+class RespaldarEmpresaForm(QWidget, resp):
 
     def __init__(self, parent=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.parent=parent
         self.setupUi(self) #1
+        self.setWindowFlag(Qt.Window)
         self.ui=GeneralCustomUi(self)
         self.bm=Menu_Botones(self)
         self.boton_guardar.clicked.connect(self.resp_empresa)

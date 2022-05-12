@@ -4,15 +4,17 @@ from PySide6.QtCore import Qt
 from views.general_custom_ui import GeneralCustomUi
 from views.botonesMenu import Menu_Botones
 from views.consulta_cheques import ConsultaCheques
+from views.Ui_consulta import consultac
 from database import recipes
 
 
-class Consulta_chequesForm(QWidget, ConsultaCheques):
+class Consulta_chequesForm(QWidget, consultac):
 
     def __init__(self, parent=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.parent=parent
         self.setupUi(self) #1
+        self.setWindowFlag(Qt.Window)
         self.ui=GeneralCustomUi(self)
         self.bm=Menu_Botones(self)
         #self.content_frame.mouseMoveEvent = self.move_window
@@ -49,6 +51,7 @@ class Consulta_chequesForm(QWidget, ConsultaCheques):
         self.tabla_cheques.verticalHeader().setDefaultSectionSize(30) #tamaño de las filas 
         #self.tabla_clientes.setColumnHidden(0, True)#selecciona una celda, lo pone en color azul
         self.tabla_cheques.setSelectionBehavior(QAbstractItemView.SelectRows)#selecciona la selda completa
+        self.tabla_cheques.setEditTriggers(QAbstractItemView.NoEditTriggers)#deshabilita la edicion
         
         """self.tabla_clientes.setCellWidget(
                 index_row, 4, self.build_action_buttons()

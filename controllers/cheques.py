@@ -62,14 +62,13 @@ class ChequesForm(QWidget, Cheques, FPDF):
         id = self.id_c.text()
         nombre = self.nombre_c.text()
         apellidos = self.apellidos_c.text()
-        id_cheque = self.caja_id_cheque_2.text()
         fecha = self.fechaf.text()
         monto = self.caja_monto_2.text()
         beneficiario = self.caja_beneficiario_2.text()
         descripcion = self.caja_descripcion_2.text()
         
  
-        data = (id, nombre, apellidos, id_cheque, fecha, monto, beneficiario, descripcion)
+        data = (id, nombre, apellidos, fecha, monto, beneficiario, descripcion)
         
         
   ### CREAR DOC PDF CHEQUE
@@ -81,9 +80,13 @@ class ChequesForm(QWidget, Cheques, FPDF):
         pdf.set_font('Arial', '', 16)
         pdf.set_text_color(r=0,g=0,b=0)
         #Encabezado
-        empresa=recipes.empresa
-        nombre_emp=str('Caja popular mexicana')
-        ubicacion_emp=str('México')
+        #empresa=recipes.empresa      JACQUE
+        empresa=recipes.empresa()
+        nombre_empresa=str(empresa[0])
+        direccion2=str(empresa[1])
+        ##################################
+        nombre_emp=nombre_empresa
+        ubicacion_emp=direccion2
         #Arial bold 15
         pdf.set_font('Arial', '',18)
         #Titulo
@@ -120,12 +123,12 @@ class ChequesForm(QWidget, Cheques, FPDF):
         pdf.set_fill_color(r=151,g=153 , b=155) #color de fondo
         pdf.set_draw_color(r=0,g=0 , b=0)#color del borde
         pdf.set_text_color(r=0,g=0,b=0)
-        pdf.cell(w=45,h=4, txt="No. de cheque",border=1,align='C', fill=1)
+        pdf.cell(w=45,h=4, txt="Cliente",border=1,align='C', fill=1)
         pdf.cell(w=30,h=4, txt="Fecha de emisión",border=1,align='C', fill=1)
         pdf.cell(w=30,h=4, txt="Monto",border=1,align='C', fill=1)
         pdf.cell(w=45,h=4, txt="Beneficiario",border=1,align='C', fill=1)
         pdf.cell(w=40,h=4, txt="Descripción",border=1,align='C', fill=1,ln=1)
-        pdf.cell(w=45,h=4, txt=str(id_cheque),border=1,align='C', fill=0)
+        pdf.cell(w=45,h=4, txt=str(id),border=1,align='C', fill=0)
         pdf.cell(w=30,h=4, txt=str(fecha),border=1,align='C', fill=0)
         pdf.cell(w=30,h=4, txt='$'+str(monto),border=1,align='C', fill=0)
         pdf.cell(w=45,h=4, txt=str(beneficiario),border=1,align='C', fill=0)
@@ -134,7 +137,7 @@ class ChequesForm(QWidget, Cheques, FPDF):
         pdf.cell(40,10, '', 0,1)
         pdf.cell(w=0,h=5, txt="FIRMA",border=0,ln=1,align='C', fill=0)
                 
-        if len(id)==0 or len(nombre)==0 or len(apellidos)==0 or len(id_cheque)==0 or len(fecha)==0 or len(monto)==0 or len(beneficiario)==0 or len(descripcion)==0:
+        if len(id)==0 or len(nombre)==0 or len(apellidos)==0 or len(fecha)==0 or len(monto)==0 or len(beneficiario)==0 or len(descripcion)==0:
             self.Open3()
        
         elif recipes.crear_cheque(data):
@@ -146,7 +149,10 @@ class ChequesForm(QWidget, Cheques, FPDF):
            ejemp=str(nombre)
            m=ejemp+"_"+str(b)
            pdf.output('cheques/'+str(m)+'.pdf','f')
-           wb.open_new('C:/Users/Laptop/Desktop/Proyecto/cheques/'+str(m)+'.pdf')
+           wb.open_new(f"cheques\{m}"+".pdf")#jacque
+           #wb.open_new('C:/Users/Almar/Documents/Proyecto/cheques'+str(m)+'.pdf')
+           #(f"pagos\{m}"+".pdf")
+          
 
     def Open(self):
         window=Cheque(self)
@@ -160,7 +166,6 @@ class ChequesForm(QWidget, Cheques, FPDF):
         self.id_c.clear()
         self.nombre_c.clear()
         self.apellidos_c.clear()
-        self.caja_id_cheque_2.clear()
         self.fechaf.clear()
         self.caja_monto_2.clear()
         self.caja_beneficiario_2.clear()

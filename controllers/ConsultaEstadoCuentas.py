@@ -1,14 +1,11 @@
-from decimal import Decimal
-from re import S
-from string import punctuation
 from PySide6.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView
 from PySide6.QtCore import Qt
 from views.Ui_consulta_cliente import Ui_consulta_cliente
-from controllers.prestamo import Prestamos
+from controllers.EstadoCuentas import estadoCuentas
 from controllers.advertencia import VentanaEmergente
 from database import recipes
-class buscar(QWidget, Ui_consulta_cliente):
-    def __init__(self, parent=None): #capturar instancia de mainwindows
+class buscarCuenta(QWidget, Ui_consulta_cliente):
+    def __init__(self, parent=None,): #capturar instancia de mainwindows
         super().__init__(parent)
         self.setupUi(self) #1
         self.contenido_frame.mouseMoveEvent = self.move_window
@@ -34,7 +31,6 @@ class buscar(QWidget, Ui_consulta_cliente):
                 self.tabla_clientes.setItem(index_row, index_cell, QTableWidgetItem(str(cell)))
                 
     def  config_table(self): #MEDIDAS DE LA TABLA
-        self.tabla_clientes.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
         column_labels=("ID", "NOMBRE", "APELLIDOS")
         #self.tabla_clientes.setAlternatingRowColors(True) #color alterno
         self.tabla_clientes.setColumnCount(len(column_labels)) 
@@ -45,15 +41,12 @@ class buscar(QWidget, Ui_consulta_cliente):
         self.tabla_clientes.verticalHeader().setDefaultSectionSize(30) #tamaño de las filas 
         self.tabla_clientes.setSelectionBehavior(QAbstractItemView.SelectRows)#selecciona la selda completa
         self.tabla_clientes.setEditTriggers(QAbstractItemView.NoEditTriggers)#deshabilita la edicion
+        self.tabla_clientes.setWordWrap(False)
         
-        # Especifica dónde deben aparecer los puntos suspensivos "..." cuando se muestran
-        # textos que no encajan
-        self.tabla_clientes.setTextElideMode(Qt.ElideRight)# Qt.ElideNone
-        # Establecer el ajuste de palabras del texto 
-        self.tabla_clientes.setWordWrap(False) 
     def set_table_data(self):
         data=recipes.select_tabal_clientes()  
         self.populate_table(data)  
+    
     """*********************  METODO DE BUSQUEDA   ***************************"""  
     #Metodo de buscar
     def search(self):
@@ -90,19 +83,9 @@ class buscar(QWidget, Ui_consulta_cliente):
         self.var = int(self.tabla_clientes.selectedIndexes()[0].data())
         numero=int(self.tabla_clientes.selectedIndexes()[0].data())
         Id_cliente=numero
-        p=recipes.condicion(Id_cliente)
-        #mm=recipes.condicion2(Id_cliente)
-        if p:
-            error=VentanaEmergente(self)
-            error.show()
-        
-        else: 
-            window=Prestamos(self,Id_cliente)
-            self.close()
-            window.show()
-            #self.hide()
-            
-        #self.close()   
+        if Id_cliente>0:
+            window=estadoCuentas(self,Id_cliente)
+            window.show() 
     """*************************  MOVIMIENTO Y ACCION DE LOS BOTONES  *****************************"""   
     def set_title_bar_buttons_actions(self):
         self.maximizar.clicked.connect(self.close)
@@ -113,6 +96,10 @@ class buscar(QWidget, Ui_consulta_cliente):
         
     def mouse_press_event2(self, event):
         self.drag_pos=event.globalPos()
+    def remove_defult_title_bar(self):   #hacer el fondo transparente
+        self.setAttribute(Qt.WA_TranslucentBackground, True)
+        #Quitar la barra de titulo
+        self.setWindowFlag(Qt.FramelessWindowHint)
         
     def move_window(self, event):
         #cuando el boton se mueva dentro de la barra azul pero ejecutando el boton izquierdo, ejecuta lo que este en el lefstame
@@ -121,7 +108,3 @@ class buscar(QWidget, Ui_consulta_cliente):
             #event.globalPos = posicion actaul del mouse cuando presione boton izquierdo
             self.move(self.pos() + event.globalPos()- self.drag_pos)
             self.drag_pos=event.globalPos()
-    def remove_defult_title_bar(self):   #hacer el fondo transparente
-        self.setAttribute(Qt.WA_TranslucentBackground, True)
-        #Quitar la barra de titulo
-        self.setWindowFlag(Qt.FramelessWindowHint)

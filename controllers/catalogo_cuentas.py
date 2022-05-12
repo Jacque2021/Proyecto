@@ -5,6 +5,7 @@ from views.general_custom_ui import GeneralCustomUi
 from views.botonesMenu import Menu_Botones
 from views.Ui_catalogo_cuentas import Ui_Catalogo_cuentas
 from controllers.cuenta_a import CuentaForm
+from controllers.error_prestamo import Error_p
 from database import recipes
 
 
@@ -36,7 +37,6 @@ class CatalogoForm(QWidget, Ui_Catalogo_cuentas):
         self.nombre_b.setText(nombre_b)
         
     def nuevo_catalogo_cuentas(self):
-        cuenta = self.cuenta.text()
         RFC_e = self.clave_e.text() 
         nombre_b = self.nombre_b.text()
         registro = self.registro.text()
@@ -46,17 +46,18 @@ class CatalogoForm(QWidget, Ui_Catalogo_cuentas):
         digito_fiscal_1 = self.digito_fiscal.text() 
         digito_fiscal_2 = self.digito_fis.text() 
 
-        data = (cuenta, RFC_e, nombre_b, registro, elegircf, codig_SAT, rubro, digito_fiscal_1, digito_fiscal_2)
+        data = (RFC_e, nombre_b, registro, elegircf, codig_SAT, rubro, digito_fiscal_1, digito_fiscal_2)
 
         if recipes.insertar_catalogo_cuentas(data):
             print("Cuenta Agregada")
             self.clear_inputs()
             self.cuenta_agregada()
-        else:
+        else: 
+            self.window=Error_p(self)
+            self.window.show()
             print("Error al agregar cuenta")
 
     def clear_inputs(self):
-        self.cuenta.clear()
         self.clave_e.clear()
         self.nombre_b.clear()
         self.registro.clear()

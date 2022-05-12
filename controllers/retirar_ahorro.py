@@ -1,3 +1,4 @@
+from decimal import Decimal
 from distutils.log import error
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget
@@ -46,7 +47,12 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
         self.fechar.setText(str(convertida1)) #lo pasa a la interfaz
         hora = time.strftime('%H:%M:%S')
         self.horar.setText(str(hora)) #lo pasa a la interfaz
-
+        if recipes.llamar_capital(self.Id_cliente):
+            ahorro=recipes.llamar_capital(self.Id_cliente)
+            cap=Decimal(ahorro[0])
+            self.caja_capital.setText('$'+str(cap))
+        else: 
+            self.caja_capital.setText("Su cuenta es de 0.0 pesos")
     def llamar_nombre(self): 
         data=recipes.select_cliente2(self.Id_cliente)
         id=data[0]
@@ -60,21 +66,24 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
        
 
     def retiro(self):
+        ahorro=recipes.llamar_capital(self.Id_cliente)
+        capi=Decimal(ahorro[0])
+        impo=Decimal(ahorro[2])
         id = self.id_c.text()
         nombre = self.nombre_c.text()
         apellidos = self.apellidos_c.text()
-        tran = self.caja_transaccion.text()
-        capital = self.caja_capital.text()
+        capital2 =capi
         total = self.caja_total_retiro.text()
         descripcion = self.caja_descrpcion.text()
         fecha = self.fechar.text()
         hora = self.horar.text()
-        
-        a = int(total)
-        b = int(capital)
+        a = Decimal(total)
+        b = capital2
         cap = b -a
-       
-        data = (id, nombre, apellidos, tran, capital, total, cap, descripcion, fecha, hora)
+        pago_con_capital=(cap,impo)
+        if recipes.pagar_con_ahorro(self.Id_cliente, pago_con_capital):
+                print("Descuento de ahorro hecho")
+        data = (id, nombre, apellidos,capi, total, cap, descripcion, fecha, hora)
         
         ### CREAR DOC PDF CHEQUE
         #self.cell('logobueno.png', 10, 8 , 25) 
@@ -88,9 +97,13 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
         pdf.set_font('Arial', '', 16)
         pdf.set_text_color(r=0,g=0,b=0)
         #Encabezado
-        empresa=recipes.empresa
-        nombre_emp=str('Caja popular mexicana')
-        ubicacion_emp=str('México')
+        #empresa=recipes.empresa      JACQUE
+        empresa=recipes.empresa()
+        nombre_empresa=str(empresa[0])
+        direccion2=str(empresa[1])
+        ##################################
+        nombre_emp=nombre_empresa
+        ubicacion_emp=direccion2
         #Arial bold 15
         pdf.set_font('Arial', '',18)
         #Titulo
@@ -114,10 +127,10 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
         pdf.set_fill_color(r=151,g=153 , b=155) #color de fondo
         pdf.set_draw_color(r=0,g=0 , b=0)#color del borde
         pdf.cell(w=25,h=4, txt="No° cliente",border=1,align='C', fill=1)
-        pdf.cell(w=125,h=4, txt="Nombre del cliente",border=1,align='C', fill=1,ln=0)
+        pdf.cell(w=70,h=4, txt="Nombre del cliente",border=1,align='C', fill=1,ln=0)
         pdf.cell(w=0,h=4, txt="Apellidos del cliente",border=1,align='C', fill=1,ln=1)
         pdf.cell(w=25,h=4, txt=str(id),border=1,align='C', fill=0)
-        pdf.cell(w=125,h=4, txt=nombre,border=1,align='C', fill=0)
+        pdf.cell(w=70,h=4, txt=nombre,border=1,align='C', fill=0)
         pdf.cell(w=0,h=4, txt=apellidos,border=1,align='C', fill=0,ln=1)
         pdf.cell(w=0,h=4, txt="",border=0,align='C', fill=0,ln=1)
         pdf.set_fill_color(r=0,g=0 , b=0) 
@@ -126,13 +139,13 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
         pdf.set_fill_color(r=151,g=153 , b=155) #color de fondo
         pdf.set_draw_color(r=0,g=0 , b=0)#color del borde
         pdf.set_text_color(r=0,g=0,b=0)
-        pdf.cell(w=45,h=4, txt="Transacción",border=1,align='C', fill=1)
+        pdf.cell(w=45,h=4, txt="Cliente",border=1,align='C', fill=1)
         pdf.cell(w=30,h=4, txt="Capital",border=1,align='C', fill=1)
         pdf.cell(w=30,h=4, txt="Monto",border=1,align='C', fill=1)
         pdf.cell(w=45,h=4, txt="Descripción",border=1,align='C', fill=1)
         pdf.cell(w=40,h=4, txt="Fecha de retiro",border=1,align='C', fill=1,ln=1)
-        pdf.cell(w=45,h=4, txt=str(tran),border=1,align='C', fill=0)
-        pdf.cell(w=30,h=4, txt=str(capital),border=1,align='C', fill=0)
+        pdf.cell(w=45,h=4, txt=str(id),border=1,align='C', fill=0)
+        pdf.cell(w=30,h=4, txt=str(cap),border=1,align='C', fill=0)
         pdf.cell(w=30,h=4, txt='$'+str(total),border=1,align='C', fill=0)
         pdf.cell(w=45,h=4, txt=str(descripcion),border=1,align='C', fill=0)
         pdf.cell(w=40,h=4, txt=str(fecha),border=1,align='C', fill=0,ln=1)
@@ -151,7 +164,7 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
             print ("error el retiro no puede ser mayor a 5,000")
             self.Open2()
         
-        elif len(id)==0 or len(nombre)==0 or len(apellidos)==0 or len(tran)==0 or len(descripcion)==0:
+        elif len(id)==0 or len(nombre)==0 or len(apellidos)==0  or len(descripcion)==0:
             self.Open3()
 
         elif recipes.retirar_ahorro(data):
@@ -165,7 +178,8 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
             ejemp=str(nombre)
             m=ejemp+"_"+str(bb)
             pdf.output('retiros/'+str(m)+'.pdf','f')
-            wb.open_new('C:/Users/Laptop/Desktop/Proyecto/retiros/'+str(m)+'.pdf')
+            wb.open_new(f"retiros\{m}"+".pdf")#jacque
+           # wb.open_new('C:/Users/Almar/Documents/Proyecto/retiros'+str(m)+'.pdf')
             
     def Open(self):
         window=RetiroE(self)
@@ -188,7 +202,6 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
         self.id_c.clear()
         self.nombre_c.clear()
         self.apellidos_c.clear()
-        self.caja_transaccion.clear()
         self.caja_capital.clear()
         self.caja_total_retiro.clear()
         self.caja_descrpcion.clear()

@@ -67,11 +67,21 @@ class mensaje(QWidget, Ui_Form):
         r=data[10]
         renta=round(r,2)
         fecha_in=data[11]
+        debe=data[13]
+        k=data[14]
+        wo=debe-k
         partes2 = str(fecha_in).split(" ")[0].split("-")
         fecha_inicio = "/".join(reversed(partes2))
-        fecha_si=data[12]
-        partes3 = str(fecha_in).split(" ")[0].split("-")
-        fecha_siguiente = "/".join(reversed(partes3))
+        fecha_si=data[12]    #fecha siguiente
+        #partes3 = str(fecha_in).split(" ")[0].split("-")
+        #fecha_siguiente = "/".join(reversed(partes3))
+        msj=""
+        if wo>1:
+            partes3 = str(fecha_si).split(" ")[0].split("-")
+            fecha_siguiente = "/".join(reversed(partes3))
+            fecha_sig=fecha_siguiente
+        else:
+            fecha_sig=msj
         fecha=datetime.datetime.now()
         partes = str(fecha).split(" ")[0].split("-")
         fecha_pago = "/".join(reversed(partes))
@@ -145,7 +155,7 @@ class mensaje(QWidget, Ui_Form):
         pdf.cell(w=63,h=4, txt="Fecha del sig. pago",border=1,align='C', fill=1,ln=1)
         pdf.cell(w=64,h=4, txt=str(fecha_inicio),border=1,align='C', fill=0)
         pdf.cell(w=63,h=4, txt=str(fecha_pago),border=1,align='C', fill=0)
-        pdf.cell(w=63,h=4, txt=str(fecha_siguiente),border=1,align='C', fill=0,ln=1)
+        pdf.cell(w=63,h=4, txt=str(fecha_sig),border=1,align='C', fill=0,ln=1)
         pdf.cell(w=0,h=8, txt="",border=0,align='C', fill=0,ln=1)
         
         #TABLa

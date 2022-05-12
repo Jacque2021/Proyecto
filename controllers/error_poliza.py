@@ -1,16 +1,13 @@
-
 from PySide6.QtWidgets import QWidget
 from views.general_custom_ui import GeneralCustomUi
-from views.Ui_error_prestamo import error_prestamo
-from PySide6.QtCore import Qt
+from views.Ui_error_poliza import Ui_Error_poliza
 
-class Error_p(QWidget, error_prestamo):
+class ErrorPolizaForm(QWidget,Ui_Error_poliza):
     def __init__(self, parent=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.parent=parent
         self.setupUi(self) #1
         self.ui=GeneralCustomUi(self)
-        self.setWindowFlag(Qt.Window)
         self.regresar_button.clicked.connect(self.close)
         
     def mousePressEvent(self, event): #ubicación mouse

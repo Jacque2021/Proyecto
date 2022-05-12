@@ -21,6 +21,10 @@ from controllers.agregar_cliente import AgregarClienteForm
 from controllers.historial_cliente import HistorialClienteForm
 from controllers.listado_polizas import ListadoPolizasForm
 from controllers.busqueda_e import buscar_empresa
+from controllers.ConsultaEstadoCuentas import buscarCuenta
+from controllers.EmitirReporte import emite_R
+from controllers.EmitirReporte_2 import emite_R_2
+from controllers.NuevaPoliza import nuevaPoliza
 from controllers.cheques import ChequesForm
 from database import recipes
 import os
@@ -55,6 +59,10 @@ class Menu(QWidget, Ui_MenuPrincipal):
         self.Listado.clicked.connect(self.Open_listado_polizas)
         self.Historial.clicked.connect(self.Open_historial_cliente)
         self.Catalogo.clicked.connect(self.open_catalogo)
+        self.Estado.clicked.connect(self.open_estadoCUENTAS)
+        self.Reportes.clicked.connect(self.open_emitirReport)
+        self.Reportes_2.clicked.connect(self.open_emitirReport_2)
+        self.Polizas.clicked.connect(self.open_nPoliza)
     def Open_pagosPrestamos(self):
         window=buscueda_prestamo(self)
         window.show()
@@ -105,7 +113,23 @@ class Menu(QWidget, Ui_MenuPrincipal):
     def open_catalogo(self):
         self.window=buscar_empresa(self)
         self.window.show()
-    """***AQUI ESTUVO ??***"""
+    """***AQUI ESTUVO JESUS***"""
+    def open_estadoCUENTAS(self):
+        self.window=buscarCuenta(self)
+        self.window.show()
+    def open_emitirReport(self):
+        self.window=emite_R(self)
+        self.window.show()
+    def open_emitirReport_2(self):
+        self.window=emite_R_2(self)
+        self.window.show()
+    def open_nPoliza(self):
+        self.window=nuevaPoliza(self)
+        self.window.show()
+
+        
+        
+        
         
     """*************************  SUB MENU 2 ****************************"""
     ###################################################################  

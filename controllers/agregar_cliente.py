@@ -5,6 +5,7 @@ from views.botonesMenu import Menu_Botones
 from PySide6.QtCore import Qt
 from views.Ui_agregar_cliente import Ui_Agregar_cliente
 from controllers.editar_eliminar_cliente import edi_eli_cliente
+from controllers.mensaje_error4 import mensaje_error4
 from controllers.cliente_a import ClienteForm
 from controllers.errorcliente import ErrorForm
 from database import recipes
@@ -15,10 +16,11 @@ class AgregarClienteForm(QWidget, Ui_Agregar_cliente):
         super().__init__(parent)
         self.parent=parent
         self.setupUi(self) #1
+        self.setWindowFlag(Qt.Window)
         self.ui=GeneralCustomUi(self)
         self.bm=Menu_Botones(self)
         self.boton_guardar.clicked.connect(self.nuevo_cliente)
-        self.setWindowFlag(Qt.Window)
+        self.municipio.returnPressed.connect(self.nuevo_cliente)
         self.cc()
 
     def cc(self):
@@ -26,13 +28,13 @@ class AgregarClienteForm(QWidget, Ui_Agregar_cliente):
 
     def buscar_cli(self):
         self.window=edi_eli_cliente(self)
+        self.mensaje.clear()
         self.window.show()
     
     def mousePressEvent(self, event): #ubicación mouse
         self.ui.mouse_press_event(event)
 
     def nuevo_cliente(self):
-        Id_cliente = self.codigo_cliente.text()
         nombre = self.nombre.text() 
         apellidos = self.apellidos.text()
         telefono = self.telefono.text()
@@ -43,21 +45,21 @@ class AgregarClienteForm(QWidget, Ui_Agregar_cliente):
         puntuacion = self.puntuacion.text() 
         municipio = self.municipio.text()
 
-        data = (Id_cliente, nombre, apellidos, telefono, telefono_add, direccion, correo, fecha_nacimiento, puntuacion, municipio)
+        data = (nombre, apellidos, telefono, telefono_add, direccion, correo, fecha_nacimiento, puntuacion, municipio)
         
         if recipes.insertar_clientes(data):
             print("Cliente agregado")
             self.clear_inputs()
             self.cliente_agregado()
         else:
-            if self.codigo_cliente.text()=="" or self.nombre.text()=="" or self.apellidos.text()=="" or self.telefono.text()=="" or self.telefono_adicional.text()=="" or self.direccion.text()=="" or self.correo_elec.text()=="" or self.fecha_de_nacimiento.text()=="" or self.puntuacion.text() =="" or self.municipio.text()=="":
-                self.mensaje.setText("ERROR: Ingrese todos los datos")
+            if self.nombre.text()=="" or self.apellidos.text()=="" or self.telefono.text()=="" or self.telefono_adicional.text()=="" or self.direccion.text()=="" or self.correo_elec.text()=="" or self.fecha_de_nacimiento.text()=="" or self.puntuacion.text() =="" or self.municipio.text()=="":
+                self.window=mensaje_error4(self)
+                self.window.show()
             else:
                 self.cliente_error()
-            print("Error en el cliente")
+                print("Error en el cliente")
 
     def clear_inputs(self):
-        self.codigo_cliente.clear()
         self.nombre.clear()
         self.apellidos.clear()
         self.telefono.clear()

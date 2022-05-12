@@ -20,9 +20,9 @@ class Pagos(QWidget, Ui_Nuevoprestamo):
         super().__init__(parent)
         self.Id_cliente=Id_cliente #1
         self.setupUi(self)
+        self.setWindowFlag(Qt.Window)
         self.ui=GeneralCustomUi(self)
         self.bm=Menu_Botones(self)
-        self.setWindowFlag(Qt.Window)
         self.llenar_datos_prestamo()
         #self.minimenu()
         self.boton_pagar.clicked.connect(self.registrar_pago)
@@ -52,18 +52,23 @@ class Pagos(QWidget, Ui_Nuevoprestamo):
             interes=round(data[3],2)
             fecha_registro=datetime.date.today()
             limite=data[6]
+            saldo=data[8]
             #limite=datetime.strptime( fecha_limite , '%dd/%mm/%Y' )
             dia_delta=datetime.timedelta(days=30)
-            fecha_siguiente=limite+dia_delta
-            h1=str(fecha_siguiente)
-            partes = h1.split(" ")[0].split("-")
-            convertida1 = "/".join(reversed(partes))
-            self.fecha_sig_2.setText(str(convertida1))
+            restame=saldo-pago
+            if restame<1:
+                self.fecha_sig_2.setText(" ")
+            else:
+                fecha_siguiente=limite+dia_delta
+                h1=str(fecha_siguiente)
+                partes = h1.split(" ")[0].split("-")
+                convertida1 = "/".join(reversed(partes))
+                self.fecha_sig_2.setText(str(convertida1))
             if fecha_registro>=limite:
                 if recipes.capital_ahorro(self.Id_cliente):
                     a=recipes.capital_ahorro(self.Id_cliente)
                     ca=a[0]
-                    if ca>renta:
+                    if ca>Decimal(renta):
                         self.pagar_ahorro.setVisible(True)
                 else: None
                 d1=limite

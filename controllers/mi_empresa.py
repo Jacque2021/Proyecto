@@ -1,5 +1,6 @@
 from distutils.command.config import config
 from PySide6.QtWidgets import QWidget
+from PySide6.QtCore import Qt
 from views.general_custom_ui import GeneralCustomUi
 from views.botonesMenu import Menu_Botones
 from views.mi_empresa import Miempresa
@@ -21,6 +22,7 @@ class MiEmpresaForm(QWidget, Miempresa):
         self.parent=parent
         self.setupUi(self) #1
         self.ui=GeneralCustomUi(self)
+        self.setWindowFlag(Qt.Window)
         self.bm=Menu_Botones(self)
         self.boton_guardar.clicked.connect(self.nueva_empresa)
         self.vista()
@@ -88,16 +90,7 @@ class MiEmpresaForm(QWidget, Miempresa):
            self.clear_inputs()
     
 #############################
-   # def con(config):
-    #    print("Conexión establecida correctamnete")
-     #   conn = None
-     #   try:
-      #      conn = connector.connect(**config)
-       #     print("Conexión establecida correctamnete")
-       # except connector.Error as err:
-        #    print(f"Error at create_connection function: {err.msg}" )
-        #return conn 
-#################################
+ 
     def Open(self):
         window=EmpresaAgregada(self)
         window.show()

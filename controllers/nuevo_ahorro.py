@@ -1,5 +1,6 @@
 from calendar import month
 from ctypes.wintypes import FLOAT
+from decimal import Decimal
 from PySide6.QtWidgets import QWidget
 from PySide6.QtCore import Qt
 import datetime
@@ -65,29 +66,24 @@ class NuevoAhorroForm(QWidget, NuevoAhorro):
         id = self.id_c.text()
         nombre = self.nombre_c.text()
         apellidos = self.apellidos_c.text()
-        id_ahorro = self.caja_id.text()
         tea = self.caja_tea.text()
         importe = self.caja_importe.text()
         fecha_ven = self.fecha_venc.text()
-        capital = self.caja_capital.text()
-        cap = float(capital)
+        fecha_ven = datetime.datetime.strptime(fecha_ven,'%d/%m/%Y')
+        print(fecha_ven) 
         fecha_ap = self.horan.text()
         fecha_ini = self.horan_2.text() 
     
-       # data = (id, nombre, apellidos, id_ahorro, importe,  fecha_ven, capital,  fecha_ap, fecha_ini)
-   
-        cap = float(capital)
         importe = float(importe)
         tea = float(tea)
         teea = tea/100 
         plazo = 360
         interes = 0
         cancelacion = 0
-        cap_act = 0
 
-        interes = cap * teea
+        interes = importe * teea
         print("El interes es:",interes)
-        cancelacion = cap + interes
+        cancelacion = importe + interes
         print("Si cancela el total es:",cancelacion)
     
         intt = str(interes)
@@ -97,12 +93,8 @@ class NuevoAhorroForm(QWidget, NuevoAhorro):
         self.cancelacion.setText(cancc)
         
         plazo = str(plazo)
-       
-
         inttt = self.interes_c.text()
         canccc = self.cancelacion.text()
-
-        cap_act = cap + importe
         ###
         importe = float(importe)
         impor = importe /360
@@ -124,14 +116,17 @@ class NuevoAhorroForm(QWidget, NuevoAhorro):
         teea = str(tea)
         
         importe = self.caja_importe.text()
+        if recipes.llama_capital(self.Id_cliente):
+            dato=recipes.llama_capital(self.Id_cliente)
+            cap=dato[0]
+            capital=Decimal(cap)+Decimal(cancelacion)
+        else: capital=cancelacion
+        data = (id, nombre, apellidos, importe, teea, plazo,  fecha_ven, fecha_ap, fecha_ini, inttt,
+                cancelacion,capital)
 
         
-        data = (id, nombre, apellidos, id_ahorro, importe, teea, plazo,  fecha_ven, capital, cap_act,  fecha_ap, fecha_ini, inttt,
-                cancelacion)
 
-        
-
-        if len(id)==0 or len(nombre)==0 or len(apellidos)==0 or len(id_ahorro)==0:
+        if len(id)==0 or len(nombre)==0 or len(apellidos)==0:
             self.Open3()
 
         elif recipes.crear_ahorro(data):
@@ -151,11 +146,9 @@ class NuevoAhorroForm(QWidget, NuevoAhorro):
             self.id_c.clear()
             self.nombre_c.clear()
             self.apellidos_c.clear()
-            self.caja_id.clear()
             self.caja_importe.clear()
             self.caja_tea.clear()
             self.fecha_venc.clear()
-            self.caja_capital.clear()
             self.horan.clear()
             self.horan_2.clear()
           

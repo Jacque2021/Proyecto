@@ -19,8 +19,9 @@ class DiarioForm(QWidget, Ui_diarios_polizas):
         self.set_title_bar_buttons_actions()
         self.config_table() #medidas de la tabla
         self.boton_buscar.clicked.connect(self.filtro_numero)
-        self.boton_imprimir.clicked.connect(self.pdf_diarios)
-
+        self.numero_fin.returnPressed.connect(self.filtro_numero)
+        self.boton_imprimir.clicked.connect(self.abrir)
+        
     def filtro_numero(self):
         numero_1 = self.numero_ini.text()
         numero_2 = self.numero_fin.text()
@@ -93,8 +94,12 @@ class DiarioForm(QWidget, Ui_diarios_polizas):
         pdf.set_text_color(r=0,g=0,b=0)
         #Encabezado
         #empresa=recipes.empresa
-        nombre_emp=str('Caja popular mexicana')
-        ubicacion_emp=str('México')
+        empresa=recipes.empresa()
+        nombre_empresa=str(empresa[0])
+        direccion2=str(empresa[1])
+        ##################################
+        nombre_emp=nombre_empresa
+        ubicacion_emp=direccion2
         #Arial bold 15
         pdf.set_font('Arial', '',18)
         #Titulo
@@ -133,4 +138,7 @@ class DiarioForm(QWidget, Ui_diarios_polizas):
             pdf.cell(w=50,h=8, txt=str(valor[5]),border=1,align='C', fill=0)
             pdf.cell(w=30,h=8, txt=str(valor[6]),border=1,align='C', fill=0)
             pdf.cell(w=30,h=8, txt=str(valor[7]),border=1,align='C', fill=0, ln=1)
-        pdf.output('C:/Users/Almar/Documents/Proyecto/reporte_diarios/diarios.pdf', 'F')
+        pdf.output('reporte_diarios/diarios.pdf', 'F')
+    def abrir(self):
+        b=date.today()
+        wb.open_new(f"reporte_diarios\diarios.pdf")

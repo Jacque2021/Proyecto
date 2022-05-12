@@ -1,32 +1,29 @@
-from PySide6.QtWidgets import (QWidget, QApplication, QDialog, QPushButton, QTableWidget,
-                             QTableWidgetItem, QAbstractItemView, QHeaderView, QMenu,QMenuBar,
-                            QMessageBox)
+from PySide6.QtWidgets import (QWidget, QMenu)
 from PySide6.QtGui import QAction, QActionGroup
 from PySide6.QtCore import Qt
-#from asyncio.windows_events import NULL
-#from cgitb import text
 import math
-from string import punctuation
 from PySide6.QtWidgets import QWidget
 from views.general_custom_ui import GeneralCustomUi
 from views.botonesMenu import Menu_Botones
 from views.Ui_NuevoPrestamo import Ui_Nuevoprestamo
 from controllers.prestamo_registrado import mensaje
+from controllers.mensaje_error import mensaje_error
+from controllers.mensaje_error2 import mensaje_error2
+from controllers.mensaje_error3 import mensaje_error3
 from decimal import Decimal
 from database import recipes
 from controllers.cancelacion import Error
 import datetime
 from datetime import date
-#from fpdf import FPDF
 
 class Prestamos(QWidget, Ui_Nuevoprestamo):
     def __init__(self, parent=None,Id_cliente=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.Id_cliente=Id_cliente
         self.setupUi(self) #1
+        self.setWindowFlag(Qt.Window)
         self.bm=Menu_Botones(self)
         self.ui=GeneralCustomUi(self)
-        self.setWindowFlag(Qt.Window)
         self.llamar_nombre()
         self.Guardar.clicked.connect(self.insertar_prestamos)
         self.Borrar.clicked.connect(self.limpirar_parametros)
@@ -81,18 +78,33 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
         nombre_codeudor=self.Codeudor.text()
         Garantia=self.Garantia.text()
         #condiciones para el prestamo
-        if punctuation <18 and cantidad_prestamo>25000:
-            self.TextoError.setText("No se puede realizar esa cantidad de prestamo")
+        if punctuation <18 and cantidad_prestamo>25000 and a>18:
+            self.window=mensaje_error3(self)
+            self.window.show()
+        elif punctuation >= 18 and punctuation <42 and cantidad_prestamo>100000 and a>24:
+            self.window=mensaje_error3(self)
+            self.window.show()
+        elif punctuation >= 42 and cantidad_prestamo>300000 and a>36:
+            self.window=mensaje_error3(self)
+            self.window.show()
+        elif punctuation <18 and cantidad_prestamo>25000:
+            self.window=mensaje_error(self)
+            self.window.show()
         elif punctuation >= 18 and punctuation <42 and cantidad_prestamo>100000:
-            self.TextoError.setText("No se puede realizar esa cantidad de prestamo")
+            self.window=mensaje_error(self)
+            self.window.show()
         elif  punctuation >= 42 and cantidad_prestamo>300000:
-            self.TextoError.setText("No se puede realizar esa cantidad de prestamo")
-        elif periodo>18 and cantidad_prestamo<=25000:
-            self.Plazo_max.setText("El usuario excede el plazo máximo para pagar")
-        elif periodo>24 and cantidad_prestamo<=100000:
-            self.Plazo_max.setText("El usuario excede el plazo máximo para pagar")
-        elif periodo>36 and cantidad_prestamo<=300000:
-            self.Plazo_max.setText("El usuario excede el plazo máximo para pagar")
+            self.window=mensaje_error(self)
+            self.window.show()
+        elif a>18 and cantidad_prestamo<=25000:
+            self.window=mensaje_error2(self)
+            self.window.show()
+        elif a>24 and cantidad_prestamo<=100000:
+            self.window=mensaje_error2(self)
+            self.window.show()
+        elif a>36 and cantidad_prestamo<=300000:
+            self.window=mensaje_error2(self)
+            self.window.show()
         else:
             b=date.today()
             ejemp=str(nombre)

@@ -1,19 +1,17 @@
-
 from PySide6.QtWidgets import QWidget
 from PySide6.QtCore import Qt
-from views.general_custom_ui import GeneralCustomUi
-#from views.general_custom_ui import GeneralCustomUi
-from views.Ui_error2 import Ui_Error
-
-class Error(QWidget, Ui_Error):
+from views.Ui_mensaje_error import Ui_Form
+class mensaje_error3(QWidget, Ui_Form):
     def __init__(self, parent=None): #capturar instancia de mainwindows
         super().__init__(parent)
         self.parent=parent
         self.setupUi(self) #1
         self.setWindowFlag(Qt.Window)
-        self.frame.mouseMoveEvent = self.move_window
+        self.rojo.mouseMoveEvent = self.move_window
         self.remove_defult_title_bar()
-        self.regresar_button.clicked.connect(self.close)
+        self.mensaje.setAlignment(Qt.AlignCenter)
+        self.mensaje.setText("El usuario excede el monto\n de préstamo permitido y el\n plazo máximo para pagar")
+        self.Ok.clicked.connect(self.close)
         
     """*****************   ATRIBUTOS DE LA VENTANA VISTA    ********************"""
     def remove_defult_title_bar(self):   #hacer el fondo transparente
@@ -35,5 +33,3 @@ class Error(QWidget, Ui_Error):
             #event.globalPos = posicion actaul del mouse cuando presione boton izquierdo
             self.move(self.pos() + event.globalPos()- self.drag_pos)
             self.drag_pos=event.globalPos()
-        
-    

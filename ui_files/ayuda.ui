@@ -1,0 +1,2366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Nuevoprestamo</class>
+ <widget class="QWidget" name="Nuevoprestamo">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>685</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#DetailWindow{border-radius: 5px}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="central_widget_frame">
+     <property name="minimumSize">
+      <size>
+       <width>1350</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 5px</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="shadow_layout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="background_frame">
+        <property name="minimumSize">
+         <size>
+          <width>1350</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidgget#background_frame{background-color: rgb(245, 240, 225);}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="top_bar_frame">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #1e3d59;
+border-radius: 5px</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="title_label">
+              <property name="minimumSize">
+               <size>
+                <width>1100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: white;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="buttons_holder_frame">
+              <property name="minimumSize">
+               <size>
+                <width>180</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>113</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QToolButton" name="restore_button">
+               <property name="geometry">
+                <rect>
+                 <x>80</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/restore-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/restore-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="close_button">
+               <property name="geometry">
+                <rect>
+                 <x>120</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/close-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/close-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="maximize_button">
+               <property name="geometry">
+                <rect>
+                 <x>77</x>
+                 <y>0</y>
+                 <width>31</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/maximize-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/maximize-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="minimize_button">
+               <property name="geometry">
+                <rect>
+                 <x>40</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/minimize-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/minimize-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="content_frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QFrame" name="barra_principal_frame">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QWidget#barra_principal_frame{background-color: rgb(48, 127, 226);
+border-radius: 5px}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QPushButton" name="Empresa">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Empresa</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/house.png</normaloff>../assets/Iconos/house.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Clientes">
+               <property name="geometry">
+                <rect>
+                 <x>150</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Clientes</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/60eb68bb3242ef4ac327a3fe28d25719.png</normaloff>../assets/Iconos/60eb68bb3242ef4ac327a3fe28d25719.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Prestamos">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Prestamos</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/prestamos.png</normaloff>../assets/Iconos/prestamos.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>35</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Ahorros">
+               <property name="geometry">
+                <rect>
+                 <x>430</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Ahorros</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/497f1ee33d47f13536a037095be32bde-icono-de-circulo-de-banco-de-cerdo.png</normaloff>../assets/Iconos/497f1ee33d47f13536a037095be32bde-icono-de-circulo-de-banco-de-cerdo.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Consultas">
+               <property name="geometry">
+                <rect>
+                 <x>570</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Consultas</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/consultas.png</normaloff>../assets/Iconos/consultas.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Ayuda">
+               <property name="geometry">
+                <rect>
+                 <x>1140</x>
+                 <y>10</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Ayuda</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/ayuda.png</normaloff>../assets/Iconos/ayuda.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Salir">
+               <property name="geometry">
+                <rect>
+                 <x>1240</x>
+                 <y>10</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Salir</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/exit.png</normaloff>../assets/Iconos/exit.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Notificaciones">
+               <property name="geometry">
+                <rect>
+                 <x>1000</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Notificaciones</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/Imagen2.png</normaloff>../assets/Iconos/Imagen2.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="PolizaS">
+               <property name="geometry">
+                <rect>
+                 <x>712</x>
+                 <y>10</y>
+                 <width>151</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Polizas</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/polizas.png</normaloff>../assets/Iconos/polizas.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="ChequeS">
+               <property name="geometry">
+                <rect>
+                 <x>860</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Cheques</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/cheques.png</normaloff>../assets/Iconos/cheques.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QLabel" name="notify">
+               <property name="geometry">
+                <rect>
+                 <x>1010</x>
+                 <y>20</y>
+                 <width>16</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/imagen/rojo.png);</string>
+               </property>
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="contenido">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="label_18">
+               <property name="geometry">
+                <rect>
+                 <x>1000</x>
+                 <y>10</y>
+                 <width>251</width>
+                 <height>51</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QFrame" name="frame">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1431</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QLabel" name="IngresaTitulo">
+                <property name="geometry">
+                 <rect>
+                  <x>292</x>
+                  <y>20</y>
+                  <width>841</width>
+                  <height>61</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>750</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>1600</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ayuda&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_10">
+                <property name="geometry">
+                 <rect>
+                  <x>1200</x>
+                  <y>10</y>
+                  <width>80</width>
+                  <height>80</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>80</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../imagenes/res.qrc">:/imagen/logobueno_preview_rev_1.png</pixmap>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Catalogo">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Catálogo de cuentas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Respaldo">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Respaldar empresa</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Mi_Empresa">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Mi empresa</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Ahorro">
+                <property name="geometry">
+                 <rect>
+                  <x>430</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nuevo ahorro</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="abonar">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Abonar pago</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Reportes">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Emitir reporte</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Polizas">
+                <property name="geometry">
+                 <rect>
+                  <x>710</x>
+                  <y>0</y>
+                  <width>151</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nueva poliza</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Historial">
+                <property name="geometry">
+                 <rect>
+                  <x>150</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Historial del cliente</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Estado">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Estado de cuentas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="cancelar">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Cancelar pago</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Cliente">
+                <property name="geometry">
+                 <rect>
+                  <x>150</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Agregar nuevo cliente</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Retirar">
+                <property name="geometry">
+                 <rect>
+                  <x>430</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Retirar ahorro</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Cheques">
+                <property name="geometry">
+                 <rect>
+                  <x>860</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Cheques</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Consulta_cheque">
+                <property name="geometry">
+                 <rect>
+                  <x>860</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Consultar cheques</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Listado">
+                <property name="geometry">
+                 <rect>
+                  <x>710</x>
+                  <y>30</y>
+                  <width>151</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Listado de polizas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="prestamo">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nuevo prestamo</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Reportes_2">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Emitir reporte 
+de prestamos</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="Desarrollo">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>100</y>
+                 <width>1390</width>
+                 <height>3905</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>490</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QScrollArea" name="scrollArea">
+                  <property name="styleSheet">
+                   <string notr="true">selection-background-color: rgb(255, 170, 127);</string>
+                  </property>
+                  <property name="widgetResizable">
+                   <bool>true</bool>
+                  </property>
+                  <widget class="QWidget" name="scrollAreaWidgetContents">
+                   <property name="geometry">
+                    <rect>
+                     <x>0</x>
+                     <y>0</y>
+                     <width>1373</width>
+                     <height>15000</height>
+                    </rect>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_6">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="frame_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>15000</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QWidget#frame_2{background-color: rgb(223, 223, 223);}</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <widget class="QFrame" name="frame_3">
+                       <property name="geometry">
+                        <rect>
+                         <x>0</x>
+                         <y>0</y>
+                         <width>1360</width>
+                         <height>14151</height>
+                        </rect>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>3000</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-right-color: rgb(0, 0, 0);</string>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <widget class="QLabel" name="Titulo">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>10</y>
+                          <width>111</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+font: 700 16pt &quot;Segoe UI&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Préstamos&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>40</y>
+                          <width>1331</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;El menú de préstamos cuenta con tres opciones las cuales son; nuevo préstamo, Abonar pago y Cancelar pago. A continuación, se muestra a detalle como funciona cada uno de ellos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_4">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>70</y>
+                          <width>121</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Nuevo préstamo:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_8">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>100</y>
+                          <width>1281</width>
+                          <height>81</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Como primera función, el administrador deberá buscar el nombre del cliente que solicita dicho préstamo en la tabla de clientes registrados. Para facilitar dicha búsqueda, se ingresó un &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;recuadro donde dice “Nombre del cliente”, el cual el administrador puede escribir ya sea el nombre, apellidos o Id del cliente para dar con el cliente más rápido. Una vez encontrado el nombre, &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;el administrador deberá dar doble click sobre la celda seleccionada del cliente. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="Imagen1">
+                        <property name="geometry">
+                         <rect>
+                          <x>340</x>
+                          <y>180</y>
+                          <width>781</width>
+                          <height>171</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_2">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>430</y>
+                          <width>1291</width>
+                          <height>241</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una vez seleccionado el nombre, se abrirá una nueva ventana, en ella se muestra el nombre del cliente el cual había sido seleccionado en la tabla anterior. En la parte de arriba &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;de la tabla de datos del préstamo, se muestra un texto en azul el cual indica la cantidad máxima permitida para ese cliente y de igual forma, el máximo de plazos a pagar dicho préstamo. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Cabe mencionar que la cantidad de préstamo autorizada por cliente, se maneja a través de la cantidad de puntos que tenga el cliente, el cual ira ganando conforme a su puntualidad &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;de pago de prestamos anteriores. Después se muestra la tabla de datos del préstamo, en la que el administrador deberá ingresar la cantidad del préstamo que solicita el cliente el &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;cual no debe sobrepasar el limite permitido ya que por el contrarió marcara un mensaje de error tal y como se muestra en la imagen; de igual forma el administrador deberá ingresar &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;la tasa de interés anual con el que administran en la cooperativa correspondiente; se ingresa el tiempo en años, del cual tardara el cliente en liquidar el préstamo y de igualmente la &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;frecuencia con la que pagara. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_3">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>990</y>
+                          <width>1291</width>
+                          <height>91</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Por último, se muestra la tabla de otros datos la cual tiene como parámetros que son el nombre el codeudor y la garantía del préstamo. Estos parámetros son opcionales para rellenar, ya &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;que en algunos casos no se requiere de ingresar el nombre de un codeudor, eso lo tendrá que valorar el administrador; la garantía del préstamo es solo hacer mención de que es lo que el &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;cliente esta dejando como garantía en caso de no cumplir con sus obligaciones del pago del préstamo. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_5">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>1320</y>
+                          <width>121</width>
+                          <height>41</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Abonar pago:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_6">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>1360</y>
+                          <width>1271</width>
+                          <height>161</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de Abonar préstamo, se muestra una tabla en la que el administrador deberá buscar al cliente que va realizar su pago de préstamo, una vez seleccionado, se abre &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;una nueva ventana en la que se muestra el número de cuenta, el nombre del cliente, la cantidad del préstamo que solicito el cliente, continuando con la información de pago del &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;préstamo, que incluye el interés y el interés moratorio, este ultimo como se puede mostrar, esta en cero ya que el cliente está pagando en la fecha limite establecida, si este pagara con &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;días de retraso, el interés moratorio aumentaría, cabe señalar que el interés moratorio esta establecido del 6% mensual, dicho esto, al ultimo se hace la suma del total que el cliente &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;deberá pagar. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_7">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>1520</y>
+                          <width>1251</width>
+                          <height>71</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Del lado derecho se muestra tres fechas, uno como bien lo dice es la fecha limite que tiene el cliente para dar su pago mensual, luego muestra la fecha del registro del pago y la fecha &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;limite siguiente que se tiene para pagar el siguiente pago mensual, el cual cada uno tiene un rango de 30 días. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_9">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>1830</y>
+                          <width>1301</width>
+                          <height>131</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Calibri','sans-serif'; font-size:12pt;&quot;&gt;Por último, se muestra dos botones, el primero que dice “pagar con cuenta de ahorro”, este botón solo será visible si el cliente tiene una cuenta de ahorro registrada en el sistema y si su cuenta &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Calibri','sans-serif'; font-size:12pt;&quot;&gt;de ahorro es mayor o igual al monto total a pagar por mes, de esta forma podrá liberar su pago mensual y al mismo tiempo será descontado la cantidad registrada en la cuenta de ahorro. El otro &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Calibri','sans-serif'; font-size:12pt;&quot;&gt;botón que dice “Pagar” es para pagar con efectivo el préstamo. Una vez abonado el pago con cualquiera de las dos opciones, se creará un documento en formato PDF el cual es considerado como &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Calibri','sans-serif'; font-size:12pt;&quot;&gt;reporte de pago en caso de requerir de una aclaración de él. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_11">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>2250</y>
+                          <width>181</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Cancelar pago:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_12">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>2290</y>
+                          <width>1301</width>
+                          <height>91</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Por última opción dentro del menú de préstamos, tenemos “cancelar pago”, la cual consiste en borrar un pago de préstamo que por error fue realizado, solo bastara con dar click al &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;icono de basura según la celda correspondiente del pago que desea cancelar. Se añadió un apartado de búsqueda donde el administrador podrá buscar al cliente del cual se realizó &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;por error el préstamo ingresando el nombre o apellido. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen1">
+                        <property name="geometry">
+                         <rect>
+                          <x>360</x>
+                          <y>190</y>
+                          <width>701</width>
+                          <height>221</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true"/>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_13">
+                        <property name="geometry">
+                         <rect>
+                          <x>350</x>
+                          <y>1080</y>
+                          <width>741</width>
+                          <height>281</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">image: url(:/imagen/prestamonuevo.png);</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_14">
+                        <property name="geometry">
+                         <rect>
+                          <x>430</x>
+                          <y>1610</y>
+                          <width>551</width>
+                          <height>201</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">image: url(:/imagen/abonar ahorro.png);</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_15">
+                        <property name="geometry">
+                         <rect>
+                          <x>240</x>
+                          <y>2410</y>
+                          <width>871</width>
+                          <height>311</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">image: url(:/imagen/cancela.png);</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen5">
+                        <property name="geometry">
+                         <rect>
+                          <x>420</x>
+                          <y>1990</y>
+                          <width>641</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen2">
+                        <property name="geometry">
+                         <rect>
+                          <x>470</x>
+                          <y>660</y>
+                          <width>691</width>
+                          <height>311</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="Titulo_2">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>2700</y>
+                          <width>111</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+font: 700 16pt &quot;Segoe UI&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Empresa&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_16">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>2740</y>
+                          <width>1331</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;El menú de empresa cuenta con tres opciones las cuales son; mi empresa, respaldar empresa y catalogo de cuentas. A continuación, se muestra a detalle como funciona cada uno de ellos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_19">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>2770</y>
+                          <width>121</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Mi empresa:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_20">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>2800</y>
+                          <width>1271</width>
+                          <height>191</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de mi empresa, se muestra la interfaz, en donde se llenan los datos de la que se quiera registrar, como lo es: Nombre.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En la sección de datos generales se encuentra: RFC y la ubicación de la empresa.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En inicio de historia: se encuentra la fecha del inicio del ejercicio, el cual se llena por default con la fecha del dia y el fin del ejercicio.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En datos generales del servidor: se agrega el usuario, la contraseña, el host y el nombre de la base de datos, lo cual es para hacer la conexión de la misma.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Por ultimo se tiene la sección de periodos contables: en donde se agrega el tipo de periodo.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una vez que se han llenado los datos se hace el registro de la empresa una vez que se da clic en el botón de guardar.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen6">
+                        <property name="geometry">
+                         <rect>
+                          <x>390</x>
+                          <y>3040</y>
+                          <width>641</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_21">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>3320</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Respaldar empresa:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_22">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>3350</y>
+                          <width>1271</width>
+                          <height>181</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de respaldar empresa, se muestra la interfaz, en donde se llenan los datos para hacer el respaldo de la misma.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En la sección de nuevo respaldo se encuentran los datos del respaldo como lo son:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;RFC, nombre de la empresa, ruta y respaldo. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;La fecha y hora de respaldo se muestran por default, siendo las del dia. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una vez que se han llenado los datos se hace el respaldo, una vez que se da clic en el botón de guardar.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen7">
+                        <property name="geometry">
+                         <rect>
+                          <x>300</x>
+                          <y>3530</y>
+                          <width>701</width>
+                          <height>311</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_23">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>3850</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Catálogo de cuentas:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="Titulo_3">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>4510</y>
+                          <width>111</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+font: 700 16pt &quot;Segoe UI&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Ahorros&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_24">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>4540</y>
+                          <width>1331</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;El menú de ahorros cuenta con dos opciones las cuales son; nuevo ahorro y retirar ahorro. A continuación, se muestra a detalle como funciona cada uno de ellos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_45">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>4570</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Nuevo ahorro: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_46">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>4600</y>
+                          <width>1271</width>
+                          <height>311</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de nuevo ahorro, se muestra una tabla en la que el administrador deberá buscar al cliente que va realizar su ahorro, una vez seleccionado,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;se abre una nueva ventana en donde ya se ven reflejados los datos del cliente se se selecciono anteriormente, seguido de los datos del ahorro, en donde se tiene:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Id de ahorro: este debe ser único e irrepetible.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Importe: se ingresa la cantidad para ahorrar.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;TEA: es la tasa efectiva anual, y se ingresa por medio de porcentaje.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Capital: Cantidad que se tiene como capital.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;La fecha de inicio y fecha de apertura estan definidas por default al dia actual en que se hace el ahorro.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;La fecha de venciemiento debe ser ingresada por el usuario, esta a plazo de 360 dias como ya esta establecido. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una vez que se han llenado los campos se da clic en el botón de guardar, y se calcula automaticamente el interés y la cancelación.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En la parte derecha hay una tabla la cuál refleja cual seria el interés por dia, por los 360 y asi se muestra el total del interes que salen el letras rojas.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen8">
+                        <property name="geometry">
+                         <rect>
+                          <x>220</x>
+                          <y>4910</y>
+                          <width>1081</width>
+                          <height>331</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_47">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>5240</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Retirar ahorro: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_48">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>5270</y>
+                          <width>1271</width>
+                          <height>301</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de retirar ahorro, se muestra una tabla en la que el administrador deberá buscar al cliente que va realizar su retiro, una vez seleccionado,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;se abre una nueva ventana en donde ya se ven reflejados los datos del cliente se se selecciono anteriormente, seguido de los datos del ahorro, en donde se tiene:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Transacción no.: este debe ser único e irrepetible.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Capital ahorrado&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Total de retiro: cantidad a retirar, la cual se establece que logicamnete no tiene que ser mayor al capital ahorrado, asi como tampoco debe ser mayor a 5,000 pesos &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;porque si llega a suceder el caso se deberá realizar un cheque.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;La fecha y hora de retiro estan definidas por default al dia actual en que se hace el ahorro.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Descripción: referente al retiro.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una vez que se han llenado los campos se da clic en el botón de retirar, en ese momento se genera un pdf con los datos correspondientes para poder realizar el retiro de dinero.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen9">
+                        <property name="geometry">
+                         <rect>
+                          <x>270</x>
+                          <y>5570</y>
+                          <width>841</width>
+                          <height>301</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="Titulo_7">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>5880</y>
+                          <width>111</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+font: 700 16pt &quot;Segoe UI&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Cheques&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_49">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>5910</y>
+                          <width>1331</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;El menú de cheques cuenta con dos opciones las cuales son; cheques y consultar cheques. A continuación, se muestra a detalle como funciona cada uno de ellos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_50">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>5940</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Cheques:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_51">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>5970</y>
+                          <width>1271</width>
+                          <height>241</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de cheque, se muestra una tabla en la que el administrador deberá buscar al cliente que va realizar su cheque, una vez seleccionado,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;se abre una nueva ventana en donde ya se ven reflejados los datos del cliente se se selecciono anteriormente, seguido de los datos del cliente, en donde se tiene:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Id del cheque: este debe ser único e irrepetible.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Beneficiario del cliente: Persona que es acreedor del cheque.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Monto total: Cantidad generada para el cheque.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Descripción.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;La fecha de emisión esta definida por default al dia actual en que se hace el cheque.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una vez que se han llenado los campos se da clic en el botón de emitir, y se genera un pdf para que pueda ser cobrado el cheque.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen10">
+                        <property name="geometry">
+                         <rect>
+                          <x>340</x>
+                          <y>6220</y>
+                          <width>751</width>
+                          <height>321</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_52">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>6560</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Consulta cheques:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_53">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>6580</y>
+                          <width>1271</width>
+                          <height>171</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de consulta cheques, se muestra la interfaz, en donde se muestra la tabla con los cheques generados, los cuales se buscan por el nombre del cliente, &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;esto para que sean identificados fácilmente.  &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Que tiene datos importantes como lo son: &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Id, nombre, apellidos, id del cheque, fecha de emisión, monto total, beneficiario, descripción.&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen10_2">
+                        <property name="geometry">
+                         <rect>
+                          <x>110</x>
+                          <y>6770</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_54">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>7080</y>
+                          <width>1331</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;El menú de clientes cuenta con dos opciones las cuales son; agregar cliente e historial de clientes. A continuación, se muestra a detalle como funciona cada uno de ellos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_55">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>7110</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Agregar cliente:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="Titulo_8">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>7050</y>
+                          <width>111</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+font: 700 16pt &quot;Segoe UI&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Clientes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_56">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>7140</y>
+                          <width>1351</width>
+                          <height>481</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de agregar cliente, se muestran los campos en los cuáles se puede visualizar los campos en donde se pondrán los datos del cliente que se va a registrar. Los datos a registrar son los siguientes:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;ID del cliente: Este debe ser único e irrepetible en cada cliente.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Nombre: Nombre del cliente.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Télefono: Télefono del cliente.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Apellidos: Apellidos del cliente.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Dirección: Dirección del cliente.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Télefono adicional: Télefono adicional del cliente puede ser de algún familiar.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Correo electrónico: Correo electrónico del cliente.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Fecha de nacimiento: Fecha en que el cliente nació.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Puntuación: La puntuación del cliente al inicio puede ser de 0 ya que no ha realizado préstamos o ahorros.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Municipio: El municipio donde vive el cliente este debe ser el mismo que el de la sociedad cooperativa.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En la parte de abajo hay otras dos opciones con el botón Guardar guardara dicha información colocada.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Con el botón Buscar abrira una tabla en la cuál se muestra los clientes registrados hasta la fecha, esta tabla contiene dos iconos uno para eliminar y el otro para eliminar en el cuál abre, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;otra ventana llamada Actualizar cliente esta ventana muestra los campos llenados con la información seleccionada anteriormente,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;contiene los mismos campos descritos anteriormente, en la parte de abajo contiene el botón actualizar con el cuál se actualizara la información de dicho cliente seleccionado.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_c1">
+                        <property name="geometry">
+                         <rect>
+                          <x>140</x>
+                          <y>7640</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_57">
+                        <property name="geometry">
+                         <rect>
+                          <x>10</x>
+                          <y>7950</y>
+                          <width>1351</width>
+                          <height>191</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón del historial del cliente se muestra 3 campos y 3 botones de buscar, los campos que se muestran son:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Buscar por nombre del cliente: Aquí se inserta el nombre del cliente, después se da clic en el boton de Buscar que se encuentra a su izquierda, para buscar por el nombre.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Buscar por apellidos del cliente: Aquí se insertas los apellidos del cliente, después se da clic en el boton de Buscar que se encuentra a su izquierda, para buscar por el apellidos.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Buscar ID del cliente: Aquí se inserta el ID del cliente, después se da clic en el boton de Buscar que se encuentra a su izquierda, para buscar por el ID.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En la parte de abajo se encuentra un botón de Imprimir, en el cuál imprime dicha tabla que arrojo al buscar por cualquier campo y hay otros botones de historial del cliente por ahorros o &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;por préstamos en caso de que el cliente no cuente con un préstamo o un ahorro.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_58">
+                        <property name="geometry">
+                         <rect>
+                          <x>10</x>
+                          <y>7920</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Historial del cliente:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_c2">
+                        <property name="geometry">
+                         <rect>
+                          <x>90</x>
+                          <y>8150</y>
+                          <width>1181</width>
+                          <height>241</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_59">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>3880</y>
+                          <width>1301</width>
+                          <height>311</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al seleccionar el botón de Catálogo de cuentas, se muestra una tabla en la que el administrador deberá buscar a la empresa que va realizar su registro del cátalogo, una vez seleccionado,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;se abre una nueva ventana en donde ya se ven reflejados los datos del cliente se se selecciono anteriormente, seguido de los datos de la empresa, en donde se tiene:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Registro: La fecha en que se va a registrar la cuenta.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Cuenta: La cuenta debe ser unica e irrepetible.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Contables y fiscales: Aquí elige si es una cuenta fiscal o contable.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Código agrupador de cuentas del SAT: Aquí el usuario elige el código del SAT que necesite para la cuenta.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Rubro: Aquí coloca el rubro asociado a esa cuenta.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Dígito fiscal 1: Coloca el número fiscal 1.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Dígito fiscal 2: Coloca el número fiscal 2.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_ca1">
+                        <property name="geometry">
+                         <rect>
+                          <x>260</x>
+                          <y>4200</y>
+                          <width>981</width>
+                          <height>221</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_61">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>8480</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Nueva Poliza:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_62">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>8450</y>
+                          <width>1331</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;El menú de polizas cuenta con dos opciones las cuales son; Nueva poliza y Listado polizas. A continuación, se muestra a detalle como funciona cada uno de ellos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="Titulo_9">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>8420</y>
+                          <width>111</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+font: 700 16pt &quot;Segoe UI&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Polizas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_63">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>9380</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Listado polizas:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_64">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>9410</y>
+                          <width>1351</width>
+                          <height>251</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al presionar el botón Listado de polizas se abre una interfaz en la cuál se muestra lo siguiente:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Buscar por número: Se ingresa el número de la poliza, y se presiona el botón de buscar para que muestre los datos relacionados con el número de la poliza.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En la parte izaquierda se muestra un botón de diarios y polizas, en el cuál abre una pequeña interfaz donde muestra:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Buscar por número inicial: Se coloca el número inicial de la poliza.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Buscar por número final: Se coloca el número final de la poliza.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Se presiona el botón de Buscar esta busqueda se hace por un rango con el número inicial y final que se colocaron anteriormente, en la parte de abajo se muestra el botón de Imprimir en el cuál &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;genera un reporte con los datos encontrados anteriormente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_lp">
+                        <property name="geometry">
+                         <rect>
+                          <x>220</x>
+                          <y>9680</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="Titulo_10">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>9970</y>
+                          <width>111</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+font: 700 16pt &quot;Segoe UI&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Consultas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_65">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>10000</y>
+                          <width>1331</width>
+                          <height>51</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;El menú de consultas cuenta con tres opciones las cuales son: Estado de cuentas, Reporte de ahorros y Reporte de prestamos. &lt;br/&gt;A continuación, se muestra a detalle como funciona cada uno de ellos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_66">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>10080</y>
+                          <width>151</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Estado de cuentas:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_67">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>10110</y>
+                          <width>1351</width>
+                          <height>191</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al presionar el botón Estado de cuentas se abre una interfaz emergente en la cuál se muestra lo siguiente:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una tabla con los datos del cliente, tanto su ID como su nombre y apellidos, si se desea ser mas especifico, hay un recuadro para escribir el nombre que se desea saber la información.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al momento de seleccionar el cliente se reedirige a una ventana con una tabla con los datos correspondientes.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Estos son, ID_PRESTAMOS, ID_CLIENTE, NOMBRE, FECHA_INICIO, FECHA_SIGUIENTE E INTERES.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_ec">
+                        <property name="geometry">
+                         <rect>
+                          <x>120</x>
+                          <y>10320</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_68">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>10590</y>
+                          <width>191</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Emitir reporte de ahorros:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_69">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>10620</y>
+                          <width>1351</width>
+                          <height>161</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al presionar el botón de Emitir reporte de ahorros se abre una interfaz en la cuál se muestra lo siguiente:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una tabla con los datos correspondientes a dicho reporte, estos son, ID_CLIENTE, NOMBRE, APELLIDOS, ID_AHORRO, IMPORTE, T.E.A, PLAZO, CAPITAL, CAPITAL_ACTUALIZADO, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;FECHA_APERTURA, FECHA_INICIO, Y FECHA_VENCIMIENTO.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Ademas, este contiene un filtro tanto de fecha como de ID del cliente para realizar la busqueda los cuales el usario puede usar el que mas le convenga para obtener &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;la información correspondiente.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_ra">
+                        <property name="geometry">
+                         <rect>
+                          <x>100</x>
+                          <y>10850</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_70">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>11170</y>
+                          <width>1351</width>
+                          <height>71</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En dado caso que los campos solicitados no sean llenados se mostrara una ventana emergente advirtiendo que debe de llenar la información necesaria para extraer los datos para el llenado &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;de la tabla.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_ra_avi">
+                        <property name="geometry">
+                         <rect>
+                          <x>80</x>
+                          <y>11260</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_71">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>11610</y>
+                          <width>1351</width>
+                          <height>61</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Finalmente, si los datos son ingresados correctamente y se muestra la información en la tabla, se da click en el botón de continuar para generar el PDF con el reporte creado&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;de manera automatica.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_ra_PDF">
+                        <property name="geometry">
+                         <rect>
+                          <x>50</x>
+                          <y>11710</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_72">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>12030</y>
+                          <width>211</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#307fe2;&quot;&gt;Emitir reporte de prestamos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_73">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>12070</y>
+                          <width>1351</width>
+                          <height>161</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al presionar el botón de Emitir reporte de ahorros se abre una interfaz en la cuál se muestra lo siguiente:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Una tabla con los datos correspondientes a dicho reporte, estos son, ID_PAGO, ID_PRESTAMO, ID_CLIENTES, SALDO INSOLITO, INTERES, AMORTIZACION, AMORTIZACION ACOMULADA, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;FECHA_LIMITE, FECHA DE PAGO, FECHA_SIGUIENTE, MORATORIO Y AHORRO&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Ademas, este contiene un filtro tanto de fecha como de ID del cliente para realizar la busqueda los cuales el usario puede usar el que mas le convenga para obtener &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;la información correspondiente.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_rp">
+                        <property name="geometry">
+                         <rect>
+                          <x>100</x>
+                          <y>12270</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_74">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>12600</y>
+                          <width>1351</width>
+                          <height>71</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En dado caso que los campos solicitados no sean llenados se mostrara una ventana emergente advirtiendo que debe de llenar la información necesaria para extraer los datos para el llenado &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;de la tabla.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_rp_avi">
+                        <property name="geometry">
+                         <rect>
+                          <x>90</x>
+                          <y>12700</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_75">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>13010</y>
+                          <width>1351</width>
+                          <height>61</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Finalmente, si los datos son ingresados correctamente y se muestra la información en la tabla, se da click en el botón de continuar para generar el PDF con el reporte creado&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;de manera automatica.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_rp_PDF">
+                        <property name="geometry">
+                         <rect>
+                          <x>100</x>
+                          <y>13130</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_76">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>8520</y>
+                          <width>1351</width>
+                          <height>281</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Al presionar el botón Nueva poliza se abre una interfaz en la cuál se muestra lo siguiente:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En el botón Nuevo, se abre una ventana emergente con el catalogo de cuentas, el cual se selecciona la cuenta y se abre otra ventana &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;En esta otra se llenan los datos o en este caso el CARGO, ABONO, REFERENCIA Y CONCEPTO, ya que extrae del catalogo de cuentas el numero de cuenta y la clave del SAT.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Despues, ahora si en la ventana principal, se llenan los datos registrados anteriormente para que se visualicen en una tabla, solo que ahora, incorpora la FECHA, TIPO DE POLIZA y NUMERO, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;ademas de un pequeño concepto que tambien se ocupa para identificar la poliza &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Y finalmente revisando que sea la misma cuenta que se agrego a traves del catalogo, se da un pequeño click en la opcion de guardar y esta se visualiza en una tabla que contiene&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;los siguientes datos almacenados:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;MOVIMIENTO, CUENTA, RFC, CARGO, ABONO y REFERENCIA &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="imagen_np">
+                        <property name="geometry">
+                         <rect>
+                          <x>80</x>
+                          <y>8900</y>
+                          <width>1181</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </widget>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../imagenes/res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

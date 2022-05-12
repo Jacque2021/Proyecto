@@ -1,0 +1,2294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DetailWindow</class>
+ <widget class="QWidget" name="DetailWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1350</width>
+    <height>685</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#DetailWindow{border-radius: 5px}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="central_widget_frame">
+     <property name="minimumSize">
+      <size>
+       <width>1350</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 5px</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="shadow_layout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="background_frame">
+        <property name="minimumSize">
+         <size>
+          <width>1350</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidgget#background_frame{background-color: rgb(245, 240, 225);}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="top_bar_frame">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #1e3d59;
+border-radius: 5px</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="title_label">
+              <property name="minimumSize">
+               <size>
+                <width>1100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: white;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="buttons_holder_frame">
+              <property name="minimumSize">
+               <size>
+                <width>180</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>113</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QToolButton" name="restore_button">
+               <property name="geometry">
+                <rect>
+                 <x>110</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/restore-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/restore-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="close_button">
+               <property name="geometry">
+                <rect>
+                 <x>150</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/close-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/close-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="maximize_button">
+               <property name="geometry">
+                <rect>
+                 <x>107</x>
+                 <y>0</y>
+                 <width>31</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/maximize-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/maximize-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="minimize_button">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/minimize-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/minimize-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="content_frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QFrame" name="barra_principal_frame">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QWidget#barra_principal_frame{background-color: rgb(48, 127, 226);
+border-radius: 5px}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QPushButton" name="Empresa">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Empresa</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/house.png</normaloff>../assets/Iconos/house.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Clientes">
+               <property name="geometry">
+                <rect>
+                 <x>150</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Clientes</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/60eb68bb3242ef4ac327a3fe28d25719.png</normaloff>../assets/Iconos/60eb68bb3242ef4ac327a3fe28d25719.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Prestamos">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Prestamos</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/prestamos.png</normaloff>../assets/Iconos/prestamos.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>35</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Ahorros">
+               <property name="geometry">
+                <rect>
+                 <x>430</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Ahorros</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/497f1ee33d47f13536a037095be32bde-icono-de-circulo-de-banco-de-cerdo.png</normaloff>../assets/Iconos/497f1ee33d47f13536a037095be32bde-icono-de-circulo-de-banco-de-cerdo.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Consultas">
+               <property name="geometry">
+                <rect>
+                 <x>570</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Consultas</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/consultas.png</normaloff>../assets/Iconos/consultas.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Ayuda">
+               <property name="geometry">
+                <rect>
+                 <x>1140</x>
+                 <y>10</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Ayuda</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/ayuda.png</normaloff>../assets/Iconos/ayuda.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Salir">
+               <property name="geometry">
+                <rect>
+                 <x>1240</x>
+                 <y>10</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Salir</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/exit.png</normaloff>../assets/Iconos/exit.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Notificaciones">
+               <property name="geometry">
+                <rect>
+                 <x>1000</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Notificaciones</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/Imagen2.png</normaloff>../assets/Iconos/Imagen2.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="PolizaS">
+               <property name="geometry">
+                <rect>
+                 <x>712</x>
+                 <y>10</y>
+                 <width>151</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Polizas</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/polizas.png</normaloff>../assets/Iconos/polizas.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="ChequeS">
+               <property name="geometry">
+                <rect>
+                 <x>860</x>
+                 <y>10</y>
+                 <width>143</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style: solid;
+background-color: rgb(48, 127, 226);
+border-width: 1px;
+border-color: rgb(255, 255, 255);
+border-radius: 1px;</string>
+               </property>
+               <property name="text">
+                <string>Cheques</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/cheques.png</normaloff>../assets/Iconos/cheques.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QLabel" name="notify">
+               <property name="geometry">
+                <rect>
+                 <x>1010</x>
+                 <y>20</y>
+                 <width>16</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/imagen/rojo.png);</string>
+               </property>
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="contenido">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="label_18">
+               <property name="geometry">
+                <rect>
+                 <x>1000</x>
+                 <y>10</y>
+                 <width>251</width>
+                 <height>51</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QFrame" name="frame">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1431</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QLabel" name="IngresaTitulo">
+                <property name="geometry">
+                 <rect>
+                  <x>240</x>
+                  <y>20</y>
+                  <width>841</width>
+                  <height>61</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>750</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>1600</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Nuevo ahorro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_10">
+                <property name="geometry">
+                 <rect>
+                  <x>1200</x>
+                  <y>10</y>
+                  <width>80</width>
+                  <height>80</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>80</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../imagenes/res.qrc">:/imagen/logobueno_preview_rev_1.png</pixmap>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Catalogo">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Catálogo de cuentas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Respaldo">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Respaldar empresa</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Mi_Empresa">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Mi empresa</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Ahorro">
+                <property name="geometry">
+                 <rect>
+                  <x>430</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nuevo ahorro</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="abonar">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Abonar pago</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Reportes">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Emitir reporte</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Polizas">
+                <property name="geometry">
+                 <rect>
+                  <x>710</x>
+                  <y>0</y>
+                  <width>151</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nueva poliza</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Historial">
+                <property name="geometry">
+                 <rect>
+                  <x>150</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Historial del cliente</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Estado">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Estado de cuentas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="cancelar">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Cancelar pago</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Cliente">
+                <property name="geometry">
+                 <rect>
+                  <x>150</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Agregar nuevo cliente</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Retirar">
+                <property name="geometry">
+                 <rect>
+                  <x>430</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Retirar ahorro</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Cheques">
+                <property name="geometry">
+                 <rect>
+                  <x>860</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Cheques</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Consulta_cheque">
+                <property name="geometry">
+                 <rect>
+                  <x>860</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Consultar cheques</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Listado">
+                <property name="geometry">
+                 <rect>
+                  <x>710</x>
+                  <y>30</y>
+                  <width>151</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Listado de polizas</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="prestamo">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>0</y>
+                  <width>141</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Nuevo prestamo</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Reportes_2">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Emitir reporte 
+de prestamos</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="Desarrollo">
+               <property name="geometry">
+                <rect>
+                 <x>20</x>
+                 <y>120</y>
+                 <width>1401</width>
+                 <height>471</height>
+                </rect>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QLabel" name="advertencia">
+                <property name="geometry">
+                 <rect>
+                  <x>580</x>
+                  <y>260</y>
+                  <width>471</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(249, 66, 58);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="cuenta">
+                <property name="geometry">
+                 <rect>
+                  <x>360</x>
+                  <y>100</y>
+                  <width>81</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha">
+                <property name="geometry">
+                 <rect>
+                  <x>700</x>
+                  <y>410</y>
+                  <width>131</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_limite">
+                <property name="geometry">
+                 <rect>
+                  <x>730</x>
+                  <y>190</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="nombre">
+                <property name="geometry">
+                 <rect>
+                  <x>590</x>
+                  <y>100</y>
+                  <width>281</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_registro">
+                <property name="geometry">
+                 <rect>
+                  <x>760</x>
+                  <y>220</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_sig">
+                <property name="geometry">
+                 <rect>
+                  <x>550</x>
+                  <y>410</y>
+                  <width>131</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="total_pag">
+                <property name="geometry">
+                 <rect>
+                  <x>660</x>
+                  <y>290</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="realizo_pago">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>380</y>
+                  <width>551</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QFrame" name="primera_linea_3">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>10</y>
+                  <width>681</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(151,153,155);
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <widget class="QLabel" name="datos_cliente_3">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>111</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Datos del cliente</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QFrame" name="frame_contenidoC">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>30</y>
+                  <width>681</width>
+                  <height>521</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <widget class="QFrame" name="primera_linea_6">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>120</y>
+                   <width>701</width>
+                   <height>21</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(151,153,155);
+</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="datos_cliente_6">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>171</width>
+                    <height>16</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Datos del ahorro</string>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QLabel" name="titulo_importe">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>150</y>
+                   <width>61</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Importe:</string>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="caja_importe">
+                 <property name="geometry">
+                  <rect>
+                   <x>100</x>
+                   <y>150</y>
+                   <width>171</width>
+                   <height>20</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit#caja_importe{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="titulo_tea">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>230</y>
+                   <width>51</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>T.E.A:</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="titulo_fecapert">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>190</y>
+                   <width>101</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Fecha apertura:</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_48">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>280</y>
+                   <width>71</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Plazo:</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_49">
+                 <property name="geometry">
+                  <rect>
+                   <x>380</x>
+                   <y>150</y>
+                   <width>101</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Fecha inicio:</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_50">
+                 <property name="geometry">
+                  <rect>
+                   <x>330</x>
+                   <y>190</y>
+                   <width>141</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Fecha de vencimiento:</string>
+                 </property>
+                </widget>
+                <widget class="QDateEdit" name="fecha_venc">
+                 <property name="geometry">
+                  <rect>
+                   <x>480</x>
+                   <y>190</y>
+                   <width>171</width>
+                   <height>22</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QDateEdit#fecha_venc{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_51">
+                 <property name="geometry">
+                  <rect>
+                   <x>350</x>
+                   <y>240</y>
+                   <width>101</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Interés calculado:</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_53">
+                 <property name="geometry">
+                  <rect>
+                   <x>380</x>
+                   <y>280</y>
+                   <width>101</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Cancelación:</string>
+                 </property>
+                </widget>
+                <widget class="QFrame" name="frame_botones">
+                 <property name="geometry">
+                  <rect>
+                   <x>80</x>
+                   <y>400</y>
+                   <width>521</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_55">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>30</y>
+                   <width>21</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Id:</string>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="id_c">
+                 <property name="geometry">
+                  <rect>
+                   <x>40</x>
+                   <y>30</y>
+                   <width>61</width>
+                   <height>20</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit#id_c{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_56">
+                 <property name="geometry">
+                  <rect>
+                   <x>130</x>
+                   <y>30</y>
+                   <width>61</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Nombre:</string>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="nombre_c">
+                 <property name="geometry">
+                  <rect>
+                   <x>190</x>
+                   <y>30</y>
+                   <width>141</width>
+                   <height>20</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit#nombre_c{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_57">
+                 <property name="geometry">
+                  <rect>
+                   <x>360</x>
+                   <y>30</y>
+                   <width>61</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Apellidos:</string>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="apellidos_c">
+                 <property name="geometry">
+                  <rect>
+                   <x>450</x>
+                   <y>30</y>
+                   <width>231</width>
+                   <height>20</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit#apellidos_c{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="plazo">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>280</y>
+                   <width>61</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#plazo{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;360 dias&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="interes_c">
+                 <property name="geometry">
+                  <rect>
+                   <x>480</x>
+                   <y>230</y>
+                   <width>250</width>
+                   <height>32</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>250</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="whatsThis">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 0, 0);
+font: 10pt &quot;Arial&quot;;
+QLabel#interes_c{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="cancelacion">
+                 <property name="geometry">
+                  <rect>
+                   <x>480</x>
+                   <y>270</y>
+                   <width>250</width>
+                   <height>32</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>250</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="whatsThis">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 0, 0);
+font: 10pt &quot;Arial&quot;;
+QLabel#interes_c{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="texto_error">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>340</y>
+                   <width>421</width>
+                   <height>32</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>250</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="whatsThis">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(48, 127, 226);
+font: 10pt &quot;Arial&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="caja_tea">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>230</y>
+                   <width>61</width>
+                   <height>20</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit#caja_tea{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label">
+                 <property name="geometry">
+                  <rect>
+                   <x>180</x>
+                   <y>230</y>
+                   <width>47</width>
+                   <height>13</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>%</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="horan">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>190</y>
+                   <width>161</width>
+                   <height>21</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel#horan{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="horan_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>480</x>
+                   <y>150</y>
+                   <width>171</width>
+                   <height>21</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel#horan_2{border: 1px solid rgb(0,0,0);}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+                <widget class="QToolButton" name="boton_procesar">
+                 <property name="geometry">
+                  <rect>
+                   <x>350</x>
+                   <y>390</y>
+                   <width>71</width>
+                   <height>21</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(116,170,80);</string>
+                 </property>
+                 <property name="text">
+                  <string>Guardar</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QFrame" name="frame_2">
+                <property name="geometry">
+                 <rect>
+                  <x>900</x>
+                  <y>10</y>
+                  <width>291</width>
+                  <height>341</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <widget class="QTextBrowser" name="textBrowser_3">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>0</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#textBrowser_3{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;DIAS &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="textBrowser_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>0</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#textBrowser_4{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;INTERES CALC.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="dia1">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>30</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#dia1{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="textBrowser_7">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>180</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#textBrowser_7{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="dia5">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>150</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#dia5{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="dia4">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>120</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#dia4{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="dia3">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>90</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#dia3{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="dia2">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>60</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#dia2{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="dia360">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>240</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#dia360{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;360&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="interes1">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>30</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#interes1{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="interes1_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>60</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#interes1_2{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="interes1_3">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>90</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#interes1_3{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="interes1_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>120</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#interes1_4{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="interes1_5">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>150</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#interes1_5{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="interes1_359">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>210</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#interes1_359{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="interes1_360">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>240</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#interes1_360{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="interes1_total">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>270</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#interes1_total{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="dias1_13">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>270</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#dias1_13{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;TOTAL&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QTextBrowser" name="dia359">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>210</y>
+                   <width>51</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QTextBrowser#dia359{border: 1px solid rgb(0,0,0);};
+</string>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;&quot;&gt;359&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../imagenes/res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

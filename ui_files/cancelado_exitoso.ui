@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>235</width>
-    <height>170</height>
+    <width>223</width>
+    <height>169</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -63,28 +63,12 @@ background-color: rgb(48, 127, 226);</string>
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>91</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">image: url(:/imagen/cancelar.png);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>50</y>
-        <width>111</width>
+        <x>0</x>
+        <y>40</y>
+        <width>231</width>
         <height>41</height>
        </rect>
       </property>
@@ -95,9 +79,9 @@ background-color: rgb(48, 127, 226);</string>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>70</y>
-        <width>111</width>
+        <x>10</x>
+        <y>60</y>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
@@ -108,7 +92,7 @@ background-color: rgb(48, 127, 226);</string>
      <widget class="QPushButton" name="Ok">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>90</x>
         <y>110</y>
         <width>41</width>
         <height>24</height>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>cliente_actualizado</class>
+ <widget class="QWidget" name="cliente_actualizado">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>257</width>
-    <height>174</height>
+    <width>235</width>
+    <height>170</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
       <string notr="true">QWidget#frame{background-color: rgb(255, 255, 255);
 border-style: solid;
 border-width: 4px;
-border-color: rgb(249, 66, 58);}</string>
+border-color: rgb(48, 127, 226);}</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -48,13 +48,13 @@ border-color: rgb(249, 66, 58);}</string>
        <rect>
         <x>-1</x>
         <y>0</y>
-        <width>261</width>
+        <width>251</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">
-background-color: rgb(249, 66, 58);</string>
+background-color: rgb(48, 127, 226);</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -66,34 +66,34 @@ background-color: rgb(249, 66, 58);</string>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>50</x>
         <y>30</y>
-        <width>151</width>
-        <height>20</height>
+        <width>131</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;No se puede solicitar &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Cliente actualizado&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>70</y>
-        <width>151</width>
+        <x>60</x>
+        <y>50</y>
+        <width>111</width>
         <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Favor de realizar los &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;exitosamente&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="Ok">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>130</y>
+        <x>90</x>
+        <y>110</y>
         <width>41</width>
         <height>24</height>
        </rect>
@@ -108,48 +108,6 @@ background-color: rgb(249, 66, 58);</string>
       </property>
       <property name="text">
        <string>Ok</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">image: url(:/imagen/chi.png);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>50</y>
-        <width>151</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;un nuevo prestamo.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>90</y>
-        <width>151</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;pagos pendientes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>

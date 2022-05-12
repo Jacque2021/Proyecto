@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1395</width>
+    <width>1360</width>
     <height>685</height>
    </rect>
   </property>
@@ -34,6 +34,12 @@
    </property>
    <item>
     <widget class="QFrame" name="central_widget_frame">
+     <property name="minimumSize">
+      <size>
+       <width>1360</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">Qwidget#centra_widget_frama{border-radius: 5px}</string>
      </property>
@@ -61,6 +67,12 @@
       </property>
       <item>
        <widget class="QFrame" name="background_frame">
+        <property name="minimumSize">
+         <size>
+          <width>1360</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">QWidget#background_frame{background-color: rgb(245, 240, 225);}</string>
         </property>
@@ -153,33 +165,10 @@ border-radius: 5px</string>
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <widget class="QToolButton" name="minimize_button">
-               <property name="geometry">
-                <rect>
-                 <x>90</x>
-                 <y>0</y>
-                 <width>22</width>
-                 <height>22</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../iconos/icons/maximize-window.png</normaloff>../iconos/icons/maximize-window.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
               <widget class="QToolButton" name="restore_button">
                <property name="geometry">
                 <rect>
-                 <x>120</x>
+                 <x>103</x>
                  <y>0</y>
                  <width>22</width>
                  <height>22</height>
@@ -190,30 +179,7 @@ border-radius: 5px</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../iconos/icons/restore-window.png</normaloff>../iconos/icons/restore-window.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-              <widget class="QToolButton" name="maximize_button">
-               <property name="geometry">
-                <rect>
-                 <x>120</x>
-                 <y>0</y>
-                 <width>22</width>
-                 <height>22</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../iconos/icons/minimize-window.png</normaloff>../iconos/icons/minimize-window.png</iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/restore-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/restore-window.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -225,7 +191,7 @@ border-radius: 5px</string>
               <widget class="QToolButton" name="close_button">
                <property name="geometry">
                 <rect>
-                 <x>150</x>
+                 <x>143</x>
                  <y>0</y>
                  <width>22</width>
                  <height>22</height>
@@ -236,7 +202,53 @@ border-radius: 5px</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../iconos/icons/close-window.png</normaloff>../iconos/icons/close-window.png</iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/close-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/close-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="maximize_button">
+               <property name="geometry">
+                <rect>
+                 <x>100</x>
+                 <y>0</y>
+                 <width>31</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/maximize-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/maximize-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="minimize_button">
+               <property name="geometry">
+                <rect>
+                 <x>63</x>
+                 <y>0</y>
+                 <width>22</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/minimize-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/minimize-window.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -252,6 +264,12 @@ border-radius: 5px</string>
          </item>
          <item>
           <widget class="QFrame" name="content_frame">
+           <property name="minimumSize">
+            <size>
+             <width>1350</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -661,6 +679,22 @@ border-radius: 1px;</string>
                 </size>
                </property>
               </widget>
+              <widget class="QLabel" name="notify">
+               <property name="geometry">
+                <rect>
+                 <x>1010</x>
+                 <y>20</y>
+                 <width>16</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/imagen/rojo.png);</string>
+               </property>
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
              </widget>
             </item>
             <item>
@@ -817,46 +851,6 @@ border-radius: 1px;
                  <string>Mi empresa</string>
                 </property>
                </widget>
-               <widget class="QPushButton" name="abonar_ahorro">
-                <property name="geometry">
-                 <rect>
-                  <x>430</x>
-                  <y>30</y>
-                  <width>141</width>
-                  <height>31</height>
-                 </rect>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border-style: solid;
-border-width: 2px;
-border-color: rgb(151, 153, 155);
-border-radius: 1px;
-</string>
-                </property>
-                <property name="text">
-                 <string>Abonar ahorro</string>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="PLD">
-                <property name="geometry">
-                 <rect>
-                  <x>570</x>
-                  <y>0</y>
-                  <width>141</width>
-                  <height>31</height>
-                 </rect>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border-style: solid;
-border-width: 2px;
-border-color: rgb(151, 153, 155);
-border-radius: 1px;
-</string>
-                </property>
-                <property name="text">
-                 <string>PLD</string>
-                </property>
-               </widget>
                <widget class="QPushButton" name="Ahorro">
                 <property name="geometry">
                  <rect>
@@ -901,7 +895,7 @@ border-radius: 1px;
                 <property name="geometry">
                  <rect>
                   <x>570</x>
-                  <y>60</y>
+                  <y>30</y>
                   <width>141</width>
                   <height>31</height>
                  </rect>
@@ -961,7 +955,7 @@ border-radius: 1px;
                 <property name="geometry">
                  <rect>
                   <x>570</x>
-                  <y>30</y>
+                  <y>0</y>
                   <width>141</width>
                   <height>31</height>
                  </rect>
@@ -1021,7 +1015,7 @@ border-radius: 1px;
                 <property name="geometry">
                  <rect>
                   <x>430</x>
-                  <y>60</y>
+                  <y>30</y>
                   <width>141</width>
                   <height>31</height>
                  </rect>
@@ -1115,6 +1109,27 @@ border-radius: 1px;
                 </property>
                 <property name="text">
                  <string>Nuevo prestamo</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="Reportes_2">
+                <property name="geometry">
+                 <rect>
+                  <x>570</x>
+                  <y>60</y>
+                  <width>141</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-style: solid;
+border-width: 2px;
+border-color: rgb(151, 153, 155);
+border-radius: 1px;
+</string>
+                </property>
+                <property name="text">
+                 <string>Emitir reporte 
+de prestamos</string>
                 </property>
                </widget>
               </widget>
@@ -1319,7 +1334,7 @@ border-radius: 1px;
                <widget class="QLabel" name="nombre">
                 <property name="geometry">
                  <rect>
-                  <x>590</x>
+                  <x>620</x>
                   <y>70</y>
                   <width>281</width>
                   <height>31</height>
@@ -1423,7 +1438,7 @@ border-radius: 1px;
                <widget class="QLabel" name="label_31">
                 <property name="geometry">
                  <rect>
-                  <x>560</x>
+                  <x>590</x>
                   <y>70</y>
                   <width>21</width>
                   <height>31</height>

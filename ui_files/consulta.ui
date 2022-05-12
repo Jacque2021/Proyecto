@@ -6,15 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1410</width>
+    <width>1359</width>
     <height>685</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>1350</width>
-    <height>0</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -174,7 +168,7 @@ border-radius: 5px</string>
               <widget class="QToolButton" name="close_button">
                <property name="geometry">
                 <rect>
-                 <x>120</x>
+                 <x>150</x>
                  <y>0</y>
                  <width>22</width>
                  <height>22</height>
@@ -185,30 +179,8 @@ border-radius: 5px</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/close-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/close-window.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-              <widget class="QToolButton" name="restore_button">
-               <property name="geometry">
-                <rect>
-                 <x>80</x>
-                 <y>0</y>
-                 <width>22</width>
-                 <height>22</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/restore-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/restore-window.png</iconset>
+                 <normaloff>../assets/Iconos/close-window.png</normaloff>
+                 <normalon>../assets/Iconos/close-window.png</normalon>../assets/Iconos/close-window.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -220,29 +192,6 @@ border-radius: 5px</string>
               <widget class="QToolButton" name="minimize_button">
                <property name="geometry">
                 <rect>
-                 <x>40</x>
-                 <y>0</y>
-                 <width>22</width>
-                 <height>22</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/minimize-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/minimize-window.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-              <widget class="QToolButton" name="maximize_button">
-               <property name="geometry">
-                <rect>
                  <x>80</x>
                  <y>0</y>
                  <width>22</width>
@@ -254,7 +203,56 @@ border-radius: 5px</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../../pys6-recipes-organizer-master/assets/icons/maximize-window.png</normaloff>../../pys6-recipes-organizer-master/assets/icons/maximize-window.png</iconset>
+                 <normaloff>../assets/Iconos/minimize-window.png</normaloff>
+                 <normalon>../assets/Iconos/minimize-window.png</normalon>../assets/Iconos/minimize-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="restore_button">
+               <property name="geometry">
+                <rect>
+                 <x>110</x>
+                 <y>0</y>
+                 <width>28</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/restore-window.png</normaloff>
+                 <normalon>../assets/Iconos/restore-window.png</normalon>../assets/Iconos/restore-window.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QToolButton" name="maximize_button">
+               <property name="geometry">
+                <rect>
+                 <x>110</x>
+                 <y>0</y>
+                 <width>31</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../assets/Iconos/maximize-window.png</normaloff>
+                 <normalon>../assets/Iconos/maximize-window.png</normalon>../assets/Iconos/maximize-window.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -270,12 +268,6 @@ border-radius: 5px</string>
          </item>
          <item>
           <widget class="QFrame" name="content_frame">
-           <property name="minimumSize">
-            <size>
-             <width>1350</width>
-             <height>0</height>
-            </size>
-           </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -698,7 +690,7 @@ border-radius: 1px;</string>
                 <string notr="true">image: url(:/imagen/rojo.png);</string>
                </property>
                <property name="text">
-                <string/>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </widget>
@@ -742,12 +734,12 @@ border-radius: 1px;</string>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <widget class="QLabel" name="label_17">
+               <widget class="QLabel" name="IngresaTitulo">
                 <property name="geometry">
                  <rect>
-                  <x>241</x>
+                  <x>292</x>
                   <y>20</y>
-                  <width>750</width>
+                  <width>841</width>
                   <height>61</height>
                  </rect>
                 </property>
@@ -772,7 +764,7 @@ border-radius: 1px;</string>
                  <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;                         Bienvenido&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Consulta cheques&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                </widget>
                <widget class="QLabel" name="label_10">
@@ -914,7 +906,7 @@ border-radius: 1px;
 </string>
                 </property>
                 <property name="text">
-                 <string>Emitir reporte de ahorro</string>
+                 <string>Emitir reporte</string>
                 </property>
                </widget>
                <widget class="QPushButton" name="Polizas">
@@ -1142,17 +1134,11 @@ de prestamos</string>
               <widget class="QFrame" name="Desarrollo">
                <property name="geometry">
                 <rect>
-                 <x>0</x>
-                 <y>100</y>
+                 <x>20</x>
+                 <y>110</y>
                  <width>1431</width>
-                 <height>491</height>
+                 <height>481</height>
                 </rect>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>1350</width>
-                 <height>0</height>
-                </size>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -1160,6 +1146,319 @@ de prestamos</string>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
+               <widget class="QLabel" name="advertencia">
+                <property name="geometry">
+                 <rect>
+                  <x>580</x>
+                  <y>260</y>
+                  <width>471</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(249, 66, 58);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="cuenta">
+                <property name="geometry">
+                 <rect>
+                  <x>360</x>
+                  <y>100</y>
+                  <width>81</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha">
+                <property name="geometry">
+                 <rect>
+                  <x>700</x>
+                  <y>410</y>
+                  <width>131</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_limite">
+                <property name="geometry">
+                 <rect>
+                  <x>730</x>
+                  <y>190</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="nombre">
+                <property name="geometry">
+                 <rect>
+                  <x>590</x>
+                  <y>100</y>
+                  <width>281</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_registro">
+                <property name="geometry">
+                 <rect>
+                  <x>760</x>
+                  <y>220</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="fecha_sig">
+                <property name="geometry">
+                 <rect>
+                  <x>550</x>
+                  <y>410</y>
+                  <width>131</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="total_pag">
+                <property name="geometry">
+                 <rect>
+                  <x>660</x>
+                  <y>290</y>
+                  <width>131</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QLabel" name="realizo_pago">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>380</y>
+                  <width>551</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(116, 170, 80);</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QFrame" name="frame_2">
+                <property name="geometry">
+                 <rect>
+                  <x>60</x>
+                  <y>10</y>
+                  <width>1181</width>
+                  <height>361</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <widget class="QFrame" name="contenido_frame">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>60</y>
+                   <width>1072</width>
+                   <height>276</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(179, 179, 179)</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QFrame" name="tabla_frame">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>1051</width>
+                    <height>211</height>
+                   </rect>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <widget class="QLabel" name="titulo_cliente">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>10</y>
+                     <width>121</width>
+                     <height>16</height>
+                    </rect>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Nombre del cliente:</string>
+                   </property>
+                  </widget>
+                  <widget class="QLineEdit" name="ingre_nombre">
+                   <property name="geometry">
+                    <rect>
+                     <x>130</x>
+                     <y>10</y>
+                     <width>201</width>
+                     <height>20</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:white
+</string>
+                   </property>
+                  </widget>
+                  <widget class="QTableWidget" name="tabla_cheques">
+                   <property name="geometry">
+                    <rect>
+                     <x>20</x>
+                     <y>40</y>
+                     <width>1011</width>
+                     <height>161</height>
+                    </rect>
+                   </property>
+                   <property name="rowCount">
+                    <number>4</number>
+                   </property>
+                   <attribute name="horizontalHeaderVisible">
+                    <bool>true</bool>
+                   </attribute>
+                   <attribute name="horizontalHeaderHighlightSections">
+                    <bool>true</bool>
+                   </attribute>
+                   <attribute name="horizontalHeaderStretchLastSection">
+                    <bool>true</bool>
+                   </attribute>
+                   <attribute name="verticalHeaderVisible">
+                    <bool>false</bool>
+                   </attribute>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row/>
+                   <row/>
+                  </widget>
+                 </widget>
+                </widget>
+                <widget class="QFrame" name="primera_linea_3">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>20</y>
+                   <width>1071</width>
+                   <height>21</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(151,153,155);
+</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="datos_cliente_4">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>141</width>
+                    <height>16</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Cheques realizados</string>
+                  </property>
+                 </widget>
+                </widget>
+               </widget>
               </widget>
              </widget>
             </item>

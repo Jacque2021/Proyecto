@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="imagen">
+    <file>rojo.png</file>
+    <file>cancela.png</file>
+    <file>prestamonuevo.png</file>
+    <file>chi.png</file>
+    <file>confirmation-1152155_640.webp</file>
+    <file>abonar ahorro.png</file>
+    <file>cancelar.png</file>
+    <file>1689039.png</file>
+    <file>contraseña.png</file>
+    <file>logobueno_preview_rev_1.png</file>
+    <file>logo.png</file>
+    <file>correo.png</file>
+    <file>login.png</file>
+    <file>usuario.png</file>
+    <file>c91e5488aa82ea043390cb1462c20f3a.jpg</file>
+  </qresource>
+</RCC>

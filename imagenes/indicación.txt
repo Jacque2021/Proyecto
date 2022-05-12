@@ -1,0 +1,4 @@
+En la parte de abajo se encuentra un botón de Imprimir, en el cuál imprime 
+dicha tabla que arrojo al buscar por cualquier campo y hay otros 
+botones de historial del cliente por ahorros o 
+por préstamos en caso de que el cliente no cuente con un préstamo o un ahorro.

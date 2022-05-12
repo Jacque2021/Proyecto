@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NuevoPrestamo.ui'
+## Form generated from reading UI file 'EstadoCuentas.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.3
 ##
@@ -15,12 +15,12 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QPlainTextEdit, QPushButton, QSizePolicy,
-    QToolButton, QVBoxLayout, QWidget)
-from imagenes import res_rc
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
+    QLabel, QPushButton, QSizePolicy, QTableWidget,
+    QTableWidgetItem, QToolButton, QVBoxLayout, QWidget)
 
-class Ui_Nuevoprestamo(object):
+
+class EstCuentas(object):
     def setupUi(self, Nuevoprestamo):
         if not Nuevoprestamo.objectName():
             Nuevoprestamo.setObjectName(u"Nuevoprestamo")
@@ -431,152 +431,27 @@ class Ui_Nuevoprestamo(object):
 "")
         self.Desarrollo = QFrame(self.contenido)
         self.Desarrollo.setObjectName(u"Desarrollo")
-        self.Desarrollo.setGeometry(QRect(40, 100, 1400, 491))
+        self.Desarrollo.setGeometry(QRect(0, 100, 1431, 531))
         self.Desarrollo.setFrameShape(QFrame.StyledPanel)
         self.Desarrollo.setFrameShadow(QFrame.Raised)
-        self.label_41 = QLabel(self.Desarrollo)
-        self.label_41.setObjectName(u"label_41")
-        self.label_41.setGeometry(QRect(270, 350, 181, 31))
-        self.label_41.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.label_29 = QLabel(self.Desarrollo)
-        self.label_29.setObjectName(u"label_29")
-        self.label_29.setGeometry(QRect(270, 60, 121, 31))
-        self.label_29.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.label_32 = QLabel(self.Desarrollo)
-        self.label_32.setObjectName(u"label_32")
-        self.label_32.setGeometry(QRect(270, 170, 791, 31))
-        self.label_32.setStyleSheet(u"background-color: rgb(151, 153, 155);")
         self.label_33 = QLabel(self.Desarrollo)
         self.label_33.setObjectName(u"label_33")
-        self.label_33.setGeometry(QRect(270, 320, 791, 31))
+        self.label_33.setGeometry(QRect(270, 60, 791, 31))
         self.label_33.setStyleSheet(u"background-color: rgb(151, 153, 155);")
-        self.label_37 = QLabel(self.Desarrollo)
-        self.label_37.setObjectName(u"label_37")
-        self.label_37.setGeometry(QRect(670, 200, 181, 31))
-        self.label_37.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.Garantia = QLineEdit(self.Desarrollo)
-        self.Garantia.setObjectName(u"Garantia")
-        self.Garantia.setGeometry(QRect(450, 380, 611, 31))
-        self.Garantia.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.label_19 = QLabel(self.Desarrollo)
-        self.label_19.setObjectName(u"label_19")
-        self.label_19.setGeometry(QRect(270, 30, 791, 31))
-        self.label_19.setStyleSheet(u"background-color: rgb(151, 153, 155);")
-        self.Codeudor = QLineEdit(self.Desarrollo)
-        self.Codeudor.setObjectName(u"Codeudor")
-        self.Codeudor.setGeometry(QRect(450, 350, 611, 31))
-        self.Codeudor.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.Cantidad = QLineEdit(self.Desarrollo)
-        self.Cantidad.setObjectName(u"Cantidad")
-        self.Cantidad.setGeometry(QRect(450, 200, 221, 31))
-        self.Cantidad.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.Guardar = QPushButton(self.Desarrollo)
-        self.Guardar.setObjectName(u"Guardar")
-        self.Guardar.setGeometry(QRect(750, 440, 91, 31))
-        font2 = QFont()
-        font2.setPointSize(12)
-        self.Guardar.setFont(font2)
-        self.Guardar.setStyleSheet(u"\n"
-"background-color: rgb(116, 170, 80);\n"
-"\n"
-"")
-        self.Borrar = QPushButton(self.Desarrollo)
-        self.Borrar.setObjectName(u"Borrar")
-        self.Borrar.setGeometry(QRect(570, 440, 91, 31))
-        self.Borrar.setFont(font2)
-        self.Borrar.setStyleSheet(u"\n"
-"background-color: rgb(116, 170, 80);\n"
-"\n"
-"")
-        self.label_36 = QLabel(self.Desarrollo)
-        self.label_36.setObjectName(u"label_36")
-        self.label_36.setGeometry(QRect(270, 200, 181, 31))
-        self.label_36.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.Interes = QLineEdit(self.Desarrollo)
-        self.Interes.setObjectName(u"Interes")
-        self.Interes.setGeometry(QRect(850, 200, 161, 31))
-        self.Interes.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.label_42 = QLabel(self.Desarrollo)
-        self.label_42.setObjectName(u"label_42")
-        self.label_42.setGeometry(QRect(270, 380, 181, 31))
-        self.label_42.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.label_3 = QLabel(self.Desarrollo)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(1010, 200, 51, 31))
-        self.label_3.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.label_38 = QLabel(self.Desarrollo)
-        self.label_38.setObjectName(u"label_38")
-        self.label_38.setGeometry(QRect(270, 230, 181, 31))
-        self.label_38.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.label_40 = QLabel(self.Desarrollo)
-        self.label_40.setObjectName(u"label_40")
-        self.label_40.setGeometry(QRect(670, 230, 181, 31))
-        self.label_40.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.Frecuencia = QLineEdit(self.Desarrollo)
-        self.Frecuencia.setObjectName(u"Frecuencia")
-        self.Frecuencia.setGeometry(QRect(850, 230, 211, 31))
-        self.Frecuencia.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.cantidad_prestamo = QLabel(self.Desarrollo)
-        self.cantidad_prestamo.setObjectName(u"cantidad_prestamo")
-        self.cantidad_prestamo.setGeometry(QRect(270, 130, 781, 31))
-        self.cantidad_prestamo.setStyleSheet(u"color: rgb(48, 127, 226);")
-        self.TextoError = QLabel(self.Desarrollo)
-        self.TextoError.setObjectName(u"TextoError")
-        self.TextoError.setGeometry(QRect(270, 290, 781, 21))
-        self.TextoError.setStyleSheet(u"color: rgb(249, 66, 58);")
-        self.plainTextEdit = QPlainTextEdit(self.Desarrollo)
-        self.plainTextEdit.setObjectName(u"plainTextEdit")
-        self.plainTextEdit.setGeometry(QRect(1070, 60, 41, 31))
-        self.nom_cliente = QLabel(self.Desarrollo)
-        self.nom_cliente.setObjectName(u"nom_cliente")
-        self.nom_cliente.setGeometry(QRect(390, 60, 671, 31))
-        self.nom_cliente.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.TextoError_2 = QLabel(self.Desarrollo)
-        self.TextoError_2.setObjectName(u"TextoError_2")
-        self.TextoError_2.setGeometry(QRect(450, 420, 601, 21))
-        self.TextoError_2.setStyleSheet(u"color: rgb(48, 127, 226);")
-        self.Plazo_max = QLabel(self.Desarrollo)
-        self.Plazo_max.setObjectName(u"Plazo_max")
-        self.Plazo_max.setGeometry(QRect(270, 270, 781, 21))
-        self.Plazo_max.setStyleSheet(u"color: rgb(249, 66, 58);")
-        self.Tiempo = QLabel(self.Desarrollo)
-        self.Tiempo.setObjectName(u"Tiempo")
-        self.Tiempo.setGeometry(QRect(450, 230, 221, 31))
-        self.Tiempo.setStyleSheet(u"border-style: solid;\n"
-"font: 9pt \"Segoe UI\";\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);")
-        self.Tiempo.setFrameShape(QFrame.NoFrame)
-        self.Tiempo.setFrameShadow(QFrame.Plain)
-        self.Tiempo.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse|Qt.TextBrowserInteraction|Qt.TextEditable|Qt.TextSelectableByMouse)
+        self.tabla_clientes = QTableWidget(self.Desarrollo)
+        if (self.tabla_clientes.rowCount() < 4):
+            self.tabla_clientes.setRowCount(4)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tabla_clientes.setVerticalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tabla_clientes.setVerticalHeaderItem(1, __qtablewidgetitem1)
+        self.tabla_clientes.setObjectName(u"tabla_clientes")
+        self.tabla_clientes.setGeometry(QRect(270, 110, 781, 161))
+        self.tabla_clientes.setRowCount(4)
+        self.tabla_clientes.horizontalHeader().setVisible(True)
+        self.tabla_clientes.horizontalHeader().setHighlightSections(True)
+        self.tabla_clientes.horizontalHeader().setStretchLastSection(True)
+        self.tabla_clientes.verticalHeader().setVisible(False)
 
         self.verticalLayout_3.addWidget(self.contenido)
 
@@ -614,7 +489,7 @@ class Ui_Nuevoprestamo(object):
         self.ChequeS.setText(QCoreApplication.translate("Nuevoprestamo", u"Cheques", None))
         self.notify.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
         self.label_18.setText("")
-        self.IngresaTitulo.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Nuevo prestamo</p></body></html>", None))
+        self.IngresaTitulo.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Estado de cuentas</p></body></html>", None))
         self.label_10.setText("")
         self.Catalogo.setText(QCoreApplication.translate("Nuevoprestamo", u"Cat\u00e1logo de cuentas", None))
         self.Respaldo.setText(QCoreApplication.translate("Nuevoprestamo", u"Respaldar empresa", None))
@@ -634,32 +509,6 @@ class Ui_Nuevoprestamo(object):
         self.prestamo.setText(QCoreApplication.translate("Nuevoprestamo", u"Nuevo prestamo", None))
         self.Reportes_2.setText(QCoreApplication.translate("Nuevoprestamo", u"Emitir reporte \n"
 "de prestamos", None))
-        self.label_41.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Nombre del codeudor</p></body></html>", None))
-        self.label_29.setText(QCoreApplication.translate("Nuevoprestamo", u"Nombre del cliente", None))
-        self.label_32.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Datos del prestamo</span></p></body></html>", None))
-        self.label_33.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Otros datos</span></p></body></html>", None))
-        self.label_37.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Tasa de inter\u00e9s anual</p></body></html>", None))
-        self.label_19.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">   Datos del cliente</span></p></body></html>", None))
-        self.Codeudor.setPlaceholderText(QCoreApplication.translate("Nuevoprestamo", u"Ingrese el nombre completo del codeudor", None))
-        self.Guardar.setText(QCoreApplication.translate("Nuevoprestamo", u"Guardar", None))
-        self.Borrar.setText(QCoreApplication.translate("Nuevoprestamo", u"Borrar", None))
-        self.label_36.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Cantidad del prestamo</p></body></html>", None))
-        self.Interes.setPlaceholderText(QCoreApplication.translate("Nuevoprestamo", u"Ingrese solo n\u00fameros", None))
-        self.label_42.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Garantia prestamo</p></body></html>", None))
-        self.label_3.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">%</span></p></body></html>", None))
-        self.label_38.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Frecuencia</p></body></html>", None))
-        self.label_40.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Pagos</p></body></html>", None))
-        self.cantidad_prestamo.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
-        self.TextoError.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
-#if QT_CONFIG(tooltip)
-        self.nom_cliente.setToolTip(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
-#endif // QT_CONFIG(tooltip)
-        self.nom_cliente.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\"><br/></span></p></body></html>", None))
-        self.TextoError_2.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
-        self.Plazo_max.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
-#if QT_CONFIG(tooltip)
-        self.Tiempo.setToolTip(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
-#endif // QT_CONFIG(tooltip)
-        self.Tiempo.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><span style=\" font-size:8pt;\">Mensual</span></p></body></html>", None))
+        self.label_33.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Cuentas del cliente</span></p></body></html>", None))
     # retranslateUi
 

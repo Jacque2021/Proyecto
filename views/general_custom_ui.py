@@ -4,16 +4,17 @@ from PySide6.QtWidgets import QGraphicsDropShadowEffect   #sombra de interfaz
 #ui tiene el objeto de todas las caracteristicas de la clase
 #from vistas.Ui_add_edit_windows import AddEditWindows
 
-#para el metodo fill_category_cb
-category_data=(
-    "Recetas Italianas",
-    "Postres",
-    "Bebidas"
-)
+from database import recipes
 
+#para el metodo fill_category_cb
 opciones=(
     "Contables",
     "Fiscales"
+)
+tipo_poliza=(
+    "Diario",
+    "Mensual",
+    "Anual"
 )
 
 codigos=(
@@ -55,16 +56,16 @@ codigos=(
     "Nivel=2, CA=611.01, Impuesto Sobre la renta",
     "Nivel=2, CA=611.02, Impuesto Sobre la renta por remanente distribuible",
     "CA=800, Cuentas en orden",
-)
 
+)
 
 class GeneralCustomUi():
     def __init__(self, ui):
         self.ui=ui #contiene el objeto de las ventanas
         self.remove_defult_title_bar()
-        self.miximize_window()
         self.ui.top_bar_frame.mouseMoveEvent = self.move_window #top_bar_frame= la barra principal azul
         self.set_window_shadow()
+        self.miximize_window()
         self.set_title_bar_buttons_actions() #boton de maximizar y minimizar
         
     def remove_defult_title_bar(self):   #hacer el fondo transparente
@@ -94,7 +95,7 @@ class GeneralCustomUi():
         shadow.setColor("#000000")
         self.ui.background_frame.setGraphicsEffect(shadow)
         
- #Programar botones de la barra azul
+    #Programar botones de la barra azul
         #maximizar ventana
     def miximize_window(self):
         self.ui.showMaximized()
@@ -114,13 +115,11 @@ class GeneralCustomUi():
         self.ui.restore_button.clicked.connect(self.restore_window)
         
     #objeto de la ventana de agregar, category_data fue creada arriba
-    """ def fill_category_cb(self):
-        self.ui.category_combo_box.addItems(category_data)"""
-        
     def fiscal_contable(self):
         self.ui.elegir_c_f.addItems(opciones)
 
     def opciones_c(self):
         self.ui.codigo_SAT.addItems(codigos)
-    
-    
+
+    def tipo_De_poliza(self):
+        self.ui.tipo_poliza.addItems(tipo_poliza)

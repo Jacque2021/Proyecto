@@ -18,13 +18,13 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QDateEdit, QFrame, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QSizePolicy,
     QTextBrowser, QToolButton, QVBoxLayout, QWidget)
-from imagenes import res_rc
+#import res_rc
 
 class NuevoAhorro(object):
     def setupUi(self, DetailWindow):
         if not DetailWindow.objectName():
             DetailWindow.setObjectName(u"DetailWindow")
-        DetailWindow.resize(1400, 685)
+        DetailWindow.resize(1350, 685)
         DetailWindow.setStyleSheet(u"QWidget#DetailWindow{border-radius: 5px}")
         self.verticalLayout = QVBoxLayout(DetailWindow)
         self.verticalLayout.setSpacing(0)
@@ -32,16 +32,18 @@ class NuevoAhorro(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.central_widget_frame = QFrame(DetailWindow)
         self.central_widget_frame.setObjectName(u"central_widget_frame")
-        self.central_widget_frame.setStyleSheet(u"Qwidget#centra_widget_frama{border-radius: 5px}")
+        self.central_widget_frame.setMinimumSize(QSize(1350, 0))
+        self.central_widget_frame.setStyleSheet(u"border-radius: 5px")
         self.central_widget_frame.setFrameShape(QFrame.StyledPanel)
         self.central_widget_frame.setFrameShadow(QFrame.Raised)
         self.shadow_layout = QVBoxLayout(self.central_widget_frame)
         self.shadow_layout.setSpacing(0)
         self.shadow_layout.setObjectName(u"shadow_layout")
-        self.shadow_layout.setContentsMargins(0, 0, 0, 0)
+        self.shadow_layout.setContentsMargins(5, 5, 5, 5)
         self.background_frame = QFrame(self.central_widget_frame)
         self.background_frame.setObjectName(u"background_frame")
-        self.background_frame.setStyleSheet(u"QWidget#background_frame{background-color: rgb(245, 240, 225);}")
+        self.background_frame.setMinimumSize(QSize(1350, 0))
+        self.background_frame.setStyleSheet(u"QWidgget#background_frame{background-color: rgb(245, 240, 225);}")
         self.background_frame.setFrameShape(QFrame.StyledPanel)
         self.background_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.background_frame)
@@ -75,34 +77,34 @@ class NuevoAhorro(object):
         self.buttons_holder_frame.setMaximumSize(QSize(113, 16777215))
         self.buttons_holder_frame.setFrameShape(QFrame.StyledPanel)
         self.buttons_holder_frame.setFrameShadow(QFrame.Raised)
-        self.minimize_button = QToolButton(self.buttons_holder_frame)
-        self.minimize_button.setObjectName(u"minimize_button")
-        self.minimize_button.setGeometry(QRect(40, 0, 22, 22))
-        icon = QIcon()
-        icon.addFile(u"./../pys6-recipes-organizer-master/assets/icons/minimize-window.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.minimize_button.setIcon(icon)
-        self.minimize_button.setIconSize(QSize(25, 25))
         self.restore_button = QToolButton(self.buttons_holder_frame)
         self.restore_button.setObjectName(u"restore_button")
-        self.restore_button.setGeometry(QRect(80, 0, 22, 22))
-        icon1 = QIcon()
-        icon1.addFile(u"./../pys6-recipes-organizer-master/assets/icons/restore-window.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.restore_button.setIcon(icon1)
+        self.restore_button.setGeometry(QRect(110, 0, 22, 22))
+        icon = QIcon()
+        icon.addFile(u"./../pys6-recipes-organizer-master/assets/icons/restore-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.restore_button.setIcon(icon)
         self.restore_button.setIconSize(QSize(25, 25))
         self.close_button = QToolButton(self.buttons_holder_frame)
         self.close_button.setObjectName(u"close_button")
-        self.close_button.setGeometry(QRect(120, 0, 22, 22))
-        icon2 = QIcon()
-        icon2.addFile(u"./../pys6-recipes-organizer-master/assets/icons/close-window.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.close_button.setIcon(icon2)
+        self.close_button.setGeometry(QRect(150, 0, 22, 22))
+        icon1 = QIcon()
+        icon1.addFile(u"./../pys6-recipes-organizer-master/assets/icons/close-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.close_button.setIcon(icon1)
         self.close_button.setIconSize(QSize(25, 25))
         self.maximize_button = QToolButton(self.buttons_holder_frame)
         self.maximize_button.setObjectName(u"maximize_button")
-        self.maximize_button.setGeometry(QRect(80, 0, 22, 22))
-        icon3 = QIcon()
-        icon3.addFile(u"./../pys6-recipes-organizer-master/assets/icons/maximize-window.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.maximize_button.setIcon(icon3)
+        self.maximize_button.setGeometry(QRect(107, 0, 31, 22))
+        icon2 = QIcon()
+        icon2.addFile(u"./../pys6-recipes-organizer-master/assets/icons/maximize-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.maximize_button.setIcon(icon2)
         self.maximize_button.setIconSize(QSize(25, 25))
+        self.minimize_button = QToolButton(self.buttons_holder_frame)
+        self.minimize_button.setObjectName(u"minimize_button")
+        self.minimize_button.setGeometry(QRect(70, 0, 22, 22))
+        icon3 = QIcon()
+        icon3.addFile(u"./../pys6-recipes-organizer-master/assets/icons/minimize-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.minimize_button.setIcon(icon3)
+        self.minimize_button.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_3.addWidget(self.buttons_holder_frame)
 
@@ -136,7 +138,7 @@ class NuevoAhorro(object):
 "border-color: rgb(255, 255, 255);\n"
 "border-radius: 1px;")
         icon4 = QIcon()
-        icon4.addFile(u"./assets/Iconos/house.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"../assets/Iconos/house.png", QSize(), QIcon.Normal, QIcon.Off)
         self.Empresa.setIcon(icon4)
         self.Empresa.setIconSize(QSize(40, 40))
         self.Clientes = QPushButton(self.barra_principal_frame)
@@ -273,18 +275,18 @@ class NuevoAhorro(object):
         self.label_18.setGeometry(QRect(1000, 10, 251, 51))
         self.frame = QFrame(self.contenido)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(0, 0, 1431, 111))
+        self.frame.setGeometry(QRect(0, 0, 1431, 101))
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
-        self.label_17 = QLabel(self.frame)
-        self.label_17.setObjectName(u"label_17")
-        self.label_17.setGeometry(QRect(90, 20, 750, 61))
-        self.label_17.setMinimumSize(QSize(750, 0))
-        self.label_17.setMaximumSize(QSize(1600, 16777215))
+        self.IngresaTitulo = QLabel(self.frame)
+        self.IngresaTitulo.setObjectName(u"IngresaTitulo")
+        self.IngresaTitulo.setGeometry(QRect(240, 20, 841, 61))
+        self.IngresaTitulo.setMinimumSize(QSize(750, 0))
+        self.IngresaTitulo.setMaximumSize(QSize(1600, 16777215))
         font1 = QFont()
         font1.setPointSize(16)
-        self.label_17.setFont(font1)
-        self.label_17.setStyleSheet(u"")
+        self.IngresaTitulo.setFont(font1)
+        self.IngresaTitulo.setStyleSheet(u"")
         self.label_10 = QLabel(self.frame)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setGeometry(QRect(1200, 10, 80, 80))
@@ -428,7 +430,7 @@ class NuevoAhorro(object):
 "")
         self.Desarrollo = QFrame(self.contenido)
         self.Desarrollo.setObjectName(u"Desarrollo")
-        self.Desarrollo.setGeometry(QRect(30, 120, 1401, 471))
+        self.Desarrollo.setGeometry(QRect(20, 120, 1401, 471))
         self.Desarrollo.setFrameShape(QFrame.StyledPanel)
         self.Desarrollo.setFrameShadow(QFrame.Raised)
         self.advertencia = QLabel(self.Desarrollo)
@@ -496,35 +498,27 @@ class NuevoAhorro(object):
         self.datos_cliente_6.setObjectName(u"datos_cliente_6")
         self.datos_cliente_6.setGeometry(QRect(10, 0, 171, 16))
         self.datos_cliente_6.setFont(font)
-        self.titulo_idaho = QLabel(self.frame_contenidoC)
-        self.titulo_idaho.setObjectName(u"titulo_idaho")
-        self.titulo_idaho.setGeometry(QRect(10, 150, 111, 16))
-        font3 = QFont()
-        font3.setPointSize(10)
-        self.titulo_idaho.setFont(font3)
-        self.caja_id = QLineEdit(self.frame_contenidoC)
-        self.caja_id.setObjectName(u"caja_id")
-        self.caja_id.setGeometry(QRect(100, 150, 171, 20))
-        self.caja_id.setStyleSheet(u"QLineEdit#caja_id{border: 1px solid rgb(0,0,0);}")
         self.titulo_importe = QLabel(self.frame_contenidoC)
         self.titulo_importe.setObjectName(u"titulo_importe")
-        self.titulo_importe.setGeometry(QRect(10, 180, 61, 16))
+        self.titulo_importe.setGeometry(QRect(10, 150, 61, 16))
+        font3 = QFont()
+        font3.setPointSize(10)
         self.titulo_importe.setFont(font3)
         self.caja_importe = QLineEdit(self.frame_contenidoC)
         self.caja_importe.setObjectName(u"caja_importe")
-        self.caja_importe.setGeometry(QRect(100, 180, 171, 20))
+        self.caja_importe.setGeometry(QRect(100, 150, 171, 20))
         self.caja_importe.setStyleSheet(u"QLineEdit#caja_importe{border: 1px solid rgb(0,0,0);}")
         self.titulo_tea = QLabel(self.frame_contenidoC)
         self.titulo_tea.setObjectName(u"titulo_tea")
-        self.titulo_tea.setGeometry(QRect(10, 260, 51, 16))
+        self.titulo_tea.setGeometry(QRect(10, 230, 51, 16))
         self.titulo_tea.setFont(font3)
         self.titulo_fecapert = QLabel(self.frame_contenidoC)
         self.titulo_fecapert.setObjectName(u"titulo_fecapert")
-        self.titulo_fecapert.setGeometry(QRect(10, 220, 101, 16))
+        self.titulo_fecapert.setGeometry(QRect(10, 190, 101, 16))
         self.titulo_fecapert.setFont(font3)
         self.label_48 = QLabel(self.frame_contenidoC)
         self.label_48.setObjectName(u"label_48")
-        self.label_48.setGeometry(QRect(10, 300, 71, 16))
+        self.label_48.setGeometry(QRect(10, 280, 71, 16))
         self.label_48.setFont(font3)
         self.label_49 = QLabel(self.frame_contenidoC)
         self.label_49.setObjectName(u"label_49")
@@ -540,30 +534,17 @@ class NuevoAhorro(object):
         self.fecha_venc.setStyleSheet(u"QDateEdit#fecha_venc{border: 1px solid rgb(0,0,0);}")
         self.label_51 = QLabel(self.frame_contenidoC)
         self.label_51.setObjectName(u"label_51")
-        self.label_51.setGeometry(QRect(350, 280, 101, 16))
+        self.label_51.setGeometry(QRect(350, 240, 101, 16))
         self.label_51.setFont(font3)
-        self.label_52 = QLabel(self.frame_contenidoC)
-        self.label_52.setObjectName(u"label_52")
-        self.label_52.setGeometry(QRect(400, 240, 71, 16))
-        self.label_52.setFont(font3)
-        self.caja_capital = QLineEdit(self.frame_contenidoC)
-        self.caja_capital.setObjectName(u"caja_capital")
-        self.caja_capital.setGeometry(QRect(480, 240, 171, 20))
-        self.caja_capital.setStyleSheet(u"QLineEdit#caja_capital{border: 1px solid rgb(0,0,0);}")
         self.label_53 = QLabel(self.frame_contenidoC)
         self.label_53.setObjectName(u"label_53")
-        self.label_53.setGeometry(QRect(380, 320, 101, 16))
+        self.label_53.setGeometry(QRect(380, 280, 101, 16))
         self.label_53.setFont(font3)
         self.frame_botones = QFrame(self.frame_contenidoC)
         self.frame_botones.setObjectName(u"frame_botones")
         self.frame_botones.setGeometry(QRect(80, 400, 521, 31))
         self.frame_botones.setFrameShape(QFrame.StyledPanel)
         self.frame_botones.setFrameShadow(QFrame.Raised)
-        self.boton_procesar = QToolButton(self.frame_botones)
-        self.boton_procesar.setObjectName(u"boton_procesar")
-        self.boton_procesar.setGeometry(QRect(270, 10, 71, 21))
-        self.boton_procesar.setFont(font)
-        self.boton_procesar.setStyleSheet(u"background-color: rgb(116,170,80);")
         self.label_55 = QLabel(self.frame_contenidoC)
         self.label_55.setObjectName(u"label_55")
         self.label_55.setGeometry(QRect(10, 30, 21, 16))
@@ -590,18 +571,18 @@ class NuevoAhorro(object):
         self.apellidos_c.setStyleSheet(u"QLineEdit#apellidos_c{border: 1px solid rgb(0,0,0);}")
         self.plazo = QTextBrowser(self.frame_contenidoC)
         self.plazo.setObjectName(u"plazo")
-        self.plazo.setGeometry(QRect(110, 300, 61, 31))
+        self.plazo.setGeometry(QRect(110, 280, 61, 31))
         self.plazo.setStyleSheet(u"QTextBrowser#plazo{border: 1px solid rgb(0,0,0);}")
         self.interes_c = QLabel(self.frame_contenidoC)
         self.interes_c.setObjectName(u"interes_c")
-        self.interes_c.setGeometry(QRect(480, 270, 250, 32))
+        self.interes_c.setGeometry(QRect(480, 230, 250, 32))
         self.interes_c.setMinimumSize(QSize(250, 0))
         self.interes_c.setStyleSheet(u"color: rgb(255, 0, 0);\n"
 "font: 10pt \"Arial\";\n"
 "QLabel#interes_c{border: 1px solid rgb(0,0,0);}")
         self.cancelacion = QLabel(self.frame_contenidoC)
         self.cancelacion.setObjectName(u"cancelacion")
-        self.cancelacion.setGeometry(QRect(480, 310, 250, 32))
+        self.cancelacion.setGeometry(QRect(480, 270, 250, 32))
         self.cancelacion.setMinimumSize(QSize(250, 0))
         self.cancelacion.setStyleSheet(u"color: rgb(255, 0, 0);\n"
 "font: 10pt \"Arial\";\n"
@@ -614,19 +595,24 @@ class NuevoAhorro(object):
 "font: 10pt \"Arial\";")
         self.caja_tea = QLineEdit(self.frame_contenidoC)
         self.caja_tea.setObjectName(u"caja_tea")
-        self.caja_tea.setGeometry(QRect(110, 260, 61, 20))
+        self.caja_tea.setGeometry(QRect(110, 230, 61, 20))
         self.caja_tea.setStyleSheet(u"QLineEdit#caja_tea{border: 1px solid rgb(0,0,0);}")
         self.label = QLabel(self.frame_contenidoC)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(180, 260, 47, 13))
+        self.label.setGeometry(QRect(180, 230, 47, 13))
         self.horan = QLabel(self.frame_contenidoC)
         self.horan.setObjectName(u"horan")
-        self.horan.setGeometry(QRect(110, 220, 161, 21))
+        self.horan.setGeometry(QRect(110, 190, 161, 21))
         self.horan.setStyleSheet(u"QLabel#horan{border: 1px solid rgb(0,0,0);}")
         self.horan_2 = QLabel(self.frame_contenidoC)
         self.horan_2.setObjectName(u"horan_2")
         self.horan_2.setGeometry(QRect(480, 150, 171, 21))
         self.horan_2.setStyleSheet(u"QLabel#horan_2{border: 1px solid rgb(0,0,0);}")
+        self.boton_procesar = QToolButton(self.frame_contenidoC)
+        self.boton_procesar.setObjectName(u"boton_procesar")
+        self.boton_procesar.setGeometry(QRect(350, 390, 71, 21))
+        self.boton_procesar.setFont(font)
+        self.boton_procesar.setStyleSheet(u"background-color: rgb(116,170,80);")
         self.frame_2 = QFrame(self.Desarrollo)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setGeometry(QRect(900, 10, 291, 341))
@@ -748,10 +734,10 @@ class NuevoAhorro(object):
     def retranslateUi(self, DetailWindow):
         DetailWindow.setWindowTitle(QCoreApplication.translate("DetailWindow", u"Form", None))
         self.title_label.setText("")
-        self.minimize_button.setText("")
         self.restore_button.setText("")
         self.close_button.setText("")
         self.maximize_button.setText("")
+        self.minimize_button.setText("")
         self.Empresa.setText(QCoreApplication.translate("DetailWindow", u"Empresa", None))
         self.Clientes.setText(QCoreApplication.translate("DetailWindow", u"Clientes", None))
         self.Prestamos.setText(QCoreApplication.translate("DetailWindow", u"Prestamos", None))
@@ -762,16 +748,16 @@ class NuevoAhorro(object):
         self.Notificaciones.setText(QCoreApplication.translate("DetailWindow", u"Notificaciones", None))
         self.PolizaS.setText(QCoreApplication.translate("DetailWindow", u"Polizas", None))
         self.ChequeS.setText(QCoreApplication.translate("DetailWindow", u"Cheques", None))
-        self.notify.setText("")
+        self.notify.setText(QCoreApplication.translate("DetailWindow", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
         self.label_18.setText("")
-        self.label_17.setText(QCoreApplication.translate("DetailWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Nuevo ahorro</span></p></body></html>", None))
+        self.IngresaTitulo.setText(QCoreApplication.translate("DetailWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:700;\">Nuevo ahorro</span></p></body></html>", None))
         self.label_10.setText("")
         self.Catalogo.setText(QCoreApplication.translate("DetailWindow", u"Cat\u00e1logo de cuentas", None))
         self.Respaldo.setText(QCoreApplication.translate("DetailWindow", u"Respaldar empresa", None))
         self.Mi_Empresa.setText(QCoreApplication.translate("DetailWindow", u"Mi empresa", None))
         self.Ahorro.setText(QCoreApplication.translate("DetailWindow", u"Nuevo ahorro", None))
         self.abonar.setText(QCoreApplication.translate("DetailWindow", u"Abonar pago", None))
-        self.Reportes.setText(QCoreApplication.translate("DetailWindow", u"Emitir reporte de ahorro", None))
+        self.Reportes.setText(QCoreApplication.translate("DetailWindow", u"Emitir reporte", None))
         self.Polizas.setText(QCoreApplication.translate("DetailWindow", u"Nueva poliza", None))
         self.Historial.setText(QCoreApplication.translate("DetailWindow", u"Historial del cliente", None))
         self.Estado.setText(QCoreApplication.translate("DetailWindow", u"Estado de cuentas", None))
@@ -795,7 +781,6 @@ class NuevoAhorro(object):
         self.realizo_pago.setText(QCoreApplication.translate("DetailWindow", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
         self.datos_cliente_3.setText(QCoreApplication.translate("DetailWindow", u"Datos del cliente", None))
         self.datos_cliente_6.setText(QCoreApplication.translate("DetailWindow", u"Datos del ahorro", None))
-        self.titulo_idaho.setText(QCoreApplication.translate("DetailWindow", u"ID del ahorro:", None))
         self.titulo_importe.setText(QCoreApplication.translate("DetailWindow", u"Importe:", None))
         self.titulo_tea.setText(QCoreApplication.translate("DetailWindow", u"T.E.A:", None))
         self.titulo_fecapert.setText(QCoreApplication.translate("DetailWindow", u"Fecha apertura:", None))
@@ -803,13 +788,11 @@ class NuevoAhorro(object):
         self.label_49.setText(QCoreApplication.translate("DetailWindow", u"Fecha inicio:", None))
         self.label_50.setText(QCoreApplication.translate("DetailWindow", u"Fecha de vencimiento:", None))
         self.label_51.setText(QCoreApplication.translate("DetailWindow", u"Inter\u00e9s calculado:", None))
-        self.label_52.setText(QCoreApplication.translate("DetailWindow", u"Capital:", None))
         self.label_53.setText(QCoreApplication.translate("DetailWindow", u"Cancelaci\u00f3n:", None))
-        self.boton_procesar.setText(QCoreApplication.translate("DetailWindow", u"Guardar", None))
         self.label_55.setText(QCoreApplication.translate("DetailWindow", u"Id:", None))
         self.label_56.setText(QCoreApplication.translate("DetailWindow", u"Nombre:", None))
         self.label_57.setText(QCoreApplication.translate("DetailWindow", u"Apellidos:", None))
-        self.plazo.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.plazo.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
@@ -838,97 +821,98 @@ class NuevoAhorro(object):
         self.label.setText(QCoreApplication.translate("DetailWindow", u"%", None))
         self.horan.setText("")
         self.horan_2.setText("")
-        self.textBrowser_3.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.boton_procesar.setText(QCoreApplication.translate("DetailWindow", u"Guardar", None))
+        self.textBrowser_3.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">DIAS </span></p></body></html>", None))
-        self.textBrowser_4.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_4.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">INTERES CALC.</span></p></body></html>", None))
-        self.dia1.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.dia1.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">1</span></p></body></html>", None))
-        self.textBrowser_7.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_7.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">.</span></p></body></html>", None))
-        self.dia5.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.dia5.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">5</span></p></body></html>", None))
-        self.dia4.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.dia4.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">4</span></p></body></html>", None))
-        self.dia3.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.dia3.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">3</span></p></body></html>", None))
-        self.dia2.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.dia2.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">2</span></p></body></html>", None))
-        self.dia360.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.dia360.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">360</span></p></body></html>", None))
-        self.interes1.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.interes1.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", None))
-        self.interes1_2.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.interes1_2.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", None))
-        self.interes1_3.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.interes1_3.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", None))
-        self.interes1_4.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.interes1_4.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", None))
-        self.interes1_5.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.interes1_5.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", None))
-        self.interes1_359.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.interes1_359.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", None))
-        self.interes1_360.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.interes1_360.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", None))
-        self.interes1_total.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.interes1_total.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", None))
-        self.dias1_13.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.dias1_13.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600;\">TOTAL</span></p></body></html>", None))
-        self.dia359.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"./W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.dia359.setHtml(QCoreApplication.translate("DetailWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"

@@ -24,7 +24,8 @@ class Ui_MenuPrincipal(object):
     def setupUi(self, DetailWindow):
         if not DetailWindow.objectName():
             DetailWindow.setObjectName(u"DetailWindow")
-        DetailWindow.resize(1445, 685)
+        DetailWindow.resize(1410, 685)
+        DetailWindow.setMinimumSize(QSize(1350, 0))
         DetailWindow.setStyleSheet(u"QWidget#DetailWindow{border-radius: 5px}")
         self.verticalLayout = QVBoxLayout(DetailWindow)
         self.verticalLayout.setSpacing(0)
@@ -32,6 +33,7 @@ class Ui_MenuPrincipal(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.central_widget_frame = QFrame(DetailWindow)
         self.central_widget_frame.setObjectName(u"central_widget_frame")
+        self.central_widget_frame.setMinimumSize(QSize(1350, 0))
         self.central_widget_frame.setStyleSheet(u"border-radius: 5px")
         self.central_widget_frame.setFrameShape(QFrame.StyledPanel)
         self.central_widget_frame.setFrameShadow(QFrame.Raised)
@@ -41,6 +43,7 @@ class Ui_MenuPrincipal(object):
         self.shadow_layout.setContentsMargins(5, 5, 5, 5)
         self.background_frame = QFrame(self.central_widget_frame)
         self.background_frame.setObjectName(u"background_frame")
+        self.background_frame.setMinimumSize(QSize(1350, 0))
         self.background_frame.setStyleSheet(u"QWidgget#background_frame{background-color: rgb(245, 240, 225);}")
         self.background_frame.setFrameShape(QFrame.StyledPanel)
         self.background_frame.setFrameShadow(QFrame.Raised)
@@ -77,32 +80,32 @@ class Ui_MenuPrincipal(object):
         self.buttons_holder_frame.setFrameShadow(QFrame.Raised)
         self.minimize_button = QToolButton(self.buttons_holder_frame)
         self.minimize_button.setObjectName(u"minimize_button")
-        self.minimize_button.setGeometry(QRect(10, 0, 22, 22))
+        self.minimize_button.setGeometry(QRect(60, 0, 22, 22))
         icon = QIcon()
-        icon.addFile(u"./iconos/icons/maximize-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"./../pys6-recipes-organizer-master/assets/icons/minimize-window.png", QSize(), QIcon.Normal, QIcon.Off)
         self.minimize_button.setIcon(icon)
         self.minimize_button.setIconSize(QSize(25, 25))
         self.restore_button = QToolButton(self.buttons_holder_frame)
         self.restore_button.setObjectName(u"restore_button")
-        self.restore_button.setGeometry(QRect(50, 0, 22, 22))
+        self.restore_button.setGeometry(QRect(100, 0, 22, 22))
         icon1 = QIcon()
-        icon1.addFile(u"./iconos/icons/restore-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"./../pys6-recipes-organizer-master/assets/icons/restore-window.png", QSize(), QIcon.Normal, QIcon.Off)
         self.restore_button.setIcon(icon1)
         self.restore_button.setIconSize(QSize(25, 25))
-        self.maximize_button = QToolButton(self.buttons_holder_frame)
-        self.maximize_button.setObjectName(u"maximize_button")
-        self.maximize_button.setGeometry(QRect(50, 0, 22, 22))
-        icon2 = QIcon()
-        icon2.addFile(u"./iconos/icons/minimize-window.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.maximize_button.setIcon(icon2)
-        self.maximize_button.setIconSize(QSize(25, 25))
         self.close_button = QToolButton(self.buttons_holder_frame)
         self.close_button.setObjectName(u"close_button")
-        self.close_button.setGeometry(QRect(90, 0, 22, 22))
-        icon3 = QIcon()
-        icon3.addFile(u"./iconos/icons/close-window.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.close_button.setIcon(icon3)
+        self.close_button.setGeometry(QRect(140, 0, 22, 22))
+        icon2 = QIcon()
+        icon2.addFile(u"./../pys6-recipes-organizer-master/assets/icons/close-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.close_button.setIcon(icon2)
         self.close_button.setIconSize(QSize(25, 25))
+        self.maximize_button = QToolButton(self.buttons_holder_frame)
+        self.maximize_button.setObjectName(u"maximize_button")
+        self.maximize_button.setGeometry(QRect(97, 0, 31, 22))
+        icon3 = QIcon()
+        icon3.addFile(u"./../pys6-recipes-organizer-master/assets/icons/maximize-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.maximize_button.setIcon(icon3)
+        self.maximize_button.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_3.addWidget(self.buttons_holder_frame)
 
@@ -111,6 +114,7 @@ class Ui_MenuPrincipal(object):
 
         self.content_frame = QFrame(self.background_frame)
         self.content_frame.setObjectName(u"content_frame")
+        self.content_frame.setMinimumSize(QSize(1350, 0))
         self.content_frame.setFrameShape(QFrame.StyledPanel)
         self.content_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.content_frame)
@@ -256,6 +260,10 @@ class Ui_MenuPrincipal(object):
         icon13.addFile(u"./assets/Iconos/cheques.png", QSize(), QIcon.Normal, QIcon.Off)
         self.ChequeS.setIcon(icon13)
         self.ChequeS.setIconSize(QSize(40, 40))
+        self.notify = QLabel(self.barra_principal_frame)
+        self.notify.setObjectName(u"notify")
+        self.notify.setGeometry(QRect(1010, 20, 16, 16))
+        self.notify.setStyleSheet(u"image: url(:/imagen/rojo.png);")
 
         self.verticalLayout_3.addWidget(self.barra_principal_frame)
 
@@ -310,22 +318,6 @@ class Ui_MenuPrincipal(object):
 "border-color: rgb(151, 153, 155);\n"
 "border-radius: 1px;\n"
 "")
-        self.abonar_ahorro = QPushButton(self.frame)
-        self.abonar_ahorro.setObjectName(u"abonar_ahorro")
-        self.abonar_ahorro.setGeometry(QRect(430, 30, 141, 31))
-        self.abonar_ahorro.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);\n"
-"border-radius: 1px;\n"
-"")
-        self.PLD = QPushButton(self.frame)
-        self.PLD.setObjectName(u"PLD")
-        self.PLD.setGeometry(QRect(570, 0, 141, 31))
-        self.PLD.setStyleSheet(u"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-color: rgb(151, 153, 155);\n"
-"border-radius: 1px;\n"
-"")
         self.Ahorro = QPushButton(self.frame)
         self.Ahorro.setObjectName(u"Ahorro")
         self.Ahorro.setGeometry(QRect(430, 0, 141, 31))
@@ -344,7 +336,7 @@ class Ui_MenuPrincipal(object):
 "")
         self.Reportes = QPushButton(self.frame)
         self.Reportes.setObjectName(u"Reportes")
-        self.Reportes.setGeometry(QRect(570, 60, 141, 31))
+        self.Reportes.setGeometry(QRect(570, 30, 141, 31))
         self.Reportes.setStyleSheet(u"border-style: solid;\n"
 "border-width: 2px;\n"
 "border-color: rgb(151, 153, 155);\n"
@@ -368,7 +360,7 @@ class Ui_MenuPrincipal(object):
 "")
         self.Estado = QPushButton(self.frame)
         self.Estado.setObjectName(u"Estado")
-        self.Estado.setGeometry(QRect(570, 30, 141, 31))
+        self.Estado.setGeometry(QRect(570, 0, 141, 31))
         self.Estado.setStyleSheet(u"border-style: solid;\n"
 "border-width: 2px;\n"
 "border-color: rgb(151, 153, 155);\n"
@@ -392,7 +384,7 @@ class Ui_MenuPrincipal(object):
 "")
         self.Retirar = QPushButton(self.frame)
         self.Retirar.setObjectName(u"Retirar")
-        self.Retirar.setGeometry(QRect(430, 60, 141, 31))
+        self.Retirar.setGeometry(QRect(430, 30, 141, 31))
         self.Retirar.setStyleSheet(u"border-style: solid;\n"
 "border-width: 2px;\n"
 "border-color: rgb(151, 153, 155);\n"
@@ -430,9 +422,18 @@ class Ui_MenuPrincipal(object):
 "border-color: rgb(151, 153, 155);\n"
 "border-radius: 1px;\n"
 "")
+        self.Reportes_2 = QPushButton(self.frame)
+        self.Reportes_2.setObjectName(u"Reportes_2")
+        self.Reportes_2.setGeometry(QRect(570, 60, 141, 41))
+        self.Reportes_2.setStyleSheet(u"border-style: solid;\n"
+"border-width: 2px;\n"
+"border-color: rgb(151, 153, 155);\n"
+"border-radius: 1px;\n"
+"")
         self.Desarrollo = QFrame(self.contenido)
         self.Desarrollo.setObjectName(u"Desarrollo")
         self.Desarrollo.setGeometry(QRect(0, 100, 1431, 491))
+        self.Desarrollo.setMinimumSize(QSize(1350, 0))
         self.Desarrollo.setFrameShape(QFrame.StyledPanel)
         self.Desarrollo.setFrameShadow(QFrame.Raised)
 
@@ -458,8 +459,8 @@ class Ui_MenuPrincipal(object):
         self.title_label.setText("")
         self.minimize_button.setText("")
         self.restore_button.setText("")
-        self.maximize_button.setText("")
         self.close_button.setText("")
+        self.maximize_button.setText("")
         self.Empresa.setText(QCoreApplication.translate("DetailWindow", u"Empresa", None))
         self.Clientes.setText(QCoreApplication.translate("DetailWindow", u"Clientes", None))
         self.Prestamos.setText(QCoreApplication.translate("DetailWindow", u"Prestamos", None))
@@ -470,17 +471,16 @@ class Ui_MenuPrincipal(object):
         self.Notificaciones.setText(QCoreApplication.translate("DetailWindow", u"Notificaciones", None))
         self.PolizaS.setText(QCoreApplication.translate("DetailWindow", u"Polizas", None))
         self.ChequeS.setText(QCoreApplication.translate("DetailWindow", u"Cheques", None))
+        self.notify.setText("")
         self.label_18.setText("")
         self.label_17.setText(QCoreApplication.translate("DetailWindow", u"<html><head/><body><p align=\"center\">                         Bienvenido</p></body></html>", None))
         self.label_10.setText("")
         self.Catalogo.setText(QCoreApplication.translate("DetailWindow", u"Cat\u00e1logo de cuentas", None))
         self.Respaldo.setText(QCoreApplication.translate("DetailWindow", u"Respaldar empresa", None))
         self.Mi_Empresa.setText(QCoreApplication.translate("DetailWindow", u"Mi empresa", None))
-        self.abonar_ahorro.setText(QCoreApplication.translate("DetailWindow", u"Abonar ahorro", None))
-        self.PLD.setText(QCoreApplication.translate("DetailWindow", u"PLD", None))
         self.Ahorro.setText(QCoreApplication.translate("DetailWindow", u"Nuevo ahorro", None))
         self.abonar.setText(QCoreApplication.translate("DetailWindow", u"Abonar pago", None))
-        self.Reportes.setText(QCoreApplication.translate("DetailWindow", u"Emitir reporte", None))
+        self.Reportes.setText(QCoreApplication.translate("DetailWindow", u"Emitir reporte de ahorro", None))
         self.Polizas.setText(QCoreApplication.translate("DetailWindow", u"Nueva poliza", None))
         self.Historial.setText(QCoreApplication.translate("DetailWindow", u"Historial del cliente", None))
         self.Estado.setText(QCoreApplication.translate("DetailWindow", u"Estado de cuentas", None))
@@ -491,5 +491,7 @@ class Ui_MenuPrincipal(object):
         self.Consulta_cheque.setText(QCoreApplication.translate("DetailWindow", u"Consultar cheques", None))
         self.Listado.setText(QCoreApplication.translate("DetailWindow", u"Listado de polizas", None))
         self.prestamo.setText(QCoreApplication.translate("DetailWindow", u"Nuevo prestamo", None))
+        self.Reportes_2.setText(QCoreApplication.translate("DetailWindow", u"Emitir reporte \n"
+"de prestamos", None))
     # retranslateUi
 

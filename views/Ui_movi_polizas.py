@@ -1,0 +1,157 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'movi_polizasss.ui'
+##
+## Created by: Qt User Interface Compiler version 6.2.4
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
+    QPushButton, QSizePolicy, QToolButton, QWidget)
+
+class Mov_polizas(object):
+    def setupUi(self, Form):
+        if not Form.objectName():
+            Form.setObjectName(u"Form")
+        Form.resize(580, 516)
+        self.contenido_frame = QFrame(Form)
+        self.contenido_frame.setObjectName(u"contenido_frame")
+        self.contenido_frame.setGeometry(QRect(0, 0, 610, 525))
+        font = QFont()
+        font.setPointSize(12)
+        self.contenido_frame.setFont(font)
+        self.contenido_frame.setStyleSheet(u"background-color: rgb(179, 179, 179)")
+        self.contenido_frame.setFrameShape(QFrame.StyledPanel)
+        self.contenido_frame.setFrameShadow(QFrame.Raised)
+        self.botones_frame = QFrame(self.contenido_frame)
+        self.botones_frame.setObjectName(u"botones_frame")
+        self.botones_frame.setGeometry(QRect(520, 10, 81, 31))
+        self.botones_frame.setFrameShape(QFrame.StyledPanel)
+        self.botones_frame.setFrameShadow(QFrame.Raised)
+        self.minimizar = QToolButton(self.botones_frame)
+        self.minimizar.setObjectName(u"minimizar")
+        self.minimizar.setGeometry(QRect(0, 0, 21, 20))
+        self.minimizar.setStyleSheet(u"border-style: solid;\n"
+"border-with 0px;")
+        icon = QIcon()
+        icon.addFile(u"./iconos/icons/minimize-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.minimizar.setIcon(icon)
+        self.minimizar.setIconSize(QSize(25, 25))
+        self.maximizar = QToolButton(self.botones_frame)
+        self.maximizar.setObjectName(u"maximizar")
+        self.maximizar.setGeometry(QRect(30, 0, 25, 19))
+        self.maximizar.setStyleSheet(u"border-style: solid;\n"
+"border-with 0px;")
+        icon1 = QIcon()
+        icon1.addFile(u"./iconos/icons/close-window.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.maximizar.setIcon(icon1)
+        self.maximizar.setIconSize(QSize(25, 25))
+        self.tabla_frame = QFrame(self.contenido_frame)
+        self.tabla_frame.setObjectName(u"tabla_frame")
+        self.tabla_frame.setGeometry(QRect(10, 50, 591, 461))
+        self.tabla_frame.setFrameShape(QFrame.StyledPanel)
+        self.tabla_frame.setFrameShadow(QFrame.Raised)
+        self.frame_3 = QFrame(self.tabla_frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setGeometry(QRect(0, 0, 591, 41))
+        self.frame_3.setFont(font)
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.frame_4 = QFrame(self.tabla_frame)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setGeometry(QRect(0, 1, 591, 51))
+        self.frame_4.setFont(font)
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.label_6 = QLabel(self.frame_4)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(12, 10, 91, 25))
+        self.label_6.setMaximumSize(QSize(16777215, 25))
+        self.label_6.setFont(font)
+        self.caja_rfc_7 = QLineEdit(self.frame_4)
+        self.caja_rfc_7.setObjectName(u"caja_rfc_7")
+        self.caja_rfc_7.setGeometry(QRect(110, 10, 111, 31))
+        self.caja_rfc_7.setStyleSheet(u"QLineEdit#caja_rfc_7{border: 1px solid rgb(0,0,0);};\n"
+"")
+        self.label_7 = QLabel(self.tabla_frame)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(10, 70, 61, 25))
+        self.label_7.setMaximumSize(QSize(16777215, 25))
+        self.label_7.setFont(font)
+        self.label_8 = QLabel(self.tabla_frame)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(10, 140, 51, 25))
+        self.label_8.setMaximumSize(QSize(16777215, 25))
+        self.label_8.setFont(font)
+        self.label_9 = QLabel(self.tabla_frame)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(10, 190, 61, 25))
+        self.label_9.setMaximumSize(QSize(16777215, 25))
+        self.label_9.setFont(font)
+        self.label_10 = QLabel(self.tabla_frame)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(10, 240, 81, 25))
+        self.label_10.setMaximumSize(QSize(16777215, 25))
+        self.label_10.setFont(font)
+        self.label_11 = QLabel(self.tabla_frame)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(10, 310, 71, 25))
+        self.label_11.setMaximumSize(QSize(16777215, 25))
+        self.label_11.setFont(font)
+        self.caja_rfc_8 = QLineEdit(self.tabla_frame)
+        self.caja_rfc_8.setObjectName(u"caja_rfc_8")
+        self.caja_rfc_8.setGeometry(QRect(110, 60, 191, 31))
+        self.caja_rfc_8.setStyleSheet(u"QLineEdit#caja_rfc_8{border: 1px solid rgb(0,0,0);}")
+        self.caja_rfc_9 = QLineEdit(self.tabla_frame)
+        self.caja_rfc_9.setObjectName(u"caja_rfc_9")
+        self.caja_rfc_9.setGeometry(QRect(110, 90, 271, 31))
+        self.caja_rfc_9.setStyleSheet(u"QLineEdit#caja_rfc_9{border: 1px solid rgb(0,0,0);}")
+        self.caja_rfc_10 = QLineEdit(self.tabla_frame)
+        self.caja_rfc_10.setObjectName(u"caja_rfc_10")
+        self.caja_rfc_10.setGeometry(QRect(110, 140, 151, 31))
+        self.caja_rfc_10.setStyleSheet(u"QLineEdit#caja_rfc_10{border: 1px solid rgb(0,0,0);}")
+        self.caja_rfc_11 = QLineEdit(self.tabla_frame)
+        self.caja_rfc_11.setObjectName(u"caja_rfc_11")
+        self.caja_rfc_11.setGeometry(QRect(110, 190, 151, 31))
+        self.caja_rfc_11.setStyleSheet(u"QLineEdit#caja_rfc_11{border: 1px solid rgb(0,0,0);}")
+        self.caja_rfc_12 = QLineEdit(self.tabla_frame)
+        self.caja_rfc_12.setObjectName(u"caja_rfc_12")
+        self.caja_rfc_12.setGeometry(QRect(110, 240, 371, 41))
+        self.caja_rfc_12.setStyleSheet(u"QLineEdit#caja_rfc_12{border: 1px solid rgb(0,0,0);}")
+        self.caja_rfc_13 = QLineEdit(self.tabla_frame)
+        self.caja_rfc_13.setObjectName(u"caja_rfc_13")
+        self.caja_rfc_13.setGeometry(QRect(110, 300, 371, 41))
+        self.caja_rfc_13.setStyleSheet(u"QLineEdit#caja_rfc_13{border: 1px solid rgb(0,0,0);}")
+        self.boton_guardar = QPushButton(self.tabla_frame)
+        self.boton_guardar.setObjectName(u"boton_guardar")
+        self.boton_guardar.setGeometry(QRect(240, 400, 81, 31))
+        self.boton_guardar.setFont(font)
+        self.boton_guardar.setStyleSheet(u"background-color: rgb(116, 170, 80);")
+
+        self.retranslateUi(Form)
+
+        QMetaObject.connectSlotsByName(Form)
+    # setupUi
+
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.minimizar.setText(QCoreApplication.translate("Form", u"...", None))
+        self.maximizar.setText(QCoreApplication.translate("Form", u"...", None))
+        self.label_6.setText(QCoreApplication.translate("Form", u"Movimiento", None))
+        self.label_7.setText(QCoreApplication.translate("Form", u"Cuenta", None))
+        self.label_8.setText(QCoreApplication.translate("Form", u"Cargo", None))
+        self.label_9.setText(QCoreApplication.translate("Form", u"Abono", None))
+        self.label_10.setText(QCoreApplication.translate("Form", u"Referencia", None))
+        self.label_11.setText(QCoreApplication.translate("Form", u"Concepto", None))
+        self.boton_guardar.setText(QCoreApplication.translate("Form", u"Guardar", None))
+    # retranslateUi
+

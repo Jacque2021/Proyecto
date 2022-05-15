@@ -347,7 +347,7 @@ class HistorialClienteForm(QWidget, Ui_historial_cliente):
         # show context menu
         self.popMenu2.exec_(self.Clientes.mapToGlobal(point))
     ##############################################################
-    def ahorro(self):
+    def ahorro1(self):
         self.Ahorros.setContextMenuPolicy(Qt.CustomContextMenu)
         self.Ahorros.customContextMenuRequested.connect(self.on_context_menu3)
         np = QActionGroup(self)
@@ -463,7 +463,7 @@ class HistorialClienteForm(QWidget, Ui_historial_cliente):
         self.prestamos1()
         self.miempresa()
         self.clientes()
-        self.ahorro()
+        self.ahorro1()
         self.consultas()
         self.polizas()
         self.cheques()

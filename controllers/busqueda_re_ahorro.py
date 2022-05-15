@@ -79,6 +79,7 @@ class buscar_re_ahorro(QWidget, consulta_re_ahorro):
         numero=int(self.tabla_cheques.selectedIndexes()[0].data())
         Id_cliente=numero
         window=NuevoAhorroForm(self,Id_cliente)
+        #self.close()
         window.show()
 
     """*************************  MOVIMIENTO Y ACCION DE LOS BOTONES  *****************************"""   

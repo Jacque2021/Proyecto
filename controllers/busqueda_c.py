@@ -1,12 +1,8 @@
 from PySide6.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView
 from PySide6.QtCore import Qt
 from controllers.cheques import ChequesForm
-#from controllers.consulta_cheques import Consulta_chequesForm
-#from views.consulta_cliente import consulta_cliente
 from views.Ui_consulta_cliente import Ui_consulta_cliente
 from views.cheques import Cheques
-#from views.consulta_cheques import ConsultaCheques
-#from views.general_custom_ui import GeneralCustomUi
 from database import recipes
 
 class buscarc(QWidget, Ui_consulta_cliente):
@@ -77,6 +73,7 @@ class buscarc(QWidget, Ui_consulta_cliente):
         numero=int(self.tabla_clientes.selectedIndexes()[0].data())
         Id_cliente=numero
         window=ChequesForm(self,Id_cliente)
+        #self.close()
         window.show()
         
       

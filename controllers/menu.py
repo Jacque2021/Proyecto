@@ -181,7 +181,7 @@ class Menu(QWidget, Ui_MenuPrincipal):
         
         np.triggered.connect(self.open_empresa)
         ap.triggered.connect(self.open_repaldaempresa)
-        cancela.triggered.connect(self.Open_cancelacion)
+        cancela.triggered.connect(self.open_catalogo)
     def on_context_menu1(self, point):
         # show context menu
         self.popMenu1.exec_(self.Empresa.mapToGlobal(point))
@@ -201,8 +201,8 @@ class Menu(QWidget, Ui_MenuPrincipal):
         self.popMenu2.addSeparator()
         self.popMenu2.addAction(QAction('Historial del cliente', ap))
     
-        np.triggered.connect(self.open_busqueda)
-        ap.triggered.connect(self.Open_pagosPrestamos)
+        np.triggered.connect(self.Open_agregar_cliente)
+        ap.triggered.connect(self.Open_historial_cliente)
     def on_context_menu2(self, point):
         # show context menu
         self.popMenu2.exec_(self.Clientes.mapToGlobal(point))
@@ -231,25 +231,26 @@ class Menu(QWidget, Ui_MenuPrincipal):
     def consultas(self):
         self.Consultas.setContextMenuPolicy(Qt.CustomContextMenu)
         self.Consultas.customContextMenuRequested.connect(self.on_context_menu4)
-        np = QActionGroup(self)
-        np.setExclusive(True)
         ######################3
         ap = QActionGroup(self)
         ap.setExclusive(True)
         ########################3
         cancela = QActionGroup(self)
         cancela.setExclusive(True)
+         ########################3
+        cancela2 = QActionGroup(self)
+        cancela2.setExclusive(True)
         # create context menu
         self.popMenu4 = QMenu(self)
-        self.popMenu4.addAction(QAction('PLD', np))
-        self.popMenu4.addSeparator()
         self.popMenu4.addAction(QAction('Estado de cuentas', ap))
         self.popMenu4.addSeparator()
-        self.popMenu4.addAction(QAction('Emitir reporte', cancela))
+        self.popMenu4.addAction(QAction('Emitir reporte de ahorro', cancela))
+        self.popMenu4.addSeparator()
+        self.popMenu4.addAction(QAction('Emitir reporte de prestamos', cancela2))
         
-        np.triggered.connect(self.open_busqueda)
-        ap.triggered.connect(self.Open_pagosPrestamos)
-        cancela.triggered.connect(self.Open_cancelacion)
+        ap.triggered.connect(self.open_estadoCUENTAS)
+        cancela.triggered.connect(self.open_emitirReport)
+        cancela2.triggered.connect(self.open_emitirReport_2)
     def on_context_menu4(self, point):
         # show context menu
         self.popMenu4.exec_(self.Consultas.mapToGlobal(point))
@@ -269,8 +270,8 @@ class Menu(QWidget, Ui_MenuPrincipal):
         self.popMenu5.addSeparator()
         self.popMenu5.addAction(QAction('Listado de polizas', ap))
         
-        np.triggered.connect(self.open_busqueda)
-        ap.triggered.connect(self.Open_pagosPrestamos)
+        np.triggered.connect(self.open_nPoliza)
+        ap.triggered.connect(self.Open_listado_polizas)
     def on_context_menu5(self, point):
         # show context menu
         self.popMenu5.exec_(self.PolizaS.mapToGlobal(point))

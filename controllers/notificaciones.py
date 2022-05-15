@@ -3,6 +3,7 @@ from views.Ui_borrar_prestamo import Ui_consulta_cliente
 from PySide6.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView, QHBoxLayout, QFrame
 from PySide6.QtCore import Qt
 from database import recipes
+from controllers.info_cliente import ActualizarForm
 class Notificacion(QWidget, Ui_consulta_cliente):
     def __init__(self, parent=None): #capturar instancia de mainwindows
         super().__init__(parent)
@@ -15,6 +16,7 @@ class Notificacion(QWidget, Ui_consulta_cliente):
         self.set_table_data()
         self.ingre_nombre.returnPressed.connect(self.search)  #returnPressed= al dar enter hace la accion
         self.ingre_nombre.textChanged.connect(self.restore_table_data)
+        self.tabla_clientes.cellDoubleClicked.connect(self.funcional_dobleclicked)
              
     """*********************  DISEÑAR LA TABLA   ***************************"""  
     def populate_table(self, data): #crea tabla
@@ -80,3 +82,16 @@ class Notificacion(QWidget, Ui_consulta_cliente):
         self.setAttribute(Qt.WA_TranslucentBackground, True)
         #Quitar la barra de titulo
         self.setWindowFlag(Qt.FramelessWindowHint)
+
+    def funcional_dobleclicked(self,Id_cliente):
+        self.var = int(self.tabla_clientes.selectedIndexes()[0].data())
+        numero=int(self.tabla_clientes.selectedIndexes()[0].data())
+        Id_cliente=numero
+        #p=recipes.condicion(Id_cliente)
+        #mm=recipes.condicion2(Id_cliente)
+        #if p:
+        error=ActualizarForm(self,Id_cliente)
+        error.show()
+        
+            
+        #self.close() 

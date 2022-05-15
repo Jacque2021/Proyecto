@@ -20,7 +20,7 @@ class MainWindowsForm(QWidget,InicioSesion):
         contrasena=self.contrasena.text() #almacena el texto que fue ingresado en front-end, recuadro contrasena
  
         if len(usuario)==0 or len(contrasena)==0:
-            self.texto_error.setText("                 Ingrese todos los datos") #Mensaje al no ingresar un dato
+            self.texto_error.setText("               Ingrese todos los datos") #Mensaje al no ingresar un dato
         elif usuario=="Admin" and contrasena=="123": #validación de usuario y contraseña
             self.open_menu()    #si los datos son correctos, abre la ventana de menu
             self.hide()   #OCULTA MENU

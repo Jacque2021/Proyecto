@@ -43,7 +43,7 @@ class buscueda_prestamo(QWidget, Ui_consulta_cliente):
         self.tabla_clientes.setEditTriggers(QAbstractItemView.NoEditTriggers)#deshabilita la edicion
         
     def set_table_data(self):
-        data=recipes.select_tabal_clientes()  
+        data=recipes.select_tabal_clientes2()  
         self.populate_table(data)  
     """*********************  METODO DE BUSQUEDA   ***************************"""  
     #Metodo de buscar
@@ -82,7 +82,7 @@ class buscueda_prestamo(QWidget, Ui_consulta_cliente):
         numero=int(self.tabla_clientes.selectedIndexes()[0].data())
         Id_cliente=numero
         window=Pagos(self,Id_cliente)
-        self.close()
+        #self.close()
         window.show() 
     """*************************  MOVIMIENTO Y ACCION DE LOS BOTONES  *****************************"""   
     def set_title_bar_buttons_actions(self):

@@ -1,8 +1,6 @@
 
 from PySide6.QtWidgets import QWidget
 from PySide6.QtCore import Qt
-from views.general_custom_ui import GeneralCustomUi
-#from views.general_custom_ui import GeneralCustomUi
 from views.Ui_error2 import Ui_Error
 
 class Error(QWidget, Ui_Error):
@@ -11,7 +9,8 @@ class Error(QWidget, Ui_Error):
         self.parent=parent
         self.setupUi(self) #1
         self.setWindowFlag(Qt.Window)
-        self.frame.mouseMoveEvent = self.move_window
+        self.set_title_bar_buttons_actions()
+        self.background_frame.mouseMoveEvent = self.move_window
         self.remove_defult_title_bar()
         self.regresar_button.clicked.connect(self.close)
         
@@ -35,5 +34,6 @@ class Error(QWidget, Ui_Error):
             #event.globalPos = posicion actaul del mouse cuando presione boton izquierdo
             self.move(self.pos() + event.globalPos()- self.drag_pos)
             self.drag_pos=event.globalPos()
-        
-    
+    def set_title_bar_buttons_actions(self):
+        self.maximizar.clicked.connect(self.close)
+        self.minimizar.clicked.connect(self.showMinimized)

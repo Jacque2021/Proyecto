@@ -1,7 +1,6 @@
 from string import punctuation
 from views.Ui_borrar_prestamo import Ui_consulta_cliente
 from decimal import Decimal
-#from views.Ui_consulta_cliente import Ui_consulta_cliente
 from PySide6.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView, QHBoxLayout, QFrame
 from PySide6.QtCore import Qt
 from views import components

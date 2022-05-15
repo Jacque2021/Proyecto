@@ -1,79 +1,62 @@
 from PySide6.QtWidgets import QWidget
 from views.general_custom_ui import GeneralCustomUi
 from views.botonesMenu import Menu_Botones
-from views.empresaRespaldada import respaldo
-from controllers.respaldoRealizado import RespaldoRealizado
-from views.repaldar_empresa import RespaldarEmpresa
-from views.Ui_resp import resp
+from PySide6.QtWidgets import (QWidget, QMenu)
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QAction, QActionGroup
-from PySide6.QtWidgets import (QWidget, QMenu)
-from controllers.error_prestamo import Error_p
-from datetime import date, time
-import datetime, time
+from views.Ui_informacion_cliente import Ui_Agregar_cliente
 from database import recipes
 
 
-class RespaldarEmpresaForm(QWidget, resp):
-
-    def __init__(self, parent=None): #capturar instancia de mainwindows
+class ActualizarForm(QWidget, Ui_Agregar_cliente):
+    def __init__(self, parent=None, Id_cliente=None): #Capturar instancia en mainwindows    
         super().__init__(parent)
         self.parent=parent
+        self.Id_cliente=Id_cliente
         self.setupUi(self) #1
         self.setWindowFlag(Qt.Window)
+        self.llamar_d()
         self.ui=GeneralCustomUi(self)
         self.bm=Menu_Botones(self)
-        self.boton_guardar.clicked.connect(self.resp_empresa)
-        self.vista()
+        self.setWindowFlag(Qt.Window)
         self.cc()
         self.menu()
     
-    def mousePressEvent(self, event):
+    def mousePressEvent(self, event): #ubicación mouse
         self.ui.mouse_press_event(event)
-
-    def vista(self):
-        fecha_registro=datetime.datetime.now() #Fecha de hoy
-        h1=str(fecha_registro) #convierte a string
-        partes = h1.split(" ")[0].split("-") #quita la hora, dejando la fecha
-        convertida1 = "/".join(reversed(partes)) #cambia formato de fecha
-        self.fechar.setText(str(convertida1)) #lo pasa a la interfaz
-        hora = time.strftime('%H:%M:%S')
-        self.horar.setText(str(hora)) #lo pasa a la interfaz
-
     
-    def resp_empresa(self):
-        rfc = self.caja_RFC.text()
-        nombre = self.caja_empresa.text()
-        fecha = self.fechar.text()
-        hora_r = self.horar.text()
-        ruta = self.caja_ruta.text()
-        nombre_res = self.caja_respaldo.text()
-
-        data = (rfc, nombre, fecha, hora_r, ruta, nombre_res)
-
-        if len(rfc)==0 or len(nombre)==0 or len(fecha)==0 or len(hora_r)==0 or len(ruta)==0 or len(nombre_res)==0:
-            self.Open3()
-
-        elif recipes.respladar_empresa(data):
-           print("Empresa respaldada")
-           self.Open()
-           self.clear_inputs()
-    
-    def Open(self):
-        window=RespaldoRealizado(self)
-        window.show()
-    
-    def Open3(self):
-        window=Error_p(self)
-        window.show()
-
-    def clear_inputs(self):
-        self.caja_RFC.clear()
-        self.caja_empresa.clear()
-        self.fechar.clear()
-        self.horar.clear()
-        self.caja_ruta.clear()
-        self.caja_respaldo.clear()
+    def llamar_d(self):
+        data=recipes.select_cliente3(self.Id_cliente)
+        Id=data[0]
+        Id =str(Id)
+        nom=data[1]
+        nom =str(nom) 
+        ape=data[2]
+        ape =str(ape)
+        tel=data[3]
+        tel =str(tel)
+        tel_add=data[4]
+        tel_add =str(tel_add)
+        dir=data[5]
+        dir =str(dir)
+        cor=data[6]
+        cor =str(cor)
+        nac=data[7]
+        nac =str(nac)
+        pun=data[8]
+        pun =str(pun) 
+        mun=data[9]
+        mun =str(mun)
+        self.codigo_cliente.setText(Id)
+        self.nombre.setText(nom)
+        self.apellidos.setText(ape)
+        self.telefono.setText(tel)
+        self.telefono_adicional.setText(tel_add)
+        self.direccion.setText(dir)
+        self.correo_elec.setText(cor) 
+        self.fecha_de_nacimiento.setText(nac)
+        self.puntuacion.setText(pun)
+        self.municipio.setText(mun)
 ################################################################################################
 #########################                MENU                ###################################
 ################################################################################################ 

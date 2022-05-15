@@ -21,6 +21,25 @@ def select_tabal_clientes():
     finally:
         cur.close()
         conn.close()
+#METODO PARA LLENAR TABLA DE CLIENTES EN LA INTERFAZ DE BUSQUEDA
+def select_tabal_clientes2():
+    conn=create_conection()
+    sql="""SELECT clientes.Id_cliente,nombre,apellidos  
+        FROM clientes
+        INNER JOIN prestamos ON prestamos.Id_cliente = clientes.Id_cliente;"""
+    try:
+        cur=conn.cursor()
+        cur.execute(sql)
+        recipes=cur.fetchall()  #devuelva datos seleccionados
+        #conn.commit()    se utiliza cuando se haga cambios en la BD
+        return recipes
+    except connector.Error as err:
+        print(f"Error at select_all function: {err.msg}")
+        return False
+    finally:
+        cur.close()
+        conn.close()
+
 #METODO DE BUSQUEDA DE CLIENTES
 def select_by_parameter(param):
     conn = create_conection()

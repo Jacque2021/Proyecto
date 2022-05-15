@@ -26,7 +26,8 @@ def select_tabal_clientes2():
     conn=create_conection()
     sql="""SELECT clientes.Id_cliente,nombre,apellidos  
         FROM clientes
-        INNER JOIN prestamos ON prestamos.Id_cliente = clientes.Id_cliente;"""
+        INNER JOIN prestamos ON prestamos.Id_cliente = clientes.Id_cliente
+        WHERE saldo_insolito>1"""
     try:
         cur=conn.cursor()
         cur.execute(sql)

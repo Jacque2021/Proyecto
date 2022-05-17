@@ -101,7 +101,7 @@ def condicion(Id_cliente):
     sql = f"""SELECT clientes.Id_cliente, clientes.puntuacion, prestamos.saldo_insolito, prestamos.cantidad_prestamo
                 FROM clientes
                 INNER JOIN prestamos ON clientes.Id_cliente=prestamos.Id_cliente
-                WHERE clientes.Id_cliente= %s AND prestamos.saldo_insolito>0
+                WHERE clientes.Id_cliente= %s AND prestamos.saldo_insolito>1
             """       
     try:
         cur = conn.cursor()
@@ -598,7 +598,7 @@ def conteo(fecha):
     hoy=datetime.date.today()
     sql = f"""SELECT count(*)fecha_siguiente
             FROM prestamos
-            WHERE  fecha_siguiente>={hoy} AND fecha_siguiente<=%s and saldo_insolito>0
+            WHERE  fecha_siguiente>={hoy} AND fecha_siguiente<=%s and saldo_insolito>1
             """       
     try:
         cur = conn.cursor()
@@ -618,7 +618,7 @@ def tabla_notificacio(fecha):
     sql = f"""SELECT  clientes.Id_cliente, clientes.nombre, clientes.apellidos, prestamos.cantidad_prestamo, prestamos.renta, prestamos.fecha_siguiente
             FROM clientes
             INNER JOIN prestamos ON prestamos.Id_cliente =clientes.Id_cliente
-            WHERE  fecha_siguiente>={hoy} AND fecha_siguiente<=%s and saldo_insolito>0
+            WHERE  fecha_siguiente>={hoy} AND fecha_siguiente<=%s and saldo_insolito>1
             ORDER BY fecha_siguiente desc
             """       
     try:

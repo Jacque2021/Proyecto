@@ -73,6 +73,7 @@ class buscarc(QWidget, Ui_consulta_cliente):
         numero=int(self.tabla_clientes.selectedIndexes()[0].data())
         Id_cliente=numero
         window=ChequesForm(self,Id_cliente)
+        self.hide()
         #self.close()
         window.show()
         

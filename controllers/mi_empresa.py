@@ -122,102 +122,102 @@ class MiEmpresaForm(QWidget, Miempresa):
     def Open_pagosPrestamos(self):
         from controllers.busqueda_pago import buscueda_prestamo
         window=buscueda_prestamo(self)
-        self.close()
+        self.hide()
         window.show()
     def Open_cancelacion(self):
         from controllers.cancelacion import Error
         window=Error(self)
-        self.close()
+        self.hide()
         window.show()
     def open_busqueda(self):
         from controllers.busqueda import buscar
         window=buscar(self)
-        self.close()
+        self.hide()
         window.show()
     def cerrar(self):
-        self.close()
+        self.hide()
     def ayuda(self):
         from controllers.ayuda import Documento
         window=Documento(self)
-        self.close()
+        self.hide()
         window.show()
     def Notificacio(self):
         from controllers.notificaciones import Notificacion
         window=Notificacion(self)
-        self.close()
+        self.hide()
         window.show()
     """***AQUI ESTUVO MAY***"""
     def open_empresa(self):
         from controllers.mi_empresa import MiEmpresaForm
         self.window=MiEmpresaForm(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_repaldaempresa(self):
         from controllers.respaldar_empresa import RespaldarEmpresaForm
         self.window=RespaldarEmpresaForm(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_cheques(self):
         from controllers.busqueda_c import buscarc
         self.window=buscarc(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_consulta_cheques(self):
         from controllers.consulta_cheques import Consulta_chequesForm
         self.window=Consulta_chequesForm(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_nuevo_ahorro(self):
         from controllers.busqueda_re_ahorro import buscar_re_ahorro
         self.window=buscar_re_ahorro(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_retiro_ahorro(self):
         from controllers.busqueda_retirar_ahorro import buscar_retirar_ahorro
         self.window=buscar_retirar_ahorro(self)
-        self.close()
+        self.hide()
         self.window.show()
     """***AQUI ESTUVO PABLO***"""
     def Open_historial_cliente(self):
         from controllers.historial_cliente import HistorialClienteForm
         self.window=HistorialClienteForm(self)
-        self.close()
+        self.hide()
         self.window.show()
     def Open_listado_polizas(self):
         from controllers.listado_polizas import ListadoPolizasForm
         self.window=ListadoPolizasForm(self)
-        self.close()
+        self.hide()
         self.window.show()
     def Open_agregar_cliente(self):
         from controllers.agregar_cliente import AgregarClienteForm
         self.window=AgregarClienteForm(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_catalogo(self):
         from controllers.busqueda_e import buscar_empresa
         self.window=buscar_empresa(self)
-        self.close()
+        self.hide()
         self.window.show()
     """***AQUI ESTUVO JESUS***"""
     def open_estadoCUENTAS(self):
         from controllers.ConsultaEstadoCuentas import buscarCuenta
         self.window=buscarCuenta(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_emitirReport(self):
         from controllers.EmitirReporte import emite_R
         self.window=emite_R(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_emitirReport_2(self):
         from controllers.EmitirReporte_2 import emite_R_2
         self.window=emite_R_2(self)
-        self.close()
+        self.hide()
         self.window.show()
     def open_nPoliza(self):
         from controllers.NuevaPoliza import nuevaPoliza
         self.window=nuevaPoliza(self)
-        self.close()
+        self.hide()
         self.window.show()
 ################################################################################################
 #########################                MENU V.2            ###################################

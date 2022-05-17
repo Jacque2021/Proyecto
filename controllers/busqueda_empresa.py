@@ -62,6 +62,7 @@ class buscar_empresa(QWidget, Ui_consulta_empresa):
         cadena=str(self.tabla_empresa.selectedIndexes()[0].data())
         RFC_e=cadena
         window=CatalogoForm(self, RFC_e)
+        self.hide()
         #self.close()
         window.show()
 

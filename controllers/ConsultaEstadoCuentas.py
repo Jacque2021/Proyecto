@@ -85,6 +85,7 @@ class buscarCuenta(QWidget, Ui_consulta_cliente):
         Id_cliente=numero
         if Id_cliente>0:
             window=estadoCuentas(self,Id_cliente)
+            self.hide()
             window.show() 
     """*************************  MOVIMIENTO Y ACCION DE LOS BOTONES  *****************************"""   
     def set_title_bar_buttons_actions(self):

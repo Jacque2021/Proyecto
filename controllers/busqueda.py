@@ -98,6 +98,7 @@ class buscar(QWidget, Ui_consulta_cliente):
         
         else: 
             window=Prestamos(self,Id_cliente)
+            self.hide()
             #self.close()
             window.show()
             #self.hide()

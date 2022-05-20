@@ -57,7 +57,7 @@ class MiEmpresaForm(QWidget, Miempresa):
         h = 'localhost'
         #print(hos)
         bd = self.caja_base.text()
-        b = 'aqui'
+        b = 'ejemplo2'
         #print(bd)
 
 

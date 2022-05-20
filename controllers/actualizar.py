@@ -1,9 +1,11 @@
+#from curses import window
 from re import T
 from PySide6.QtWidgets import QWidget
 from views.general_custom_ui import GeneralCustomUi
 from views.botonesMenu import Menu_Botones
 from views.Ui_actualizarye_cliente import Ui_act_eli_cliente
 from controllers.actualizar_cliente import Actualizar_cForm
+from controllers.errorcliente import ErrorForm
 from PySide6.QtWidgets import (QWidget, QMenu)
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QAction, QActionGroup
@@ -76,6 +78,12 @@ class ActualizarForm(QWidget, Ui_act_eli_cliente):
             print("Cliente editado exitosamente")
             self.clear_inputs()
             self.cliente_actualizado()
+        else: 
+            self.cliente_error()
+            print("Error en el cliente")
+    def cliente_error(self):
+        window=ErrorForm(self)
+        window.show
     
     def clear_inputs(self):
         self.codigo_cliente.clear()

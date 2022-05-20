@@ -125,7 +125,7 @@ class emite_R(QWidget, Emi_report):
          #formato de tabla
         #titulo
         pdf.set_font('Arial', '', 15)
-        pdf.cell(w=0,h=5, txt="Reporte de pago de prestamos",border=0,ln=1,align='C', fill=0)
+        pdf.cell(w=0,h=5, txt="Reporte de ahorros",border=0,ln=1,align='C', fill=0)
         pdf.cell(w=0,h=5, txt="",border=0,ln=1,align='C', fill=0)
          #formato de tabla
         pdf.ln(5)

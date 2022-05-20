@@ -33,6 +33,7 @@ class ChequesForm(QWidget, Cheques, FPDF):
         self.vista()
         self.cc()
         self.menu()
+        self.boton_cancelar_2.clicked.connect(self.clear_inputs)
         
        # self.boton_buscar_2.clicked.connect(self.open_busqueda)
         self.boton_emitir_2.clicked.connect(self.nuevo_cheque)

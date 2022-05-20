@@ -37,6 +37,8 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
         self.vista()
         self.cc()
         self.menu()
+        self.boton_cancelar_2.clicked.connect(self.clear_inputs)
+
          
     def mousePressEvent(self, event): #ubicación mouse
         self.ui.mouse_press_event(event)
@@ -83,8 +85,6 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
         b = capital2
         cap = b -a
         pago_con_capital=(cap,impo)
-        if recipes.pagar_con_ahorro(self.Id_cliente, pago_con_capital):
-                print("Descuento de ahorro hecho")
         data = (id, nombre, apellidos,capi, total, cap, descripcion, fecha, hora)
         
         ### CREAR DOC PDF CHEQUE
@@ -154,15 +154,16 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
         pdf.cell(40,10, '', 0,1)
         pdf.cell(40,10, '', 0,1)
         pdf.cell(w=0,h=5, txt="FIRMA",border=0,ln=1,align='C', fill=0)
-                
+        a = Decimal(total)
+        b = capital2       
         if  a > b:
-            cap = b
+            cap=b
             print ("error el retiro no puede ser mayor que el capital")
             self.Open1()
             
 
         elif a >5000:
-            cap = b
+            cap=b
             print ("error el retiro no puede ser mayor a 5,000")
             self.Open2()
         
@@ -170,6 +171,8 @@ class RetirarAhorroForm(QWidget, RetirarAhorro):
             self.Open3()
 
         elif recipes.retirar_ahorro(data):
+            if recipes.pagar_con_ahorro(self.Id_cliente, pago_con_capital):
+                print("Descuento de ahorro hecho")
             print("Ahorro retirado")
             self.clear_inputs()
             self.texto_error.clear()

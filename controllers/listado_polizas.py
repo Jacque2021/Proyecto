@@ -1,3 +1,4 @@
+from distutils.log import error
 from PySide6.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView
 from controllers.diarios_polizas import DiarioForm
 from views.Ui_listado_polizas import Ui_listado_polizas
@@ -32,7 +33,7 @@ class ListadoPolizasForm(QWidget, Ui_listado_polizas):
             self.populate_table(data)
         else:
             self.window=ErrorPolizaForm(self)
-            self.window.show
+            self.window.show()
 
     def Open_diarios_p(self):
         self.window=DiarioForm(self)

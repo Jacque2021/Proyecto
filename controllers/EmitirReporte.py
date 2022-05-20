@@ -110,9 +110,9 @@ class emite_R(QWidget, Emi_report):
         pdf.set_font('Arial', '', 16)
         pdf.set_text_color(r=0,g=0,b=0)
         #Encabezado
-        empresa=recipes.empresa
-        nombre_emp=str(data[0])#data[0]
-        ubicacion_emp=str(data[1])#data[1]
+        empresa=recipes.empresa()
+        nombre_emp=str(empresa[0])
+        ubicacion_emp=str(empresa[1])
         #Arial bold 15
         pdf.set_font('Arial', '',18)
         #Titulo

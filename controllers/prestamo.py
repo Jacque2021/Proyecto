@@ -32,7 +32,6 @@ class Prestamos(QWidget, Ui_Nuevoprestamo):
         
     def mousePressEvent(self, event): #ubicación mouse
         self.ui.mouse_press_event(event)
-        
     def llamar_nombre(self): 
         data=recipes.select_cliente(self.Id_cliente)
         Id_cl=data[0]

@@ -4,7 +4,7 @@ config={
     'user':'root',
     'password': '12345678',
     'host': 'localhost',
-    'database':'aqui'
+    'database':'ejemplo2'
 }
 
 def create_conection():

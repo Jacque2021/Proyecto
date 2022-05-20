@@ -648,7 +648,7 @@ class Ui_Nuevoprestamo(object):
         self.label_42.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Garantia prestamo</p></body></html>", None))
         self.label_3.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">%</span></p></body></html>", None))
         self.label_38.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Frecuencia</p></body></html>", None))
-        self.label_40.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Pagos</p></body></html>", None))
+        self.label_40.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\">Plazo</p></body></html>", None))
         self.cantidad_prestamo.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
         self.TextoError.setText(QCoreApplication.translate("Nuevoprestamo", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
 #if QT_CONFIG(tooltip)

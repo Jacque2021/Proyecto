@@ -154,53 +154,7 @@ border-width: 3px;
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <widget class="QToolButton" name="minimize_button">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>0</y>
-                 <width>22</width>
-                 <height>22</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../iconos/icons/maximize-window.png</normaloff>../iconos/icons/maximize-window.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-              <widget class="QToolButton" name="restore_button">
-               <property name="geometry">
-                <rect>
-                 <x>50</x>
-                 <y>0</y>
-                 <width>22</width>
-                 <height>22</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../iconos/icons/restore-window.png</normaloff>../iconos/icons/restore-window.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-              <widget class="QToolButton" name="maximize_button">
+              <widget class="QToolButton" name="minimizar">
                <property name="geometry">
                 <rect>
                  <x>50</x>
@@ -223,7 +177,7 @@ border-width: 3px;
                 </size>
                </property>
               </widget>
-              <widget class="QToolButton" name="close_button">
+              <widget class="QToolButton" name="maximizar">
                <property name="geometry">
                 <rect>
                  <x>90</x>
